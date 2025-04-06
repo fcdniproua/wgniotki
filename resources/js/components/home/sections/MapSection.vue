@@ -67,7 +67,7 @@
 .map-section {
     padding: 4rem 1rem;
     background-color: #f8f9fa;
-    width: 100%;
+    width: 100vw;
     box-sizing: border-box;
 }
 

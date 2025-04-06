@@ -20,11 +20,11 @@ services:
     container_name: laravel_webserver
     restart: unless-stopped
     ports:
-      - "8001:80"  # Порт для Nginx
+      - "8080:80"  # Порт для Nginx
     volumes:
       - ./:/var/www
       - ./docker/nginx/conf.d/:/etc/nginx/conf.d/  # Додаємо конфігурацію
-    command: envsubst < /etc/nginx/conf.d/app.conf.template > /etc/nginx/conf.d/app.conf nginx -g 'daemon off;'  # Стандартний запуск Nginx
+    command: nginx -g 'daemon off;'  # Стандартний запуск Nginx
     networks:
       - app-network
 

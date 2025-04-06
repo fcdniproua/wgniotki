@@ -16,16 +16,16 @@
                     <li><router-link class="menu-next" to="/contact">Contact</router-link></li>
                 </ul>
             </nav>
-            <a
-                class="button-40"
-                role="button"
-                @click="$emit('open-contact-modal')"
-            >Wycen Namprawe
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </a>
+<!--            <a-->
+<!--                class="button-40"-->
+<!--                role="button"-->
+<!--                @click="$emit('open-contact-modal')"-->
+<!--            >Wycen Namprawe-->
+<!--                <span></span>-->
+<!--                <span></span>-->
+<!--                <span></span>-->
+<!--                <span></span>-->
+<!--            </a>-->
 
 
             <button class="burger-btn" @click="toggleMenu">
