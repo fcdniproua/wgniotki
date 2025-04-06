@@ -33,6 +33,7 @@ services:
     container_name: laravel_db
     restart: unless-stopped
     environment:
+#      PORT: 80
       MYSQL_DATABASE: laravel
       MYSQL_ROOT_PASSWORD: root
       MYSQL_PASSWORD: secret
