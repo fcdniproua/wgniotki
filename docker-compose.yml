@@ -19,13 +19,12 @@ services:
     image: nginx:alpine
     container_name: laravel_webserver
     restart: unless-stopped
-    environment:
-      - PORT=8001  # Можна використовувати будь-який порт, наприклад, 8001 для локального запуску
     ports:
-      - "${PORT:-8001}:80"  # Використовуємо змінну середовища PORT або за замовчуванням 8001
+      - "8001:80"  # Порт для Nginx
     volumes:
       - ./:/var/www
-      - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
+      - ./docker/nginx/conf.d/:/etc/nginx/conf.d/  # Додаємо конфігурацію
+    command: nginx -g 'daemon off;'  # Стандартний запуск Nginx
     networks:
       - app-network
 

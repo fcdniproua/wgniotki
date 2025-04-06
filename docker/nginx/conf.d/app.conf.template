@@ -1,5 +1,5 @@
 server {
-    listen 80;  # Порт за замовчуванням для Nginx, якщо не використовується змінна середовища
+    listen ${PORT};  # Змінна середовища буде підставлена при запуску
 
     root /var/www/public;
     index index.php index.html;
