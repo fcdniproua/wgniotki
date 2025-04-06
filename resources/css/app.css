@@ -1,0 +1,28 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Ваші кастомні стилі тут */
+body {
+    background: white !important;
+    color: black !important;
+    opacity: 1 !important;
+}
+
+/* У вашому головному CSS файлі */
+body {
+    padding-top: 70px; /* Висота хедера */
+}
+
+#app {
+    display: block !important;
+    visibility: visible !important;
+    position: relative !important;
+    z-index: 1 !important;
+}
+/* Кольори */
+:root {
+    --primary-blue: #041с32;
+    --text-white: #fff;
+    --burger-color: #fff;
+}
