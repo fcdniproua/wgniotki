@@ -5,12 +5,14 @@
 
             <div class="contact-grid">
                 <div class="contact-item">
-                    <icon-map-pin class="contact-icon" />
+                    <div class="icon-wrapper">
+                        <icon-map-pin class="contact-icon" />
+                    </div>
                     <p class="contact-text">ul. Kleczkowska 18B, 50-227 Wrocław, Poland</p>
                 </div>
 
                 <div class="contact-item">
-                    <div class="icon-group">
+                    <div class="icon-wrapper">
                         <icon-phone class="contact-icon" />
                         <icon-phone-call class="contact-icon" />
                     </div>
@@ -18,15 +20,19 @@
                 </div>
 
                 <div class="contact-item">
-                    <icon-mail class="contact-icon" />
+                    <div class="icon-wrapper">
+                        <icon-mail class="contact-icon" />
+                    </div>
                     <p class="contact-text">bezwgniotek@gmail.com</p>
                 </div>
 
                 <div class="contact-item">
-                    <icon-clock class="contact-icon" />
+                    <div class="icon-wrapper">
+                        <icon-clock class="contact-icon" />
+                    </div>
                     <div class="hours-dropdown">
                         <button class="dropdown-toggle" @click="toggleHours">
-                            Pon-Pt: 09:00 – 19:00
+                            Godziny otwarcia
                             <icon-chevron-down class="chevron" :class="{ 'rotate-180': showHours }" />
                         </button>
                         <div class="dropdown-content" :class="{ 'show': showHours }">
@@ -81,24 +87,28 @@
 .contact-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+    gap: 2rem;
     margin-bottom: 3rem;
 }
 
 .contact-item {
     display: flex;
+    flex-direction: column;
     align-items: center;
+    text-align: center;
     gap: 0.75rem;
 }
 
-.contact-icon {
-    min-width: 24px;
-    color: #e67e22;
+.icon-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
 }
 
-.icon-group {
-    display: flex;
-    gap: 0.5rem;
+.contact-icon {
+    width: 24px;
+    height: 24px;
+    color: #e67e22;
 }
 
 .contact-text {
@@ -111,6 +121,9 @@
 .hours-dropdown {
     position: relative;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .dropdown-toggle {
@@ -120,9 +133,16 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0;
+    padding: 0.5rem 1rem;
     font-size: 1.1rem;
     color: #4b5563;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.dropdown-toggle:hover {
+    background-color: #f0f0f0;
 }
 
 .chevron {
@@ -137,16 +157,13 @@
 
 .dropdown-content {
     display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 200px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    background-color: #f8f9fa;
+    width: 100%;
+    max-width: 280px;
     border-radius: 8px;
     padding: 1rem;
-    z-index: 1;
-    left: 0;
-    top: 100%;
     margin-top: 0.5rem;
+    text-align: center;
 }
 
 .dropdown-content.show {
@@ -175,6 +192,7 @@
     border: none;
 }
 
+/* Мобільна версія */
 @media (max-width: 768px) {
     .map-section {
         padding: 2rem 1rem;
@@ -182,31 +200,41 @@
 
     .section-title {
         font-size: 1.5rem;
+        margin-bottom: 1.5rem;
     }
 
     .contact-grid {
         grid-template-columns: 1fr;
-        gap: 1rem;
+        gap: 1.5rem;
+    }
+
+    .contact-item {
+        gap: 0.5rem;
     }
 
     .contact-text {
         font-size: 1rem;
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+    .dropdown-toggle {
+        font-size: 1rem;
+        padding: 0.5rem;
     }
 
     .google-map {
-        height: 350px;
+        height: 300px;
     }
 }
 
 @media (max-width: 480px) {
-    .contact-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
+    .contact-text {
+        max-width: 90%;
     }
 
     .dropdown-content {
-        min-width: 100%;
+        max-width: 90%;
     }
 }
 </style>
