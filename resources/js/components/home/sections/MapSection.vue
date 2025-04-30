@@ -13,52 +13,26 @@
 
                 <div class="contact-item">
                     <div class="icon-wrapper">
-                        <icon-phone class="contact-icon" />
-                        <icon-phone-call class="contact-icon" />
+                        <IconPhoneCall class="contact-icon" />
                     </div>
-                    <p class="contact-text">+48 510 631 616</p>
-                </div>
-
-                <div class="contact-item">
-                    <div class="icon-wrapper">
-                        <icon-mail class="contact-icon" />
-                    </div>
-                    <p class="contact-text">bezwgniotek@gmail.com</p>
-                </div>
-
-                <div class="contact-item">
-                    <div class="icon-wrapper">
-                        <icon-clock class="contact-icon" />
-                    </div>
-                    <div class="hours-dropdown">
-                        <button class="dropdown-toggle" @click="toggleHours">
-                            Godziny otwarcia
-                            <icon-chevron-down class="chevron" :class="{ 'rotate-180': showHours }" />
-                        </button>
-                        <div class="dropdown-content" :class="{ 'show': showHours }">
-                            <p><strong>Poniedziałek:</strong> 09:00 – 19:00</p>
-                            <p><strong>Wtorek:</strong> 09:00 – 19:00</p>
-                            <p><strong>Środa:</strong> 09:00 – 19:00</p>
-                            <p><strong>Czwartek:</strong> 09:00 – 19:00</p>
-                            <p><strong>Piątek:</strong> 09:00 – 19:00</p>
-                            <p class="closed"><strong>Sobota:</strong> Zamknięte</p>
-                            <p class="closed"><strong>Niedziela:</strong> Zamknięte</p>
-                        </div>
-                    </div>
+                    <p class="contact-text"><a  class="contact-text" href="tel:48510631616">510 631 616</a></p>
                 </div>
             </div>
 
-            <div class="map-wrapper">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2505.245575373025!2d17.02124931575551!3d51.10702997957188!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470fe9e7a8e7589d%3A0x5e4c9a6b5b6a4a8f!2sKleczkowska%2018B%2C%2050-227%20Wroc%C5%82aw%2C%20Poland!5e0!3m2!1sen!2spl!4v1620000000000!5m2!1sen!2spl"
-                    width="100%"
-                    height="450"
-                    style="border:0;"
-                    allowfullscreen=""
-                    loading="lazy"
-                    class="google-map"
-                ></iframe>
+            <h2 class="section-title">Polub nasze strony </h2>
+
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <ul class="social-icons">
+                        <li><a href="https://www.instagram.com/usuwanie.wgniecen.wroclaw" target="_blank"><icon-instagram /></a></li>
+                        <li><a href="https://wa.me/48510631616" target="_blank"><icon-whatsapp /></a></li>
+                        <li><a href="https://m.facebook.com/108648248244581" target="_blank"><icon-facebook /></a></li>
+                    </ul>
+                </div>
             </div>
+
+
+            <div class="map-wrapper" v-html="mapEmbed"></div>
         </div>
     </section>
 </template>
@@ -237,20 +211,90 @@
         max-width: 90%;
     }
 }
+
+.social-icons {
+    position: relative;
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    padding: 0;
+}
+.social-icons li {
+    position: relative;
+    margin: 0 20px;
+    cursor: pointer;
+}
+.social-icons li a {
+    position: relative;
+    text-decoration: none;
+    display: block;
+}
+.social-icons li a .fa-brands {
+    font-size: 4em;
+    color: #222;
+    transition: 0.3s;
+}
+
+/*.social-icons li {
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text; !* Додаємо для кращої підтримки *!
+}
+
+!* Instagram *!
+.social-icons li:nth-child(1) {
+    background-image: linear-gradient(45deg,
+    #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%,
+    #bc1888 100%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+!* WhatsApp *!
+.social-icons li:nth-child(2) {
+    background: #25D366;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+!* Facebook *!
+.social-icons li:nth-child(3)  {
+    background: #1877F2;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}*/
+
 </style>
 
-<script setup lang="ts">
-import { ref } from 'vue';
+<script>
 import IconPhone from "../../icon/IconPhone.vue";
 import IconPhoneCall from "../../icon/IconPhoneCall.vue";
 import IconMapPin from "../../icon/IconMapPin.vue";
 import IconMail from "../../icon/IconMail.vue";
 import IconClock from "../../icon/IconClock.vue";
 import IconChevronDown from "../../icon/IconChevronDown.vue";
+import IconFacebook from "../../icon/IconFacebook.vue";
+import IconInstagram from "../../icon/IconInstagram.vue";
+import IconWhatsapp from "../../icon/IconWhatsapp.vue";
 
-const showHours = ref(false);
-
-const toggleHours = () => {
-    showHours.value = !showHours.value;
-};
+export default {
+    components: {
+        IconWhatsapp,
+        IconInstagram,
+        IconFacebook,
+        IconPhone,
+        IconPhoneCall,
+        IconMapPin,
+        IconClock,
+        IconChevronDown,
+        IconMail,
+    },
+    props: {
+        mapEmbed: {
+            type: String,
+            required: true,
+            default: ''
+        }
+    }
+}
 </script>

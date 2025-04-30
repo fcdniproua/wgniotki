@@ -33,10 +33,10 @@ services:
     container_name: laravel_db
     restart: unless-stopped
     environment:
-      MYSQL_DATABASE: laravel
+      MYSQL_DATABASE: wgniotki
       MYSQL_ROOT_PASSWORD: root
       MYSQL_PASSWORD: secret
-      MYSQL_USER: laravel
+      MYSQL_USER: wgniotki
     ports:
       - "3308:3306"
     volumes:

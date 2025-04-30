@@ -1,12 +1,12 @@
 <template>
     <section class="hero-section">
         <div class="hero-container">
-            <h2 class="hero-title">Usuwanie wgnieceń Wrocław</h2>
+            <h2 class="hero-title"> Usuwanie wgnieceń bez lakierowania Wrocław</h2>
             <p class="hero-description">
                 Szkody parkingowe, powypadkowe, komunikacyjne oraz uszkodzenia gradowe. Szybko i profesjonalnie!
             </p>
-            <button class="hero-button">
-                Umów się na wizytę
+            <button class="hero-button-1" @click="$emit('open-contact-modal');">
+                Wyceń usługę
             </button>
         </div>
     </section>
@@ -25,9 +25,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url('/img/pexels-brett-sayles-1592261.jpg') center/cover no-repeat;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),url('/img/pexels-gregory-costa-5733733.jpg');
+    background-size: cover; /* фото покриває весь екран */
+    background-position: center 100%;
+    background-repeat: no-repeat; /* фото не повторюється */
     color: white;
-    padding: 5rem 0;
+    padding: 15rem 0;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -38,7 +41,7 @@
 .hero-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 1rem 1rem;
     position: relative;
     z-index: 2;
 }
@@ -62,6 +65,7 @@
     line-height: 1.2;
     text-shadow: 0 2px 4px rgba(0,0,0,0.1);
     animation: fadeInUp 0.8s ease-out;
+    color: #ff984d;
 }
 
 .hero-description {
@@ -74,48 +78,26 @@
     opacity: 0;
 }
 
-.hero-button {
-    background-color: white;
-    color: #1e40af;
-    font-weight: 600;
-    padding: 0.75rem 2rem;
-    border-radius: 0.375rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+.hero-button-1 {
+    display: inline-block;
+    background-color: transparent;
+    color: #ff984d; /* світліший жовтий */
+    border: 2px solid #ff984d;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-transform: uppercase;
     transition: all 0.3s ease;
-    border: none;
     cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    animation: fadeInUp 0.8s ease-out 0.4s forwards;
-    opacity: 0;
-    transform: translateY(20px);
 }
 
-.hero-button:hover {
-    background-color: #f3f4f6;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+.hero-button-1:hover {
+    background-color: #ff984d;
+    color: #1a1a1a;
 }
 
-.hero-button:active {
-    transform: translateY(0);
-}
 
-.hero-button::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, transparent 50%, rgba(255,255,255,0.2) 100%);
-    transform: translateX(-100%);
-    transition: transform 0.6s ease;
-}
-
-.hero-button:hover::after {
-    transform: translateX(100%);
-}
 
 @keyframes fadeInUp {
     from {
@@ -131,6 +113,11 @@
 @media (max-width: 768px) {
     .hero-section {
         padding: 3rem 0; /* Теж видаляємо бічні відступи на мобільних */
+        background-position: 50% center;
+    }
+
+    .hero-container{
+        margin-bottom: 50px;
     }
 
     .hero-title {
@@ -142,3 +129,5 @@
     }
 }
 </style>
+<script setup lang="ts">
+</script>

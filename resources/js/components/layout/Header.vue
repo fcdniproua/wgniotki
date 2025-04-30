@@ -2,31 +2,41 @@
     <header class="header">
         <div class="header-container">
             <router-link to="/" class="logo">
-                Gourmet
+                <logo></logo>
             </router-link>
-
 
             <nav class="main-nav">
                 <ul class="nav-list">
-                    <li><router-link class="menu-first" to="/">Home</router-link></li>
-                    <li><router-link class="menu-next" to="/about">About</router-link></li>
-                    <li><router-link class="menu-next" to="/menu">Menu</router-link></li>
-                    <li><router-link class="menu-next" to="/reservations">Reservations</router-link></li>
-                    <li><router-link class="menu-next" to="/gallery">Gallery</router-link></li>
-                    <li><router-link class="menu-next" to="/contact">Contact</router-link></li>
+                    <li><router-link class="menu-first" to="/">GLÓWNA</router-link></li>
+                    <li><router-link class="menu-next" to="/services">USLUGI</router-link></li>
+                    <li><router-link class="menu-next" to="/about">O NAS</router-link></li>
+                    <li v-if="isAuthenticated">
+                        <router-link class="menu-next" to="/admin/dashboard">DASHBOARD</router-link>
+                    </li>
                 </ul>
             </nav>
-<!--            <a-->
-<!--                class="button-40"-->
-<!--                role="button"-->
-<!--                @click="$emit('open-contact-modal')"-->
-<!--            >Wycen Namprawe-->
-<!--                <span></span>-->
-<!--                <span></span>-->
-<!--                <span></span>-->
-<!--                <span></span>-->
-<!--            </a>-->
 
+            <div class="contact-item">
+                <div class="contact-phone">
+                    <div class="icon-wrapper">
+                        <IconPhoneCall class="contact-icon" />
+                    </div>
+                    <p class="contact-text">
+                        <button class="hero-button-1" @click="$emit('open-contact-modal');">
+                            <a :href="'tel:' + contactData.contactPhone" class="contact-link">{{contactData.contactPhone}}</a>
+                        </button>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Десктопна версія кнопки -->
+            <button
+                v-if="!isMobile && !isAuthenticated"
+                @click="showLoginModal = true"
+                class="auth-btn login"
+            >
+                Admin Login
+            </button>
 
             <button class="burger-btn" @click="toggleMenu">
                 <span class="burger-line"></span>
@@ -36,40 +46,187 @@
 
             <transition name="slide">
                 <nav class="mobile-menu" v-if="isMenuOpen">
+                    <router-link to="/" class="mobile-logo">
+                        <logo></logo>
+                    </router-link>
                     <ul>
-                        <li><router-link class="menu-first" to="/" @click="closeMenu">Home</router-link></li>
-                        <li><router-link class="menu-next" to="/about" @click="closeMenu">About</router-link></li>
-                        <li><router-link class="menu-next" to="/menu" @click="closeMenu">Menu</router-link></li>
-                        <li><router-link class="menu-next" to="/reservations" @click="closeMenu">Reservations</router-link></li>
-                        <li><router-link class="menu-next" to="/gallery" @click="closeMenu">Gallery</router-link></li>
-                        <li><router-link class="menu-next" to="/contact" @click="closeMenu">Contact</router-link></li>
+                        <li><router-link class="menu-first" to="/" @click="closeMenu">GLÓWNA</router-link></li>
+                        <li><router-link class="menu-next" to="/services" @click="closeMenu">USLUGI</router-link></li>
+                        <li><router-link class="menu-next" to="/about" @click="closeMenu">O NAS</router-link></li>
+                        <li v-if="isAuthenticated">
+                            <router-link class="menu-next" to="/admin/dashboard" @click="closeMenu">DASHBOARD</router-link>
+                        </li>
+                        <!-- Мобільна версія кнопки -->
+                        <li v-if="!isAuthenticated">
+                            <button @click="openLogin" class="auth-btn login mobile">
+                                Admin
+                            </button>
+                        </li>
                     </ul>
                 </nav>
             </transition>
         </div>
+
+        <!-- Модальне вікно логіну -->
+        <AdminLoginModal
+            :isVisible="showLoginModal"
+            @close="showLoginModal = false"
+            @login-success="handleLoginSuccess"
+            style="z-index: 9999;"
+        />
     </header>
 </template>
 
 <script>
+import {ref, onMounted, inject} from 'vue';
+import { useRouter } from 'vue-router';
+import axios from 'axios';
+import AdminLoginModal from '../admin/AdminLoginModal.vue';
+import IconPhoneCall from '../icon/IconPhoneCall.vue';
+import Logo from "../icon/Logo.vue";
+
 export default {
-    name: 'AppHeader',
-    data() {
-        return {
-            isMenuOpen: false
-        }
+    components: {
+        Logo,
+        IconPhoneCall,
+        AdminLoginModal
     },
-    methods: {
-        toggleMenu() {
-            this.isMenuOpen = !this.isMenuOpen;
-            document.body.style.overflow = this.isMenuOpen ? 'hidden' : '';
-        },
-        closeMenu() {
-            this.isMenuOpen = false;
+    setup() {
+        const router = useRouter();
+        const showLoginModal = ref(false);
+        const isMenuOpen = ref(false);
+        const isMobile = ref(false);
+        const isAuthenticated = ref(false);
+        const adminName = ref('');
+        const intendedRoute = ref(null);
+        const contactData = inject('contactData')
+        const checkAuth = async () => {
+            try {
+                const { data } = await axios.get('/admin/check-auth');
+                return data.authenticated;
+            } catch {
+                return false;
+            }
+        };
+
+        // Глобальний перехоплювач маршрутів
+        router.beforeEach(async (to) => {
+            if (to.meta.requiresAdmin) {
+                const isAuth = await checkAuth();
+                if (!isAuth) {
+                    intendedRoute.value = to.fullPath;
+                    showLoginModal.value = true;
+                    return false; // Блокуємо навігацію
+                }
+            }
+        });
+
+        // Обробка успішного логіну
+
+        const checkAuthStatus = async () => {
+            try {
+                const response = await axios.get('/admin/check-auth', {
+                    headers: {
+                        'Accept': 'application/json',
+                        'X-Requested-With': 'XMLHttpRequest'
+                    }
+                });
+
+                if (response.data && typeof response.data === 'object') {
+                    isAuthenticated.value = response.data.authenticated || false;
+                    if (isAuthenticated.value) {
+                        await fetchAdminData();
+                    }
+                }
+            } catch (error) {
+                console.error('Помилка перевірки авторизації:', error);
+                isAuthenticated.value = false;
+            }
+        };
+
+        const fetchAdminData = async () => {
+            try {
+                const response = await axios.get('/admin/user', {
+                    headers: {
+                        'Accept': 'application/json',
+                        'X-Requested-With': 'XMLHttpRequest'
+                    }
+                });
+
+                if (response.data && response.data.name) {
+                    adminName.value = response.data.name;
+                }
+            } catch (error) {
+                console.error('Failed to fetch admin data:', error);
+                adminName.value = '';
+            }
+        };
+
+        const checkScreenSize = () => {
+            isMobile.value = window.innerWidth <= 992;
+        };
+
+        const toggleMenu = () => {
+            isMenuOpen.value = !isMenuOpen.value;
+            document.body.style.overflow = isMenuOpen.value ? 'hidden' : '';
+        };
+
+        const openLogin = () => {
+            showLoginModal.value = true;
+            isMenuOpen.value = false;
+        };
+
+        const handleLoginSuccess = async () => {
+            showLoginModal.value = false;
+            await checkAuthStatus();
+            if (intendedRoute.value) {
+                await router.push(intendedRoute.value);
+                intendedRoute.value = null;
+            } else {
+                await router.push('/admin/dashboard');
+            }
+        };
+
+        const closeMenu = () => {
+            isMenuOpen.value = false;
             document.body.style.overflow = '';
-        }
+        };
+
+        const logout = async () => {
+            try {
+                await axios.post('/admin/logout');
+                isAuthenticated.value = false;
+                adminName.value = '';
+                router.push('/');
+            } catch (error) {
+                console.error('Logout error:', error);
+            }
+        };
+
+        onMounted(() => {
+            checkScreenSize();
+            checkAuthStatus();
+            window.addEventListener('resize', checkScreenSize);
+        });
+
+        return {
+            IconPhoneCall,
+            contactData,
+            showLoginModal,
+            isMenuOpen,
+            isMobile,
+            isAuthenticated,
+            adminName,
+            toggleMenu,
+            openLogin,
+            handleLoginSuccess,
+            logout,
+            closeMenu
+        };
     }
-}
+};
 </script>
+
 
 <style scoped>
 .header {
@@ -80,7 +237,7 @@ export default {
     z-index: 1000;
     background: #2c3e50;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    height: 70px;
+    height: 130px;
 }
 
 .header-container {
@@ -99,6 +256,9 @@ export default {
     font-weight: 700;
     color: #ffffff;
     text-decoration: none;
+    width: 250px;
+    position: fixed;
+    top: -58px;
 }
 
 /* Десктопне меню */
@@ -142,7 +302,7 @@ export default {
     background: none;
     border: none;
     cursor: pointer;
-    padding: 10px;
+    padding: 35px;
     z-index: 1001;
 }
 
@@ -157,10 +317,10 @@ export default {
 
 .mobile-menu {
     position: fixed;
-    top: 70px;
+    top: 130px;
     left: 0;
     width: 100%;
-    height: calc(100vh - 70px);
+    height: calc(100vh - 130px);
     background: #2c3e50;
     display: flex;
     flex-direction: column;
@@ -224,6 +384,7 @@ export default {
         margin-right: 0px !important;
         margin-left: 30px !important;
         text-align: center;
+        display: none!important;
     }
 }
 
@@ -344,60 +505,148 @@ export default {
     }
 }
 
-/*.button-40 {
-    --glow-color: rgba(255, 153, 0, 0.8); !* Помаранчеве світіння *!
-    --glow-spread-color: rgba(0, 78, 146, 0.6); !* Темно-синій відтінок *!
-    --enhanced-glow-color: rgba(255, 179, 71, 0.8); !* Яскраво-помаранчевий *!
-    --btn-color: rgb(230, 115, 0); !* Основний помаранчевий колір *!
+.contact-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
 
-    border: .25em solid var(--glow-color);
-    padding: 1em 3em;
+.contact-phone {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-text {
+    margin: 0 10px;
+    text-wrap: nowrap;
+}
+
+.icon-wrapper {
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.contact-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.admin-login-btn {
+    padding: 8px 16px;
+    background: #2c3e50;
     color: white;
-    font-size: 15px;
-    font-weight: bold;
-    background-color: var(--btn-color);
-    border-radius: 1em;
-    outline: none;
-    box-shadow:
-        0 0 1em .25em var(--glow-color),
-        0 0 4em 1em var(--glow-spread-color),
-        inset 0 0 .75em .25em var(--glow-color);
-    text-shadow: 0 0 .5em var(--glow-color);
-    position: relative;
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
     transition: all 0.3s;
+    margin-left: 15px;
+}
+
+.admin-login-btn:hover {
+    background: #2c3e50;
+    transform: translateY(-2px);
+}
+
+.hero-button-1 {
+    display: inline-block;
+    background-color: transparent;
+    color: #ff984d; /* світліший жовтий */
+    border: 2px solid #ff984d;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
     cursor: pointer;
 }
 
-.button-40::after {
-    pointer-events: none;
-    content: "";
-    position: absolute;
-    top: 120%;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: var(--glow-spread-color);
-    filter: blur(2em);
-    opacity: .7;
-    transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+.hero-button-1:hover {
+    background-color: #ff984d;
+    color: #1a1a1a;
 }
 
-.button-40:hover {
-    color: var(--btn-color);
-    background-color: var(--enhanced-glow-color);
-    box-shadow:
-        0 0 1em .25em var(--glow-color),
-        0 0 4em 2em var(--glow-spread-color),
-        inset 0 0 .75em .25em var(--glow-color);
+/* Десктопна версія */
+.desktop-login-btn {
+    display: block;
 }
 
-.button-40:active {
-    box-shadow:
-        0 0 0.6em .25em var(--glow-color),
-        0 0 2.5em 2em var(--glow-spread-color),
-        inset 0 0 .5em .25em var(--glow-color);
-    transform: translateY(2px);
-}*/
+.mobile-login-btn {
+    display: none;
+}
+
+/* Адаптація для мобільних */
+@media (max-width: 992px) {
+    .desktop-login-btn {
+        display: none;
+    }
+
+    .mobile-login-btn {
+        display: block;
+        margin-top: 20px;
+    }
+
+    .mobile-login-btn .admin-login-btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+    }
+}
+
+.admin-login-btn {
+    padding: 8px 16px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.admin-logout-btn {
+    padding: 8px 16px;
+    background: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.admin-login-btn:hover,
+.admin-logout-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+.mobile-logo {
+    display: none;
+}
+
+
+/* Адаптація для мобільних */
+@media (max-width: 992px) {
+    .mobile-login-btn button {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+    }
+    .mobile-logo {
+        display: block;
+        width: 350px;
+        position: absolute;
+        top: -71px;
+        z-index: 2;
+        left: 3%;
+    }
+    .logo {
+        display:none;
+
+    }
+}
 </style>
-
-

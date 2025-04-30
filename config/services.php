@@ -35,4 +35,14 @@ return [
         ],
     ],
 
+    'google' => [
+        'api_key' => env('GOOGLE_API_KEY'),
+        'place_id' => env('GOOGLE_PLACE_ID'),
+    ],
+
+    'facebook' => [
+        'page_id' => env('FACEBOOK_PAGE_ID'),
+        'access_token' => env('FACEBOOK_ACCESS_TOKEN'),
+    ],
+
 ];

@@ -2,70 +2,128 @@
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-content">
-<!--                <div class="footer-logo">-->
-<!--                    <router-link to="/" class="logo">Gourmet</router-link>-->
-<!--                </div>-->
+                <div class="footer-columns">
+                    <!-- Колонка з контактами -->
+                    <div class="footer-column">
+                        <h3 class="footer-heading">Kontakt</h3>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>{{contactData.address}}</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+48123456789">+48 {{contactData.contactPhone}}</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:kontakt@twojesto.pl">{{contactData.contactEmail}}</a>
+                        </div>
+                    </div>
 
-                <div class="footer-links">
-<!--                    <nav class="footer-nav">-->
-<!--                        <ul>-->
-<!--                            <li><router-link to="/">Home</router-link></li>-->
-<!--                            <li><router-link to="/about">About</router-link></li>-->
-<!--                            <li><router-link to="/menu">Menu</router-link></li>-->
-<!--                            <li><router-link to="/reservations">Reservations</router-link></li>-->
-<!--                            <li><router-link to="/gallery">Gallery</router-link></li>-->
-<!--                            <li><router-link to="/contact">Contact</router-link></li>-->
-<!--                        </ul>-->
-<!--                    </nav>-->
+                    <!-- Колонка з годинами роботи -->
+                    <div class="footer-column">
+                        <h3 class="footer-heading">Godziny otwarcia</h3>
+                        <div class="hours-item" v-for="(day,index) in contactData.openingHours" :key="index">
+                            <span class="day">{{weekDays[index]}}:</span>
+                            <span class="hours" v-if="day.closed === false">{{day.from}} - {{day.to}}</span>
+                            <span class="hours" v-else>Zamknięte</span>
+                        </div>
+                        <!--                        <div class="hours-item">-->
+                        <!--                            <span class="day">Sobota:</span>-->
+                        <!--                            <span class="hours">9:00 - 14:00</span>-->
+                        <!--                        </div>-->
+                        <!--                        <div class="hours-item">-->
+                        <!--                            <span class="day">Niedziela:</span>-->
+                        <!--                            <span class="hours">Zamknięte</span>-->
+                        <!--                        </div>-->
+                    </div>
 
-                    <div class="footer-legal">
-                        <p class="copyright">&copy; 2025 TwojeSTO.pl - Wszelkie prawa zastrzeżone</p>
-                        <div class="legal-links">
-                            <router-link to="/privacy">Polityka prywatności</router-link>
-                            <router-link to="/sitemap">Mapa strony</router-link>
+                    <!-- Колонка з соцмережами -->
+                    <div class="footer-column">
+                        <h3 class="footer-heading">Polub nasze strony </h3>
+                        <div class="social-links">
+                            <a href="https://www.instagram.com/usuwanie.wgniecen.wroclaw" class="social-icon"
+                               target="_blank">
+                                <icon-instagram/>
+                            </a>
+                            <a href="https://m.facebook.com/108648248244581" class="social-icon" target="_blank">
+                                <icon-facebook/>
+                            </a>
+                        </div>
+
+                        <!-- Прикольний додаток - лічильник відремонтованих авто -->
+                        <div class="fun-fact">
+                            <div class="counter">
+                                <i class="fas fa-car"></i>
+                                <span class="count">4563</span>
+                            </div>
+                            <p>Odremontowanych pojazdów</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="footer-social">
-                    <ul class="social-icons">
-                        <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                        <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
-                        <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                    </ul>
+                <div class="footer-bottom">
+                    <div class="footer-legal">
+                        <p class="copyright">&copy; 2025 usuwanie-wgnieceń.pl - Wszelkie prawa zastrzeżone</p>
+                    </div>
                 </div>
-
-
-<!--                <div class="footer-social">-->
-<!--                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>-->
-<!--                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>-->
-<!--                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>-->
-<!--                </div>-->
             </div>
         </div>
     </footer>
 </template>
 
 <script>
+import {inject, onMounted, ref} from "vue";
+import IconFacebook from "../icon/IconFacebook.vue";
+import IconWhatsapp from "../icon/IconWhatsapp.vue";
+import IconInstagram from "../icon/IconInstagram.vue";
+
 export default {
-    name: 'AppFooter'
+    name: 'AppFooter',
+    components: {IconInstagram, IconWhatsapp, IconFacebook},
+
+    setup() {
+        const weekDays = ref(['Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', 'Piątek', 'Sobota', 'Niedziela']);
+        const contactData = inject('contactData')
+        const animateCounter = () => {
+            const counter = document.querySelector('.count');
+            const target = parseInt(counter.textContent);
+            let current = 0;
+            const increment = target / 50;
+
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    clearInterval(timer);
+                    current = target;
+                }
+                counter.textContent = Math.floor(current);
+            }, 20);
+        }
+
+        onMounted(() => {
+            animateCounter();
+        });
+
+        return {
+            contactData,
+            weekDays
+        }
+    },
 }
 </script>
 
 <style scoped>
-
 .footer {
     background-color: #2c3e50;
     color: #ffffff;
-    padding: 2.5rem 0;
+    padding: 3rem 0 1.5rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;
-    bottom: 0;
-    left: 0;
     width: 100%;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 999;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Open Sans', sans-serif;
 }
 
 .footer-container {
@@ -77,44 +135,119 @@ export default {
 .footer-content {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    gap: 2.5rem;
+}
+
+.footer-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
+    margin-bottom: 1.5rem;
 }
 
-.footer-logo .logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 28px;
-    font-weight: 700;
-    color: #ffffff;
-    text-decoration: none;
-}
-
-.footer-links {
+.footer-column {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
+    gap: 1rem;
 }
 
-.footer-nav ul {
+.footer-heading {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #e67e22;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: #e67e22;
+}
+
+.contact-item, .hours-item {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0.8rem;
 }
 
-.footer-nav a {
+.contact-item i, .hours-item i {
+    color: #e67e22;
+    width: 20px;
+    text-align: center;
+}
+
+.contact-item a {
     color: #ffffff;
     text-decoration: none;
-    font-weight: 500;
     transition: color 0.3s;
 }
 
-.footer-nav a:hover {
+.contact-item a:hover {
     color: #e67e22;
+}
+
+.day {
+    font-weight: 600;
+    min-width: 80px;
+    display: inline-block;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.3s;
+}
+
+.social-icon:hover {
+    background: #e67e22;
+    transform: translateY(-3px);
+}
+
+.fun-fact {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.counter {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #e67e22;
+    margin-bottom: 0.5rem;
+}
+
+.counter i {
+    margin-right: 10px;
+}
+
+.fun-fact p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.5rem;
 }
 
 .footer-legal {
@@ -130,7 +263,8 @@ export default {
 .legal-links {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 1.5rem;
+    flex-wrap: wrap;
 }
 
 .legal-links a {
@@ -144,76 +278,17 @@ export default {
     color: #ffffff;
 }
 
-.footer-social {
-    display: flex;
-    gap: 1.5rem;
-}
+@media (max-width: 768px) {
+    .footer-columns {
+        grid-template-columns: 1fr;
+    }
 
-.social-icons {
-    position: relative;
-    display: flex;
-    list-style: none;
-}
-.social-icons li {
-    position: relative;
-    margin: 0 20px;
-    cursor: pointer;
-}
-.social-icons li a {
-    position: relative;
-    text-decoration: none;
-    display: block;
-}
-.social-icons li a .fa-brands {
-    font-size: 2em;
-    color: #222;
-    transition: 0.3s;
-}
-.social-icons li a::before {
-    font-family: "FontAwesome";
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-size: 2em;
-    height: 0;
-    overflow: hidden;
-    transition: 0.5s ease-in-out;
-}
+    .footer-heading {
+        font-size: 1.2rem;
+    }
 
-/* Instagram */
-.social-icons li:nth-child(1) a::before {
-    content: "\f16d";
-    background-image: linear-gradient(45deg,
-    #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%,
-    #bc1888 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-/* WhatsApp */
-.social-icons li:nth-child(2) a::before {
-    content: "\f232";
-    color: #25D366;
-}
-
-/* Twitter */
-.social-icons li:nth-child(3) a::before {
-    content: "\f099";
-    color: #1DA1F2;
-}
-
-/* Facebook */
-.social-icons li:nth-child(4) a::before {
-    content: "\f39e"; /* Оновлений код іконки Facebook */
-    color: #1877F2; /* Офіційний колір Facebook */
-}
-
-.social-icons li:hover a::before {
-    height: 100%;
-}
-
-/* Додаткові ефекти при наведенні */
-.social-icons li:hover a .fa-brands {
-    opacity: 0;
+    .legal-links {
+        gap: 1rem;
+    }
 }
 </style>

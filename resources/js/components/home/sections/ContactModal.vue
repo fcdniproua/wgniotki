@@ -11,6 +11,7 @@
                             id="name"
                             v-model="form.name"
                             type="text"
+                            placeholder="Jakub Blaszczykowski"
                             required
                             class="form-input"
                         >
@@ -23,6 +24,19 @@
                             v-model="form.phone"
                             type="tel"
                             required
+                            placeholder="123 456 789"
+                            class="form-input"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">E-mail</label>
+                        <input
+                            id="email"
+                            v-model="form.email"
+                            type="email"
+                            placeholder="exapmle@example.com"
+                            required
                             class="form-input"
                         >
                     </div>
@@ -34,11 +48,32 @@
                             v-model="form.service"
                             class="form-input"
                         >
-                            <option value="">Wybierz usługę</option>
-                            <option v-for="(service, index) in services" :key="index" :value="service">
-                                {{ service }}
+                            <option v-for="(service, index) in services" :key="index" :value="service.id" :selected="index === 4">
+                                {{ service.name }}
                             </option>
                         </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Model samochodu</label>
+                        <input
+                            id="brand"
+                            v-model="form.brand"
+                            type="text"
+                            placeholder="Audi"
+                            class="form-input"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Rocznik</label>
+                        <input
+                            id="model"
+                            v-model="form.model"
+                            type="text"
+                            placeholder="A8"
+                            class="form-input"
+                        >
                     </div>
 
                     <div class="form-group">
@@ -47,12 +82,13 @@
                             id="message"
                             v-model="form.message"
                             rows="4"
+                            placeholder="Co się stało z samochodem?"
                             class="form-input"
                         ></textarea>
                     </div>
 
                     <div class="form-group">
-                        <label>Załącz zdjęcia (max 3)</label>
+                        <label>Załącz zdjęcia (max 5)</label>
                         <div class="file-upload-container">
                             <input
                                 type="file"
@@ -66,7 +102,7 @@
                                 type="button"
                                 @click="$refs.fileInput.click()"
                                 class="upload-btn"
-                                :disabled="uploadedFiles.length >= 3"
+                                :disabled="uploadedFiles.length >= 5"
                             >
                                 <i class="fas fa-cloud-upload-alt"></i> Wybierz pliki
                             </button>
@@ -83,8 +119,8 @@
                                     </button>
                                 </div>
                             </div>
-                            <div class="file-counter" :class="{'warning': uploadedFiles.length >= 3}">
-                                {{ uploadedFiles.length }}/3 zdjęć
+                            <div class="file-counter" :class="{'warning': uploadedFiles.length >= 5}">
+                                {{ uploadedFiles.length }}/5 zdjęć
                             </div>
                         </div>
                     </div>
@@ -104,67 +140,115 @@
 </template>
 
 <script>
+import { ref, onMounted } from 'vue'
+import axios from "axios";
+
 export default {
-    data() {
-        return {
-            form: {
-                name: '',
-                phone: '',
-                service: '',
-                message: ''
-            },
-            services: [
-                'Szkody parkingowe',
-                'Powypadkowe',
-                'Komunikacyjne',
-                'Uszkodzenia gradowe'
-            ],
-            uploadedFiles: []
+    setup() {
+        const services = ref([])
+        const form = ref({
+            name: '',
+            phone: '',
+            email: '',
+            brand: '',
+            model: '',
+            service: '',
+            message: ''
+        })
+        const uploadedFiles = ref([])
+
+        const fetchServices = async () => {
+            try {
+                const response = await fetch('/get-services')
+                services.value = await response.json()
+                form.value.service = services.value[0].id;
+            } catch (error) {
+                console.error('Error fetching services:', error)
+            }
         }
-    },
-    methods: {
-        handleFileUpload(event) {
+
+        const handleFileUpload = (event) => {
             const files = Array.from(event.target.files)
-            const remainingSlots = 3 - this.uploadedFiles.length
+            const remainingSlots = 5 - uploadedFiles.value.length
 
             if (files.length > remainingSlots) {
                 alert(`Możesz dodać tylko ${remainingSlots} więcej zdjęć.`)
                 return
             }
 
-            this.uploadedFiles = [...this.uploadedFiles, ...files.slice(0, remainingSlots)]
-        },
-        removeFile(index) {
-            this.uploadedFiles.splice(index, 1)
-        },
-        submitForm() {
-            // Заглушка для відправки форми
-            const formData = new FormData()
+            uploadedFiles.value = [...uploadedFiles.value, ...files.slice(0, remainingSlots)]
+        }
 
-            // Додаємо дані форми
-            Object.keys(this.form).forEach(key => {
-                formData.append(key, this.form[key])
-            })
+        const removeFile = (index) => {
+            uploadedFiles.value.splice(index, 1)
+        }
 
-            // Додаємо файли
-            this.uploadedFiles.forEach((file, index) => {
-                formData.append(`photos[${index}]`, file)
-            })
+        // Обробка відправки форми
+        const submitForm = async () => {
+            // Валідація обов'язкових полів
+            if (!form.value.service || !form.value.email || !form.value.name || !form.value.phone) {
+                alert('Wypełnij wymagane pola')
+                return
+            }
 
-            console.log('Form data:', formData) // Для перевірки в консолі
+            try {
+                const formData = new FormData()
 
-            alert(`Dziękujemy za zgłoszenie, ${this.form.name}! Zdjęcia: ${this.uploadedFiles.length}`)
-            this.resetForm()
-            this.$emit('close')
-        },
-        resetForm() {
-            this.form = {
+                Object.keys(form.value).forEach(key => {
+                    if (form.value[key] !== null && form.value[key] !== undefined) {
+                        formData.append(key, form.value[key])
+                    }
+                })
+                formData.append('status', 'new')
+                ;[...uploadedFiles.value].forEach((item, index) => {
+                    const file = item.file || item
+                    if (file) {
+                        formData.append(`photos[${index}]`, file)
+                    }
+                })
+
+                // Відправка на сервер
+                await axios.post('/send-application', formData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                })
+
+                alert('Dzięki za wypełnienie formularza!')
+                resetForm()
+                // alert(`Dziękujemy za zgłoszenie, ${form.value.name}! Zdjęcia: ${uploadedFiles.value.length}`)
+
+            } catch (error) {
+                console.error('Błąd podczas wysyłania zgłoszenia:', error)
+                alert('Nie udało się wysłać zgłoszenia')
+            }
+        }
+
+        const resetForm = () => {
+            form.value = {
                 name: '',
                 phone: '',
+                email: '',
+                brand: '',
+                model: '',
                 service: '',
                 message: ''
             }
-            this.uploadedFiles = []
+            uploadedFiles.value = []
+        }
+
+        onMounted(() => {
+            fetchServices()
+        })
+
+        return {
+            services,
+            form,
+            uploadedFiles,
+            handleFileUpload,
+            removeFile,
+            submitForm,
+            resetForm
         }
     }
 }
@@ -196,11 +280,6 @@ export default {
     overflow-y: auto;
     animation: slideUp 0.3s ease-out;
 }
-
-.modal-content {
-    padding: 2rem;
-}
-
 .modal-title {
     font-size: 1.5rem;
     font-weight: bold;
@@ -419,10 +498,6 @@ select.form-input {
 @media (max-width: 480px) {
     .modal-container {
         width: 95%;
-    }
-
-    .modal-content {
-        padding: 1.5rem;
     }
 
     .form-actions {

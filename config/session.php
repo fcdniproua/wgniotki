@@ -20,6 +20,7 @@ return [
 
     'driver' => env('SESSION_DRIVER', 'database'),
 
+
     /*
     |--------------------------------------------------------------------------
     | Session Lifetime
@@ -60,7 +61,7 @@ return [
     |
     */
 
-    'files' => storage_path('framework/sessions'),
+//    'files' => storage_path('framework/sessions'),
 
     /*
     |--------------------------------------------------------------------------
@@ -73,7 +74,8 @@ return [
     |
     */
 
-    'connection' => env('SESSION_CONNECTION'),
+
+    'connection' => env('SESSION_CONNECTION', null),
 
     /*
     |--------------------------------------------------------------------------
@@ -86,7 +88,7 @@ return [
     |
     */
 
-    'table' => env('SESSION_TABLE', 'sessions'),
+    'table' => 'sessions',
 
     /*
     |--------------------------------------------------------------------------
@@ -127,10 +129,7 @@ return [
     |
     */
 
-    'cookie' => env(
-        'SESSION_COOKIE',
-        Str::slug(env('APP_NAME', 'laravel'), '_').'_session'
-    ),
+    'cookie' => env('SESSION_COOKIE', 'laravel_session'),
 
     /*
     |--------------------------------------------------------------------------
@@ -155,8 +154,9 @@ return [
     | domain and all subdomains. Typically, this shouldn't be changed.
     |
     */
+    'domain' => env('SESSION_DOMAIN', null),
 
-    'domain' => env('SESSION_DOMAIN'),
+
 
     /*
     |--------------------------------------------------------------------------
@@ -169,7 +169,9 @@ return [
     |
     */
 
-    'secure' => env('SESSION_SECURE_COOKIE'),
+//    'secure' => env('SESSION_SECURE_COOKIE'),
+
+    'secure' => env('SESSION_SECURE_COOKIE', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -182,7 +184,7 @@ return [
     |
     */
 
-    'http_only' => env('SESSION_HTTP_ONLY', true),
+    'http_only' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -199,7 +201,8 @@ return [
     |
     */
 
-    'same_site' => env('SESSION_SAME_SITE', 'lax'),
+//    'same_site' => env('SESSION_SAME_SITE', 'lax'),
+    'same_site' => 'lax', // Для локального розвитку
 
     /*
     |--------------------------------------------------------------------------
