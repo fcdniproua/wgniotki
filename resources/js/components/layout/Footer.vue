@@ -115,7 +115,7 @@ export default {
 
 <style scoped>
 .footer {
-    background-color: #2c3e50;
+    background-color: #1A1A1A;
     color: #ffffff;
     padding: 3rem 0 1.5rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -154,7 +154,7 @@ export default {
 .footer-heading {
     font-size: 1.3rem;
     margin-bottom: 1rem;
-    color: #e67e22;
+    color: #FF6700;
     position: relative;
     padding-bottom: 10px;
 }
@@ -166,7 +166,7 @@ export default {
     left: 0;
     width: 50px;
     height: 2px;
-    background: #e67e22;
+    background: #FF6700;
 }
 
 .contact-item, .hours-item {
@@ -177,7 +177,7 @@ export default {
 }
 
 .contact-item i, .hours-item i {
-    color: #e67e22;
+    color: #FF6700;
     width: 20px;
     text-align: center;
 }
@@ -189,7 +189,7 @@ export default {
 }
 
 .contact-item a:hover {
-    color: #e67e22;
+    color: #FF6700;
 }
 
 .day {
@@ -217,7 +217,7 @@ export default {
 }
 
 .social-icon:hover {
-    background: #e67e22;
+    background: #FF6700;
     transform: translateY(-3px);
 }
 
@@ -232,7 +232,7 @@ export default {
 .counter {
     font-size: 1.8rem;
     font-weight: 700;
-    color: #e67e22;
+    color: #FF6700;
     margin-bottom: 0.5rem;
 }
 

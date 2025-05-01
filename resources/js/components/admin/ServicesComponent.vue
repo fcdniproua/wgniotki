@@ -200,7 +200,7 @@ export default {
 
 .admin-header h2 {
     font-size: 24px;
-    color: #2c3e50;
+    color:  #1A1A1A;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -261,7 +261,7 @@ export default {
 
 .card-content h3 {
     margin: 0 0 5px 0;
-    color: #2c3e50;
+    color:  #1A1A1A;
     font-size: 18px;
 }
 

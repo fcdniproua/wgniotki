@@ -321,7 +321,7 @@ export default {
 }
 
 .form-input:hover {
-    border-color: #e67e22;
+    border-color: #FF6700;
 }
 
 textarea.form-input {
@@ -356,7 +356,7 @@ select.form-input {
 }
 
 .upload-btn:hover {
-    background-color: #e67e22;
+    background-color: #FF6700;
 }
 
 .upload-btn:disabled {
@@ -426,7 +426,7 @@ select.form-input {
 
 .remove-file:hover {
     color: white;
-    background-color: #e67e22;
+    background-color: #FF6700;
 }
 
 .file-counter {
@@ -438,7 +438,7 @@ select.form-input {
 }
 
 .file-counter.warning {
-    color: #e67e22;
+    color: #FF6700;
     font-weight: 500;
 }
 
@@ -459,7 +459,7 @@ select.form-input {
 }
 
 .btn-submit {
-    background-color: #e67e22;
+    background-color: #FF6700;
     color: white;
     border: none;
 }

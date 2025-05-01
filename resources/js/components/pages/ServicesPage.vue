@@ -441,8 +441,8 @@ export default {
 
 .category-toggle.pressed {
     background: #e2e8f0;
-    color: #e67e22;
-    border-color: #e67e22;
+    color: #FF6700;
+    border-color: #FF6700;
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
     transform: translateY(2px);
 }

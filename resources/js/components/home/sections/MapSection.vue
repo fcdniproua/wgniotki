@@ -53,7 +53,7 @@
 .section-title {
     font-size: 2rem;
     font-weight: 700;
-    color: #e67e22;
+    color: #FF6700;
     margin-bottom: 2rem;
     text-align: center;
 }
@@ -82,7 +82,7 @@
 .contact-icon {
     width: 24px;
     height: 24px;
-    color: #e67e22;
+    color: #FF6700;
 }
 
 .contact-text {

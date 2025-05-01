@@ -193,8 +193,8 @@ export default {
 }
 
 .tab-btn.active {
-    border-bottom-color: #2c3e50;
-    color: #2c3e50;
+    border-bottom-color: #1A1A1A;
+    color: #1A1A1A;
 }
 
 .settings-form {
@@ -253,7 +253,7 @@ export default {
 }
 
 .save-btn {
-    background: #2c3e50;
+    background: #1A1A1A;
     color: white;
     padding: 10px 20px;
     border: none;

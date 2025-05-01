@@ -48,13 +48,13 @@
 
 
 .hero-section::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at 75% 50%, rgba(255,255,255,0.1) 0%, transparent 30%);
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* чорний з 40% прозорістю */
     z-index: 1;
 }
 
@@ -65,7 +65,7 @@
     line-height: 1.2;
     text-shadow: 0 2px 4px rgba(0,0,0,0.1);
     animation: fadeInUp 0.8s ease-out;
-    color: #ff984d;
+    color: #FF6700;
 }
 
 .hero-description {
@@ -81,8 +81,8 @@
 .hero-button-1 {
     display: inline-block;
     background-color: transparent;
-    color: #ff984d; /* світліший жовтий */
-    border: 2px solid #ff984d;
+    color: #FF6700; /* світліший жовтий */
+    border: 2px solid #FF6700;
     font-weight: 700;
     font-size: 16px;
     padding: 12px 28px;
@@ -93,7 +93,7 @@
 }
 
 .hero-button-1:hover {
-    background-color: #ff984d;
+    background-color: #FF6700;
     color: #1a1a1a;
 }
 

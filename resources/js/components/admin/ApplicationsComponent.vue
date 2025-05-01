@@ -730,7 +730,7 @@ textarea.form-control {
 }
 
 .close-btn {
-    background: #2c3e50;
+    background:  #1A1A1A;
     color: white;
     padding: 8px 16px;
     border: none;

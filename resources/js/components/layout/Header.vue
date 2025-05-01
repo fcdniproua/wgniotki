@@ -7,7 +7,7 @@
 
             <nav class="main-nav">
                 <ul class="nav-list">
-                    <li><router-link class="menu-first" to="/">GLÓWNA</router-link></li>
+                    <li><router-link class="menu-next" to="/">GLÓWNA</router-link></li>
                     <li><router-link class="menu-next" to="/services">USLUGI</router-link></li>
                     <li><router-link class="menu-next" to="/about">O NAS</router-link></li>
                     <li v-if="isAuthenticated">
@@ -35,7 +35,7 @@
                 @click="showLoginModal = true"
                 class="auth-btn login"
             >
-                Admin Login
+                Admin
             </button>
 
             <button class="burger-btn" @click="toggleMenu">
@@ -50,7 +50,7 @@
                         <logo></logo>
                     </router-link>
                     <ul>
-                        <li><router-link class="menu-first" to="/" @click="closeMenu">GLÓWNA</router-link></li>
+                        <li><router-link class="menu-next" to="/" @click="closeMenu">GLÓWNA</router-link></li>
                         <li><router-link class="menu-next" to="/services" @click="closeMenu">USLUGI</router-link></li>
                         <li><router-link class="menu-next" to="/about" @click="closeMenu">O NAS</router-link></li>
                         <li v-if="isAuthenticated">
@@ -235,7 +235,7 @@ export default {
     left: 0;
     width: 100%;
     z-index: 1000;
-    background: #2c3e50;
+    background: #1A1A1A;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     height: 130px;
 }
@@ -256,9 +256,9 @@ export default {
     font-weight: 700;
     color: #ffffff;
     text-decoration: none;
-    width: 250px;
+    width: 125px;
     position: fixed;
-    top: -58px;
+    top: 0;
 }
 
 /* Десктопне меню */
@@ -293,7 +293,7 @@ export default {
 }
 
 .menu-first:hover, .menu-next:hover {
-    color: #e67e22;
+    color: #FF6700;
 }
 
 /* Мобільне меню */
@@ -321,7 +321,7 @@ export default {
     left: 0;
     width: 100%;
     height: calc(100vh - 130px);
-    background: #2c3e50;
+    background: #1A1A1A;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -350,7 +350,7 @@ export default {
 }
 
 .mobile-menu .menu-first:hover, .mobile-menu .menu-next:hover {
-    color: #e67e22;
+    color: #FF6700;
 }
 
 /* Анімації */
@@ -406,7 +406,7 @@ export default {
     display: inline-block;
     padding: 15px 30px;
     margin: 40px 0;
-    color: #e67e22;
+    color: #FF6700;
     text-decoration: none;
     text-transform: uppercase;
     transition: 0.5s;
@@ -416,10 +416,10 @@ export default {
     cursor: pointer;
 }
 .button-40:hover {
-    background: #e67e22;
+    background: #FF6700;
     color: #050801;
-    box-shadow: 0 0 5px #e67e22, 0 0 25px #e67e22, 0 0 50px #e67e22,
-    0 0 200px #e67e22;
+    box-shadow: 0 0 5px #FF6700, 0 0 25px #FF6700, 0 0 50px #FF6700,
+    0 0 200px #FF6700;
     -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
 }
 .button-40:nth-child(1) {
@@ -437,7 +437,7 @@ export default {
     left: 0;
     width: 100%;
     height: 2px;
-    background: linear-gradient(90deg, transparent, #e67e22);
+    background: linear-gradient(90deg, transparent, #FF6700);
     animation: animate1 2s linear infinite;
 }
 @keyframes animate1 {
@@ -454,7 +454,7 @@ export default {
     right: 0;
     width: 2px;
     height: 100%;
-    background: linear-gradient(180deg, transparent, #e67e22);
+    background: linear-gradient(180deg, transparent, #FF6700);
     animation: animate2 2s linear infinite;
     animation-delay: 0.5s;
 }
@@ -472,7 +472,7 @@ export default {
     right: 0;
     width: 100%;
     height: 2px;
-    background: linear-gradient(270deg, transparent, #e67e22);
+    background: linear-gradient(270deg, transparent, #FF6700);
     animation: animate3 2s linear infinite;
     animation-delay: 1s;
 }
@@ -491,7 +491,7 @@ export default {
     left: 0;
     width: 2px;
     height: 100%;
-    background: linear-gradient(360deg, transparent, #e67e22);
+    background: linear-gradient(360deg, transparent, #FF6700);
     animation: animate4 2s linear infinite;
     animation-delay: 1.5s;
 }
@@ -536,7 +536,7 @@ export default {
 
 .admin-login-btn {
     padding: 8px 16px;
-    background: #2c3e50;
+    background: #1A1A1A;
     color: white;
     border: none;
     border-radius: 4px;
@@ -547,15 +547,15 @@ export default {
 }
 
 .admin-login-btn:hover {
-    background: #2c3e50;
+    background: #1A1A1A;
     transform: translateY(-2px);
 }
 
 .hero-button-1 {
     display: inline-block;
     background-color: transparent;
-    color: #ff984d; /* світліший жовтий */
-    border: 2px solid #ff984d;
+    color: #FF6700; /* світліший жовтий */
+    border: 2px solid #FF6700;
     font-weight: 700;
     font-size: 16px;
     padding: 12px 28px;
@@ -566,7 +566,7 @@ export default {
 }
 
 .hero-button-1:hover {
-    background-color: #ff984d;
+    background-color: #FF6700;
     color: #1a1a1a;
 }
 
@@ -628,6 +628,17 @@ export default {
     display: none;
 }
 
+.auth-btn {
+    padding: 8px 16px;
+    background: #1a1a1a;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
 
 /* Адаптація для мобільних */
 @media (max-width: 992px) {
@@ -638,11 +649,11 @@ export default {
     }
     .mobile-logo {
         display: block;
-        width: 350px;
+        width: 180px;
         position: absolute;
-        top: -71px;
+        top: 10px;
         z-index: 2;
-        left: 3%;
+        left: 24%;
     }
     .logo {
         display:none;

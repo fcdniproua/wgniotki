@@ -114,7 +114,7 @@ body.modal-open {
 }
 
 h2 {
-    color: #2c3e50;
+    color: #1A1A1A;
     margin-bottom: 20px;
     font-size: 1.5rem;
 }
@@ -152,7 +152,7 @@ textarea.form-input {
 
 /* Przyciski */
 .add-btn, .save-btn {
-    background: #2c3e50;
+    background: #1A1A1A;
     color: white;
     padding: 10px 20px;
     border: none;

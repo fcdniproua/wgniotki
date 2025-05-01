@@ -3,7 +3,7 @@
         <div v-if="isVisible" class="modal-overlay" @click.self="close">
             <div class="modal-container">
                 <div class="modal-header">
-                    <h2 class="modal-title">Admin Login</h2>
+                    <h2 class="modal-title">Admin</h2>
                     <button class="modal-close-btn" @click="close">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -125,7 +125,7 @@ export default {
 
 .modal-header {
     padding: 20px;
-    background-color: #2c3e50;
+    background-color: #1A1A1A;
     color: white;
     display: flex;
     justify-content: space-between;
@@ -194,7 +194,7 @@ export default {
 
 .submit-btn {
     padding: 12px;
-    background-color: #2c3e50;
+    background-color: #1A1A1A;
     color: white;
     border: none;
     border-radius: 6px;
