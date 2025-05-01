@@ -5,7 +5,7 @@
                 <div class="footer-columns">
                     <!-- Колонка з контактами -->
                     <div class="footer-column">
-                        <h3 class="footer-heading">Kontakt</h3>
+                        <h3 class="footer-heading bold">Kontakt</h3>
                         <div class="contact-item">
                             <i class="fas fa-map-marker-alt"></i>
                             <span>{{contactData.address}}</span>
@@ -22,7 +22,7 @@
 
                     <!-- Колонка з годинами роботи -->
                     <div class="footer-column">
-                        <h3 class="footer-heading">Godziny otwarcia</h3>
+                        <h3 class="footer-heading bold">Godziny otwarcia</h3>
                         <div class="hours-item" v-for="(day,index) in contactData.openingHours" :key="index">
                             <span class="day">{{weekDays[index]}}:</span>
                             <span class="hours" v-if="day.closed === false">{{day.from}} - {{day.to}}</span>
@@ -40,7 +40,7 @@
 
                     <!-- Колонка з соцмережами -->
                     <div class="footer-column">
-                        <h3 class="footer-heading">Polub nasze strony </h3>
+                        <h3 class="footer-heading bold">Polub nasze strony </h3>
                         <div class="social-links">
                             <a href="https://www.instagram.com/usuwanie.wgniecen.wroclaw" class="social-icon"
                                target="_blank">
@@ -123,7 +123,7 @@ export default {
     width: 100%;
     z-index: 999;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-    font-family: 'Open Sans', sans-serif;
+
 }
 
 .footer-container {

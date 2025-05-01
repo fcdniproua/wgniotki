@@ -2,7 +2,7 @@
     <section class="about-us-section">
         <div class="admin-section">
             <div class="section-header">
-                <h2>
+                <h2 class="bold">
                     <router-link class="menu-first" to="/admin/dashboard">Dashboard</router-link>
                     -> Usługi
                 </h2>
@@ -17,7 +17,7 @@
                         <i :class="service.icon"></i>
                     </div>
                     <div class="card-content">
-                        <h3>{{service.name}}</h3>
+                        <h3 class="bold">{{service.name}}</h3>
                         <span class="category">{{service.category}}</span>
                         <p>{{service.description}}</p>
                     </div>
@@ -36,7 +36,7 @@
             <div v-if="showAddModal" class="modal-overlay" @click.self="closeModal">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h3>{{editingId ? 'Edytuj usługę' : 'Nowa usługa'}}</h3>
+                        <h3 class="bold">{{editingId ? 'Edytuj usługę' : 'Nowa usługa'}}</h3>
                         <button @click="closeModal" class="modal-close">
                             <i class="fas fa-times"></i>
                         </button>
@@ -182,7 +182,6 @@ export default {
 .about-us-section {
     padding: 80px 0;
     background-color: #f8fafc;
-    font-family: 'Open Sans', sans-serif;
 }
 
 .admin-container {

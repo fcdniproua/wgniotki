@@ -1,7 +1,7 @@
 <template>
     <section class="about-us-section">
         <div class="section-header">
-            <h2> <router-link class="menu-first" to="/admin/dashboard">Dashboard</router-link> -> Klienci</h2>
+            <h2 class="bold"> <router-link class="menu-first" to="/admin/dashboard">Dashboard</router-link> -> Klienci</h2>
             <button @click="openAddModal" class="add-client-btn">
                 <i class="fas fa-plus"></i> Dodaj klienta
             </button>
@@ -11,7 +11,7 @@
             <!-- Tabela klientów -->
             <div class="table-container">
                 <div class="table-header">
-                    <h3>Lista klientów</h3>
+                    <h3 class="bold">Lista klientów</h3>
                     <div class="search-container">
                         <input v-model="searchQuery" type="text" placeholder="Szukaj klienta..." class="search-input">
                         <i class="fas fa-search search-icon"></i>
@@ -67,7 +67,7 @@
                         <i class="fas fa-times"></i>
                     </button>
 
-                    <h3>{{ editMode ? 'Edytuj klienta' : 'Dodaj nowego klienta' }}</h3>
+                    <h3 class="bold">{{ editMode ? 'Edytuj klienta' : 'Dodaj nowego klienta' }}</h3>
 
                     <div class="form-grid">
                         <div class="form-group">
@@ -107,7 +107,7 @@
         <div v-if="showDeleteModal" class="modal-overlay">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <h3>Potwierdzenie usunięcia</h3>
+                    <h3 class="bold">Potwierdzenie usunięcia</h3>
                     <p>Czy na pewno chcesz usunąć tego klienta?</p>
                     <div class="modal-actions">
                         <button @click="deleteClient" class="btn confirm-btn">Tak, usuń</button>
@@ -253,7 +253,6 @@ export default {
 .about-us-section {
     padding: 80px 0;
     background-color: #f8fafc;
-    font-family: 'Open Sans', sans-serif;
 }
 
 .section-header {

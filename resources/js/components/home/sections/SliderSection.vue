@@ -1,7 +1,7 @@
 <template>
     <section class="services-section">
         <div class="services-container">
-            <h3 class="services-title">Nasze prace</h3>
+            <h3 class="services-title bold">Nasze prace</h3>
             <div class="slider-wrapper">
                 <BlockSlider />
             </div>

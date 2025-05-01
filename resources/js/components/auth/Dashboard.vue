@@ -1,7 +1,7 @@
 <template>
     <div class="admin-container">
         <div class="admin-header">
-            <h1>Panel Administracyjny</h1>
+            <h1 class="bold">Panel Administracyjny</h1>
             <div class="admin-actions">
                 <button class="logout-btn" @click="logout">
                     <i class="fas fa-sign-out-alt"></i> Wyloguj

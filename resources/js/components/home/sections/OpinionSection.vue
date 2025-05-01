@@ -1,7 +1,7 @@
 <template>
     <section class="reviews-section">
         <div class="container">
-            <h2 class="section-title">Opinie naszych klientów</h2>
+            <h2 class="section-title bold">Opinie naszych klientów</h2>
             <p class="section-subtitle">Uwielbiamy wypielęgnowane auta!
                 Budujemy zaufanie nie słowami, lecz efektami – przekonało się o tym już wielu, teraz możesz i Ty.
             </p>
@@ -426,7 +426,7 @@ export default {
 .reviews-container {
     max-width: 800px;
     margin: 0 auto;
-    font-family: 'Segoe UI', Roboto, sans-serif;
+
 }
 
 .review-card {

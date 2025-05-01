@@ -1,14 +1,9 @@
 <template>
     <div class="services-page">
-        <section class="hero-section">
-            <div class="container">
-                <h1>Usuwanie wgnieceń</h1>
-                <p>Profesjonalne usuwanie wgnieceń bez lakierowania (PDR) dla wszystkich typów pojazdów</p>
-            </div>
-        </section>
-
         <section class="services-section">
             <div class="container">
+                <h2 class="section-title bold">Usuwanie wgnieceń</h2>
+                <p class="hero-description">Profesjonalne usuwanie wgnieceń bez lakierowania (PDR) dla wszystkich typów pojazdów</p>
                 <div v-if="loading" class="loading-indicator">
                     Ładowanie danych...
                 </div>
@@ -274,7 +269,6 @@ export default {
 <style scoped>
 /* Стилі залишаються незмінними, як у попередньому варіанті */
 .services-page {
-    font-family: 'Open Sans', sans-serif;
     color: #333;
 }
 
@@ -302,7 +296,7 @@ export default {
 }
 
 .services-section {
-    padding: 60px 0;
+    padding: 7em;
 }
 
 .loading-indicator,
@@ -552,7 +546,52 @@ export default {
     right: -70px;
 }
 
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+}
+
+.hero-description {
+    color: #1A1A1A;
+    font-size: 1.25rem;
+    max-width: 53rem;
+    margin: 0 auto 2rem;
+    line-height: 1.6;
+    opacity: 0.9;
+    animation: fadeInUp 0.8s ease-out 0.2s forwards;
+
+}
+
+
 @media (max-width: 768px) {
+
+    .hero-description {
+        font-size: 1.1rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
     .lightbox-prev {
         left: 10px;
     }

@@ -3,7 +3,7 @@
         <!-- Hero Section (залишається без змін) -->
         <section class="hero-section">
             <div class="container">
-                <h1>Usuwanie wgnieceń</h1>
+                <h1 class="bold">Usuwanie wgnieceń</h1>
                 <p>Profesjonalne usuwanie wgnieceń bez lakierowania (PDR) dla wszystkich typów pojazdów</p>
             </div>
         </section>
@@ -175,7 +175,7 @@ export default {
 
 /* Решта стилів залишаються без змін */
 .services-page {
-    font-family: 'Open Sans', sans-serif;
+
     color: #333;
 }
 

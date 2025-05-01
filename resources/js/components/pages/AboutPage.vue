@@ -1,7 +1,7 @@
 <template>
     <section class="about-us-section">
         <div class="about-container">
-            <h2 class="section-title">O NAS</h2>
+            <h2 class="section-title bold">O NAS</h2>
 
             <div class="about-content">
                 <div class="about-image">
@@ -9,7 +9,7 @@
                 </div>
 
                 <div class="about-text">
-                    <h3 class="subtitle">SPECJALIZUJEMY SIĘ W USUWANIU WGNIECIEŃ BEZ LAKIEROWANIA</h3>
+                    <h3 class="subtitle bold">SPECJALIZUJEMY SIĘ W USUWANIU WGNIECIEŃ BEZ LAKIEROWANIA</h3>
 
                     <p class="description">
                         Nasza firma <strong>Usuwanie wgnieceń</strong> to profesjonalny warsztat zajmujący się naprawą wgnieceń
@@ -64,7 +64,6 @@ export default {
 .about-us-section {
     padding: 80px 0;
     background-color: #f8fafc;
-    font-family: 'Open Sans', sans-serif;
 }
 
 .about-container {

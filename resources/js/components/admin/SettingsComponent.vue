@@ -1,7 +1,7 @@
 <template>
     <section class="about-us-section">
         <div class="admin-section">
-            <h2> <router-link class="menu-first" to="/admin/dashboard">Dashboard</router-link> -> Ustawienia</h2>
+            <h2 class="bold"> <router-link class="menu-first" to="/admin/dashboard">Dashboard</router-link> -> Ustawienia</h2>
 
             <div class="settings-tabs">
                 <button
@@ -174,7 +174,6 @@ export default {
 .about-us-section {
     padding: 80px 0;
     background-color: #f8fafc;
-    font-family: 'Open Sans', sans-serif;
 }
 
 .settings-tabs {

@@ -2,7 +2,7 @@
     <section class="about-us-section">
         <div class="admin-section">
             <div class="add-form">
-                <h3>
+                <h3 class="bold">
                     <router-link class="menu-first" to="/admin/dashboard">Dashboard</router-link> -> Dodaj nowe zgłoszenie
                 </h3>
                 <div class="form-group">
@@ -52,7 +52,7 @@
                 <button @click="createApplication" class="submit-btn">Dodaj zgłoszenie</button>
             </div>
             <div class="section-header">
-                <h2>Zgłoszenia</h2>
+                <h2 class="bold">Zgłoszenia</h2>
                 <div class="filters">
                     <select v-model="statusFilter" class="filter-select">
                         <option value="all">Wszystkie</option>
@@ -111,7 +111,7 @@
             <!-- Modal szczegółów -->
             <div v-if="selectedApplication" class="modal-overlay" @click.self="selectedApplication = null">
                 <div class="modal-content">
-                    <h3>Szczegóły zgłoszenia #{{ selectedApplication.id }}</h3>
+                    <h3 class="bold">Szczegóły zgłoszenia #{{ selectedApplication.id }}</h3>
 
                     <div class="details-grid">
                         <div class="detail-item">
@@ -459,7 +459,6 @@ export default {
 .about-us-section {
     padding: 80px 0;
     background-color: #f8fafc;
-    font-family: 'Open Sans', sans-serif;
 }
 
 .admin-section {

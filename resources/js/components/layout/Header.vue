@@ -7,9 +7,10 @@
 
             <nav class="main-nav">
                 <ul class="nav-list">
-                    <li><router-link class="menu-next" to="/">GLÓWNA</router-link></li>
-                    <li><router-link class="menu-next" to="/services">USLUGI</router-link></li>
-                    <li><router-link class="menu-next" to="/about">O NAS</router-link></li>
+                    <li><router-link class="menu-next bold" to="/">GLÓWNA</router-link></li>
+                    <li><router-link class="menu-next bold" to="/services">USLUGI</router-link></li>
+                    <li><router-link class="menu-next bold" to="/about">O NAS</router-link></li>
+                    <li><router-link class="menu-next bold" to="/contact">KONTAKT</router-link></li>
                     <li v-if="isAuthenticated">
                         <router-link class="menu-next" to="/admin/dashboard">DASHBOARD</router-link>
                     </li>
@@ -22,8 +23,8 @@
                         <IconPhoneCall class="contact-icon" />
                     </div>
                     <p class="contact-text">
-                        <button class="hero-button-1" @click="$emit('open-contact-modal');">
-                            <a :href="'tel:' + contactData.contactPhone" class="contact-link">{{contactData.contactPhone}}</a>
+                        <button class="hero-button-1 " @click="$emit('open-contact-modal');">
+                            <a :href="'tel:' + contactData.contactPhone" class="contact-link semibold">{{contactData.contactPhone}}</a>
                         </button>
                     </p>
                 </div>
@@ -53,6 +54,7 @@
                         <li><router-link class="menu-next" to="/" @click="closeMenu">GLÓWNA</router-link></li>
                         <li><router-link class="menu-next" to="/services" @click="closeMenu">USLUGI</router-link></li>
                         <li><router-link class="menu-next" to="/about" @click="closeMenu">O NAS</router-link></li>
+                        <li><router-link class="menu-next" to="/contact">KONTAKT</router-link></li>
                         <li v-if="isAuthenticated">
                             <router-link class="menu-next" to="/admin/dashboard" @click="closeMenu">DASHBOARD</router-link>
                         </li>
@@ -251,7 +253,7 @@ export default {
 }
 
 .logo {
-    font-family: 'Playfair Display', serif;
+
     font-size: 28px;
     font-weight: 700;
     color: #ffffff;
@@ -651,7 +653,7 @@ export default {
         display: block;
         width: 180px;
         position: absolute;
-        top: 10px;
+        top: 0;
         z-index: 2;
         left: 24%;
     }

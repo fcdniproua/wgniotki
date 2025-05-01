@@ -34,7 +34,6 @@ export default {
     },
     setup() {
         const showContact = ref(false);
-        console.log(showContact)
         const contactData = inject('contactData')
         const showModal = () => {
             showContact.value = true;

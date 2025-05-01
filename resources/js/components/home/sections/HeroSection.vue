@@ -1,7 +1,7 @@
 <template>
     <section class="hero-section">
         <div class="hero-container">
-            <h2 class="hero-title"> Usuwanie wgnieceń bez lakierowania Wrocław</h2>
+            <h2 class="hero-title bold"> Usuwanie wgnieceń bez lakierowania Wrocław</h2>
             <p class="hero-description">
                 Szkody parkingowe, powypadkowe, komunikacyjne oraz uszkodzenia gradowe. Szybko i profesjonalnie!
             </p>

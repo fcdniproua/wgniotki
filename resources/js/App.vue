@@ -67,8 +67,23 @@ export default {
 </script>
 
 <style>
+body {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.bold {
+    font-weight: 700 !important;
+}
+
+.semibold {
+    font-weight: 600 !important;
+}
+
+.regular {
+    font-weight: 400 !important;
+}
+
 html, body {
-    font-family: 'Roboto', sans-serif;
     height: 100%;
     margin: 0;
     padding: 0;

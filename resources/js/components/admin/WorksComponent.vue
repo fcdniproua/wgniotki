@@ -2,7 +2,7 @@
     <section class="about-us-section">
         <div class="admin-section">
             <div class="section-header">
-                <h2> <router-link class="menu-first" to="/admin/dashboard">Dashboard</router-link> -> Galeria Prac</h2>
+                <h2 class="bold"> <router-link class="menu-first" to="/admin/dashboard">Dashboard</router-link> -> Galeria Prac</h2>
                 <button @click="showUploadModal = true" class="add-btn">
                     <i class="fas fa-upload"></i> Dodaj nowe zdjęcie
                 </button>
@@ -12,7 +12,7 @@
                 <div v-for="photo in photos" :key="photo.id" class="gallery-item">
                     <img :src="getImageUrl(photo.path)" :alt="photo.slider_tag" class="work-image">
                     <div class="work-info">
-                        <h3>{{ photo.slider_tag || 'Brak tytułu' }}</h3>
+                        <h3 class="bold">{{ photo.slider_tag || 'Brak tytułu' }}</h3>
                         <p>{{ photo.is_gallery ? 'Galeria' : 'Zwykłe zdjęcie' }}</p>
                         <div class="work-actions">
                             <button @click="editPhoto(photo)" class="edit-btn">
@@ -49,7 +49,7 @@
             <!-- Upload Photo Modal -->
             <div v-if="showUploadModal" class="modal-overlay" @click.self="closeModal">
                 <div class="modal-content">
-                    <h3>{{ editingId ? 'Edytuj zdjęcie' : 'Dodaj nowe zdjęcie' }}</h3>
+                    <h3 class="bold">{{ editingId ? 'Edytuj zdjęcie' : 'Dodaj nowe zdjęcie' }}</h3>
 
                     <div class="form-group">
                         <label>Wybierz zdjęcie:</label>
@@ -285,7 +285,6 @@ export default {
 .about-us-section {
     padding: 80px 0;
     background-color: #f8fafc;
-    font-family: 'Open Sans', sans-serif;
 }
 
 .gallery-grid {

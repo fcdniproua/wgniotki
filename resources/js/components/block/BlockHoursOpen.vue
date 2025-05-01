@@ -1,6 +1,6 @@
 <template>
     <div class="opening-hours">
-        <h3 class="hours-title">Godziny otwarcia</h3>
+        <h3 class="hours-title bold">Godziny otwarcia</h3>
         <ul class="hours-list">
             <li class="hours-item"><span class="day">Poniedziałek</span> <span class="time">09:00 – 19:00</span></li>
             <li class="hours-item"><span class="day">Wtorek</span> <span class="time">09:00 – 19:00</span></li>
@@ -16,7 +16,7 @@
 <style>
 
 .opening-hours {
-    font-family: 'Arial', sans-serif;
+
     max-width: 300px;
     margin: 0 auto;
     padding: 20px;

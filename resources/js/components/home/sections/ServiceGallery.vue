@@ -1,7 +1,7 @@
 <template>
     <section class="services-section">
         <div class="services-container">
-            <h3 class="services-title">Nasze usługi</h3>
+            <h3 class="services-title bold">Nasze usługi</h3>
             <div class="services-grid">
                 <div v-for="n in 8" :key="n" class="service-card">
                     <div class="service-image">

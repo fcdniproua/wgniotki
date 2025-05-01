@@ -1,7 +1,7 @@
 <template>
     <section class="about-section">
         <div class="about-container">
-            <h2 class="about-title">O nas – Usuwanie wgnieceń metodą PDR we Wrocławiu i okolicach</h2>
+            <h2 class="about-title bold">O nas – Usuwanie wgnieceń metodą PDR we Wrocławiu i okolicach</h2>
 
             <div class="about-content">
                 <p>Jesteśmy ekspertami w <b class="b-text">usuwaniu wgniotek metodą PDR </b>(Paintless Dent Repair). Działamy we Wrocławiu i okolicach, oferując szybkie i profesjonalne naprawy uszkodzeń karoserii bez konieczności jej lakierowania. Nasze usługi obejmują usuwanie wgnieceń po <b class="b-text">szkodach parkingowych</b>, <b class="b-text">uszkodzeń po wypadkach</b> oraz <b class="b-text">po gradobiciu</b></p>
@@ -16,7 +16,7 @@
                     </ul>
                 </div>
                 <div>
-                    <h3 class="b-text">Dlaczego warto wybrać nas?</h3>
+                    <h3 class="b-text bold">Dlaczego warto wybrać nas?</h3>
                     <ul class="car-list">
                         <li><b class="b-text">Fachowość</b> – mamy doświadczenie i know-how, które pozwala nam wykonywać naprawy, których inni się boją.</li>
                         <li><b class="b-text">Szybka naprawa, perfekcyjny efekt</b> – naprawiamy wgniotki w krótkim czasie, bez pozostawiania auta na długie dni.</li>
@@ -60,7 +60,7 @@
     margin-bottom: 2rem;
     position: relative;
     padding-bottom: 15px;
-    font-family: 'Montserrat', sans-serif;
+
     text-transform: uppercase;
     letter-spacing: 1.5px;
 }

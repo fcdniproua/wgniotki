@@ -1,58 +1,48 @@
 <template>
     <section class="about-section">
         <div class="about-container">
-            <h2 class="about-title">DLACZEGO MY?</h2>
+            <h2 class="about-title bold">DLACZEGO MY?</h2>
             <div class="about-features">
                 <div class="feature-item">
                     <div class="feature-icon">
                         <img :src="'/img/icons8-worker-80.png'" alt="$">
                     </div>
-                    <h3 class="feature-title">Fachowość</h3>
+                    <h3 class="feature-title bold">Fachowość</h3>
                 </div>
                 <div class="feature-item">
                     <div class="feature-icon">
                         <img :src="'/img/icons8-bolt-80.png'" alt="$">
                     </div>
-                    <h3 class="feature-title">Szybka naprawa</h3>
+                    <h3 class="feature-title bold">Szybka naprawa</h3>
                 </div>
 
                 <div class="feature-item">
                     <div class="feature-icon">
                         <img :src="'/img/icons8-location-80.png'" alt="$">
                     </div>
-                    <h3 class="feature-title">Dobra lokalizacja</h3>
+                    <h3 class="feature-title bold">Dobra lokalizacja</h3>
                 </div>
 
                 <div class="feature-item">
                     <div class="feature-icon">
                         <img :src="'/img/icons8-dollar-80.png'" alt="$">
                     </div>
-                    <h3 class="feature-title">Konkurencyjne ceny</h3>
+                    <h3 class="feature-title bold">Konkurencyjne ceny</h3>
                 </div>
 
                 <div class="feature-item">
                     <div class="feature-icon">
                         <img :src="'/img/icons8-schedule-80.png'" alt="$">
                     </div>
-                    <h3 class="feature-title">Łatwość umówienia</h3>
+                    <h3 class="feature-title bold">Łatwość umówienia</h3>
                 </div>
                 <!--  по три в ряд -->
                 <div class="feature-item">
                     <div class="feature-icon crowd">
                         <img :src="'/img/icons8-crowd-80.png'" alt="$">
                     </div>
-                    <h3 class="feature-title">Setki zadowolonych klientów</h3>
+                    <h3 class="feature-title bold">Setki zadowolonych klientów</h3>
                 </div>
-
-<!--                <div class="feature-item">-->
-<!--                    <div class="feature-icon">✓</div>-->
-<!--                    <h3 class="feature-title">Profesjonalny zespół</h3>-->
-<!--                </div>-->
-<!--                -->
-<!--                <div class="feature-item">-->
-<!--                    <div class="feature-icon">✓</div>-->
-<!--                    <h3 class="feature-title">Setki zadowolonych klientów</h3>-->
-<!--                </div>-->
             </div>
         </div>
     </section>
@@ -81,7 +71,7 @@
     margin-bottom: 2rem;
     position: relative;
     padding-bottom: 15px;
-    font-family: 'Montserrat', sans-serif;
+
     text-transform: uppercase;
     letter-spacing: 1.5px;
 }
@@ -110,7 +100,7 @@
     line-height: 1.8;
     color: #334155;
     text-align: center;
-    font-family: 'Open Sans', sans-serif;
+
 }
 
 .about-features {

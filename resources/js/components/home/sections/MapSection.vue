@@ -1,7 +1,7 @@
 <template>
     <section class="map-section">
         <div class="map-container">
-            <h2 class="section-title">Kontakt</h2>
+            <h2 class="section-title bold" v-if="!hideTitle">Kontakt</h2>
 
             <div class="contact-grid">
                 <div class="contact-item">
@@ -19,7 +19,7 @@
                 </div>
             </div>
 
-            <h2 class="section-title">Polub nasze strony </h2>
+            <h2 class="section-title bold">Polub nasze strony </h2>
 
             <div class="contact-grid">
                 <div class="contact-item">
@@ -294,6 +294,10 @@ export default {
             type: String,
             required: true,
             default: ''
+        },
+        hideTitle: {
+            type: Boolean,
+            default: false
         }
     }
 }

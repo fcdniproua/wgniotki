@@ -9,11 +9,13 @@ import ApplicationsComponent from "./components/admin/ApplicationsComponent.vue"
 import WorksComponent from "./components/admin/WorksComponent.vue";
 import SettingsComponent from "./components/admin/SettingsComponent.vue";
 import ClientComponent from "./components/admin/ClientComponent.vue";
+import ContactPage from "./components/pages/ContactPage.vue";
 
 const routes = [
     { path: '/', name: 'Home', component: HomePage },
     { path: '/about', name: 'About', component: AboutPage },
     { path: '/services', name: 'Services', component: ServicesPage },
+    { path: '/contact', name: 'Contact', component: ContactPage },
     { path: '/admin/login', name: 'AdminLogin', component: AdminLoginModal },
     {
         path: '/admin/dashboard',

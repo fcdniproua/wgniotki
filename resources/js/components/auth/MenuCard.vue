@@ -4,7 +4,7 @@
             <div class="card-icon">
                 <i :class="['fas', icon]"></i>
             </div>
-            <h3>{{ title }}</h3>
+            <h3 class="bold">{{ title }}</h3>
         </div>
     </router-link>
 </template>

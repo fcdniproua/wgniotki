@@ -2,7 +2,7 @@
     <div class="modal-overlay" @click.self="$emit('close')">
         <div class="modal-container">
             <div class="modal-content">
-                <h2 class="modal-title">Skontaktuj się z nami</h2>
+                <h2 class="modal-title bold">Skontaktuj się z nami</h2>
 
                 <form @submit.prevent="submitForm" class="contact-form">
                     <div class="form-group">
