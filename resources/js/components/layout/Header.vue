@@ -319,10 +319,10 @@ export default {
 
 .mobile-menu {
     position: fixed;
-    top: 130px;
+    top: 70px;
     left: 0;
     width: 100%;
-    height: calc(100vh - 130px);
+    height: calc(100vh - 70px);
     background: #1A1A1A;
     display: flex;
     flex-direction: column;
@@ -644,6 +644,17 @@ export default {
 
 /* Адаптація для мобільних */
 @media (max-width: 992px) {
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background: #1A1A1A;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        height: 70px;
+    }
+
     .mobile-login-btn button {
         width: 100%;
         padding: 12px;
