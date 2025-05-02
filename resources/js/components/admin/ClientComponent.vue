@@ -184,7 +184,7 @@ export default {
 
         const deleteClient = async () => {
             try {
-                await axios.delete(`/delete-client/${clientToDelete.value}`);
+                await axios.delete(`/destroy-clients/${clientToDelete.value}`);
                 clients.value = clients.value.filter(c => c.id !== clientToDelete.value);
                 showMessage('success', 'Klient został usunięty');
             } catch (error) {
@@ -201,7 +201,7 @@ export default {
             }
 
             try {
-                const url = editMode.value ? `/update-client/${client.value.id}` : '/create-client';
+                const url = editMode.value ? `/update-clients/${client.value.id}` : '/save-clients';
                 const method = editMode.value ? 'put' : 'post';
 
                 const response = await axios[method](url, client.value);

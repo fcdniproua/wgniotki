@@ -30,7 +30,7 @@ class PhotoController extends Controller
     {
         $request['application_id'] = 1;
         $validator = Validator::make($request->all(), [
-            'service_id' => 'required|exists:applications,id',
+            'service_id' => 'required|integer',
             'slider_1' => 'required|integer',
             'slider_2' => 'required|integer',
             'slider_tag' => [
