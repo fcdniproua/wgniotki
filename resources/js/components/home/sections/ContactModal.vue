@@ -562,7 +562,6 @@ select.form-input {
 @supports (-webkit-touch-callout: none) {
     .modal-overlay {
         align-items: flex-start;
-        padding-top: 20vh;
     }
 }
 
