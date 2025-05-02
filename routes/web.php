@@ -32,17 +32,17 @@ Route::middleware([AuthenticateAdmin::class])->group(function () {
     Route::post('/save-clients', [ClientController::class, 'store'])->name('clients.store');
     Route::get('/show-clients/{client}', [ClientController::class, 'show'])->name('clients.show');
     Route::post('/update-clients/{client}', [ClientController::class, 'update'])->name('clients.update');
-    Route::post('/destroy-clients/{client}', [ClientController::class, 'destroy'])->name('clients.destroy');
+    Route::delete('/destroy-clients/{client}', [ClientController::class, 'destroy'])->name('clients.destroy');
     Route::get('/get-applications', [ApplicationController::class, 'index'])->name('applications.index');
     Route::post('/save-applications', [ApplicationController::class, 'store'])->name('applications.store');
     Route::get('/show-applications/{application}', [ApplicationController::class, 'show'])->name('applications.show');
     Route::post('/update-applications/{application}', [ApplicationController::class, 'update'])->name('applications.update');
-    Route::post('/destroy-applications/{application}', [ApplicationController::class, 'destroy'])->name('applications.destroy');
+    Route::delete('/destroy-applications/{application}', [ApplicationController::class, 'destroy'])->name('applications.destroy');
 
     Route::post('/save-photos', [PhotoController::class, 'store'])->name('photos.store');
     Route::get('/show-photos/{photo}', [PhotoController::class, 'show'])->name('photos.show');
     Route::post('/update-photos/{photo}', [PhotoController::class, 'update'])->name('photos.update');
-    Route::post('/destroy-photos/{photo}', [PhotoController::class, 'destroy'])->name('photos.destroy');
+    Route::delete('/destroy-photos/{photo}', [PhotoController::class, 'destroy'])->name('photos.destroy');
 });
 
 Route::prefix('admin')->group(function () {

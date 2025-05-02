@@ -37,6 +37,7 @@ class PhotoController extends Controller
                 Rule::requiredIf(function () use ($request) {
                     return $request->slider_1 != 0 || $request->slider_2 != 0;
                 }),
+                'nullable',
                 'string',
                 'max:255'
             ],
