@@ -1,126 +1,130 @@
 <template>
     <div class="modal-overlay" @click.self="$emit('close')">
         <div class="modal-container">
-            <div class="modal-content">
+            <div class="modal-header">
                 <h2 class="modal-title bold">Skontaktuj się z nami</h2>
+            </div>
 
+            <div class="modal-content">
                 <form @submit.prevent="submitForm" class="contact-form">
-                    <div class="form-group">
-                        <label for="name">Imię i nazwisko</label>
-                        <input
-                            id="name"
-                            v-model="form.name"
-                            type="text"
-                            placeholder="Jakub Blaszczykowski"
-                            required
-                            class="form-input"
-                        >
-                    </div>
-
-                    <div class="form-group">
-                        <label for="phone">Numer telefonu</label>
-                        <input
-                            id="phone"
-                            v-model="form.phone"
-                            type="tel"
-                            required
-                            placeholder="123 456 789"
-                            class="form-input"
-                        >
-                    </div>
-
-                    <div class="form-group">
-                        <label for="phone">E-mail</label>
-                        <input
-                            id="email"
-                            v-model="form.email"
-                            type="email"
-                            placeholder="exapmle@example.com"
-                            required
-                            class="form-input"
-                        >
-                    </div>
-
-                    <div class="form-group">
-                        <label for="service">Usługa</label>
-                        <select
-                            id="service"
-                            v-model="form.service"
-                            class="form-input"
-                        >
-                            <option v-for="(service, index) in services" :key="index" :value="service.id" :selected="index === 4">
-                                {{ service.name }}
-                            </option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="phone">Model samochodu</label>
-                        <input
-                            id="brand"
-                            v-model="form.brand"
-                            type="text"
-                            placeholder="Audi"
-                            class="form-input"
-                        >
-                    </div>
-
-                    <div class="form-group">
-                        <label for="phone">Rocznik</label>
-                        <input
-                            id="model"
-                            v-model="form.model"
-                            type="text"
-                            placeholder="A8"
-                            class="form-input"
-                        >
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Opis problemu</label>
-                        <textarea
-                            id="message"
-                            v-model="form.message"
-                            rows="4"
-                            placeholder="Co się stało z samochodem?"
-                            class="form-input"
-                        ></textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Załącz zdjęcia (max 5)</label>
-                        <div class="file-upload-container">
+                    <div class="form-scrollable">
+                        <div class="form-group">
+                            <label for="name">Imię i nazwisko</label>
                             <input
-                                type="file"
-                                ref="fileInput"
-                                accept="image/*"
-                                multiple
-                                @change="handleFileUpload"
-                                style="display: none"
+                                id="name"
+                                v-model="form.name"
+                                type="text"
+                                placeholder="Jakub Blaszczykowski"
+                                required
+                                class="form-input"
                             >
-                            <button
-                                type="button"
-                                @click="$refs.fileInput.click()"
-                                class="upload-btn"
-                                :disabled="uploadedFiles.length >= 5"
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Numer telefonu</label>
+                            <input
+                                id="phone"
+                                v-model="form.phone"
+                                type="tel"
+                                required
+                                placeholder="123 456 789"
+                                class="form-input"
                             >
-                                <i class="fas fa-cloud-upload-alt"></i> Wybierz pliki
-                            </button>
-                            <div class="file-list" v-if="uploadedFiles.length > 0">
-                                <div v-for="(file, index) in uploadedFiles" :key="index" class="file-item">
-                                    <div class="file-preview">
-                                        <div class="file-icon">
-                                            <i class="fas fa-image"></i>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">E-mail</label>
+                            <input
+                                id="email"
+                                v-model="form.email"
+                                type="email"
+                                placeholder="exapmle@example.com"
+                                required
+                                class="form-input"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service">Usługa</label>
+                            <select
+                                id="service"
+                                v-model="form.service"
+                                class="form-input"
+                            >
+                                <option v-for="(service, index) in services" :key="index" :value="service.id" :selected="index === 4">
+                                    {{ service.name }}
+                                </option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Model samochodu</label>
+                            <input
+                                id="brand"
+                                v-model="form.brand"
+                                type="text"
+                                placeholder="Audi"
+                                class="form-input"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Rocznik</label>
+                            <input
+                                id="model"
+                                v-model="form.model"
+                                type="text"
+                                placeholder="A8"
+                                class="form-input"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Opis problemu</label>
+                            <textarea
+                                id="message"
+                                v-model="form.message"
+                                rows="4"
+                                placeholder="Co się stało z samochodem?"
+                                class="form-input"
+                            ></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Załącz zdjęcia (max 5)</label>
+                            <div class="file-upload-container">
+                                <input
+                                    type="file"
+                                    ref="fileInput"
+                                    accept="image/*"
+                                    multiple
+                                    @change="handleFileUpload"
+                                    style="display: none"
+                                >
+                                <button
+                                    type="button"
+                                    @click="$refs.fileInput.click()"
+                                    class="upload-btn"
+                                    :disabled="uploadedFiles.length >= 5"
+                                >
+                                    <i class="fas fa-cloud-upload-alt"></i> Wybierz pliki
+                                </button>
+                                <div class="file-list" v-if="uploadedFiles.length > 0">
+                                    <div v-for="(file, index) in uploadedFiles" :key="index" class="file-item">
+                                        <div class="file-preview">
+                                            <div class="file-icon">
+                                                <i class="fas fa-image"></i>
+                                            </div>
+                                            <span class="file-name">{{ file.name }}</span>
                                         </div>
-                                        <span class="file-name">{{ file.name }}</span>
+                                        <button type="button" @click="removeFile(index)" class="remove-file">
+                                            <i class="fas fa-times"></i>
+                                        </button>
                                     </div>
-                                    <button type="button" @click="removeFile(index)" class="remove-file">
-                                        <i class="fas fa-times"></i>
-                                    </button>
                                 </div>
-                            </div>
-                            <div class="file-counter" :class="{'warning': uploadedFiles.length >= 5}">
-                                {{ uploadedFiles.length }}/5 zdjęć
+                                <div class="file-counter" :class="{'warning': uploadedFiles.length >= 5}">
+                                    {{ uploadedFiles.length }}/5 zdjęć
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -255,7 +259,6 @@ export default {
 </script>
 
 <style scoped>
-
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -267,37 +270,74 @@ export default {
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    animation: fadeIn 0.3s ease-out;
+    padding: 20px;
+    box-sizing: border-box;
+    -webkit-overflow-scrolling: touch; /* Для плавного скролла на iOS */
 }
 
 .modal-container {
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-    width: 90%;
+    width: 100%;
     max-width: 500px;
-    max-height: 90vh;
-    overflow-y: auto;
-    animation: slideUp 0.3s ease-out;
+    max-height: calc(100vh - 40px); /* Враховуємо padding overlay */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Важливо для правильного скролла */
 }
+
+.modal-header {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    flex-shrink: 0; /* Забороняє стискання заголовка */
+}
+
 .modal-title {
     font-size: 1.5rem;
     font-weight: bold;
     color: #333;
-    margin-bottom: 1.5rem;
+    margin: 0;
     text-align: center;
+}
+
+.modal-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0; /* Фікс для Firefox */
 }
 
 .contact-form {
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
+    height: 100%;
+    min-height: 0; /* Фікс для Firefox */
 }
+
+.form-scrollable {
+    flex: 1;
+    padding: 0 20px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch; /* Плавний скролл на iOS */
+    overscroll-behavior: contain; /* Запобігає скроллу батьківського елемента */
+}
+
+.form-actions {
+    padding: 15px 20px;
+    background: white;
+    border-top: 1px solid #eee;
+    flex-shrink: 0; /* Забороняє стискання кнопок */
+    display: flex;
+    gap: 1rem;
+}
+
 
 .form-group {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    margin-bottom: 1.2rem;
 }
 
 .form-group label {
@@ -337,7 +377,6 @@ select.form-input {
     background-size: 1em;
 }
 
-/* Стилі для завантаження файлів */
 .file-upload-container {
     margin-top: 0.5rem;
 }
@@ -442,13 +481,6 @@ select.form-input {
     font-weight: 500;
 }
 
-/* Кнопки форми */
-.form-actions {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1.5rem;
-}
-
 .btn-submit, .btn-cancel {
     flex: 1;
     padding: 0.8rem;
@@ -478,7 +510,6 @@ select.form-input {
     background-color: #f5f5f5;
 }
 
-/* Анімації */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -492,6 +523,46 @@ select.form-input {
     to {
         transform: translateY(0);
         opacity: 1;
+    }
+}
+
+
+/* Оптимізація для мобільних пристроїв */
+@media (max-width: 480px) {
+    .modal-overlay {
+        padding: 10px;
+        align-items: flex-end; /* Для кращого вигляду на мобільних */
+    }
+
+    .modal-container {
+        max-height: calc(100vh - 20px);
+        border-radius: 8px 8px 0 0;
+    }
+
+    .form-actions {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 10px;
+    }
+
+    .btn-submit, .btn-cancel {
+        width: 100%;
+    }
+
+    .form-scrollable {
+        padding: 0 10px;
+    }
+
+    .modal-header {
+        padding: 15px 10px;
+    }
+}
+
+/* Фікс для iOS, щоб клавіатура не зламала макет */
+@supports (-webkit-touch-callout: none) {
+    .modal-overlay {
+        align-items: flex-start;
+        padding-top: 20vh;
     }
 }
 

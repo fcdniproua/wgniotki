@@ -9,39 +9,49 @@
                 </div>
 
                 <div class="about-text">
-                    <h3 class="subtitle bold">SPECJALIZUJEMY SIĘ W USUWANIU WGNIECIEŃ BEZ LAKIEROWANIA</h3>
+                    <h3 class="subtitle bold">Specjalizujemy się w <strong>usuwaniu wgnieceń metodą PDR</strong> we Wrocławiu i okolicach.</h3>
 
-                    <p class="description">
-                        Nasza firma <strong>Usuwanie wgnieceń</strong> to profesjonalny warsztat zajmujący się naprawą wgnieceń
-                        każdego rodzaju. Działamy na rynku od 2010 roku, zdobywając zaufanie tysięcy klientów.
-                    </p>
+                    <p class="description semibold">
+                        Działamy szybko, precyzyjnie i bezpiecznie – bez szpachlowania, bez lakierowania.</p>
 
-                    <ul class="features-list">
-                        <li class="feature-item">
-                            <span class="check-icon">✓</span>
-                            <span>Bezinwazyjna metoda PDR (Paintless Dent Repair)</span>
-                        </li>
-                        <li class="feature-item">
-                            <span class="check-icon">✓</span>
-                            <span>Usuwanie wgnieceń po gradobiciach i kolizjach</span>
-                        </li>
-                        <li class="feature-item">
-                            <span class="check-icon">✓</span>
-                            <span>Naprawy bez konieczności lakierowania</span>
-                        </li>
-                        <li class="feature-item">
-                            <span class="check-icon">✓</span>
-                            <span>Profesjonalny sprzęt najwyższej jakości</span>
-                        </li>
-                        <li class="feature-item">
-                            <span class="check-icon">✓</span>
-                            <span>Gwarancja na wykonane usługi</span>
-                        </li>
-                    </ul>
+<!--                    <ul class="features-list">-->
+<!--                        <li class="feature-item">-->
+<!--                            <span class="check-icon">✓</span>-->
+<!--                            <span>Bezinwazyjna metoda PDR (Paintless Dent Repair)</span>-->
+<!--                        </li>-->
+<!--                        <li class="feature-item">-->
+<!--                            <span class="check-icon">✓</span>-->
+<!--                            <span>Usuwanie wgnieceń po gradobiciach i kolizjach</span>-->
+<!--                        </li>-->
+<!--                        <li class="feature-item">-->
+<!--                            <span class="check-icon">✓</span>-->
+<!--                            <span>Naprawy bez konieczności lakierowania</span>-->
+<!--                        </li>-->
+<!--                        <li class="feature-item">-->
+<!--                            <span class="check-icon">✓</span>-->
+<!--                            <span>Profesjonalny sprzęt najwyższej jakości</span>-->
+<!--                        </li>-->
+<!--                        <li class="feature-item">-->
+<!--                            <span class="check-icon">✓</span>-->
+<!--                            <span>Gwarancja na wykonane usługi</span>-->
+<!--                        </li>-->
+<!--                    </ul>-->
 
                     <p class="closing-text">
-                        Nasz zespół składa się z wykwalifikowanych specjalistów z wieloletnim doświadczeniem.
-                        Każde wgniecenie traktujemy indywidualnie, zapewniając najwyższą jakość usług.
+                        Naprawiamy <strong>wszystkie typy samochodów</strong>: miejskie, luksusowe, SUV-y i inne, youngtimery, klasyki i auta firmowe – niezależnie od marki, modelu czy kraju rejestracji.
+                        <br>
+                        <br>
+                        <strong>Nie boimy się trudnych wyzwań</strong> – skomplikowane wgniecenia po gradobiciu, kolizjach, szkody parkingowe, uszkodzenia w trudno dostępnych miejscach?
+                        Dla nas to chleb powszedni. Tam, gdzie inni mówią ‘nie da się’ – <strong>my podejmujemy się naprawy.</strong>
+                        <br>
+                        <br>
+                        Za firmą stoi <strong>Eliasz Kowalczuk</strong> – pasjonat motoryzacji, który sam naprawia auta razem z zespołem doświadczonych techników.
+                        <strong>Jesteśmy ekipą fachowców, którzy naprawdę znają się na rzeczy.</strong>
+                        Doradzimy najlepsze rozwiązanie i przywrócimy Twojemu autu perfekcyjny wygląd.
+                        <br>
+                        <br>
+                        Zadzwoń, napisz lub umów się online – działamy elastycznie i bez zbędnej zwłoki.
+
                     </p>
                 </div>
             </div>

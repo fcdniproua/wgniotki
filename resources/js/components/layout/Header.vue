@@ -47,14 +47,16 @@
 
             <transition name="slide">
                 <nav class="mobile-menu" v-if="isMenuOpen">
-                    <router-link to="/" class="mobile-logo">
-                        <logo></logo>
-                    </router-link>
+                    <div style="width: 60%">
+                        <router-link to="/" class="mobile-logo">
+                            <logo></logo>
+                        </router-link>
+                    </div>
                     <ul>
                         <li><router-link class="menu-next" to="/" @click="closeMenu">GLÓWNA</router-link></li>
                         <li><router-link class="menu-next" to="/services" @click="closeMenu">USLUGI</router-link></li>
                         <li><router-link class="menu-next" to="/about" @click="closeMenu">O NAS</router-link></li>
-                        <li><router-link class="menu-next" to="/contact">KONTAKT</router-link></li>
+                        <li><router-link class="menu-next" to="/contact" @click="closeMenu">KONTAKT</router-link></li>
                         <li v-if="isAuthenticated">
                             <router-link class="menu-next" to="/admin/dashboard" @click="closeMenu">DASHBOARD</router-link>
                         </li>
@@ -662,11 +664,6 @@ export default {
     }
     .mobile-logo {
         display: block;
-        width: 180px;
-        position: absolute;
-        top: 0;
-        z-index: 2;
-        left: 24%;
     }
     .logo {
         display:none;

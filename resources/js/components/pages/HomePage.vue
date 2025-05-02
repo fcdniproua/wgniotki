@@ -6,6 +6,7 @@
         <TextSection @open-contact-modal="showModal()"/>
         <CustomerReviews />
         <MapSection :mapEmbed="contactData.mapEmbed"/>
+        <FAQSection />
         <ContactModal v-if="showContact" @close="closeModal()" />
     </div>
 </template>
@@ -19,10 +20,12 @@ import CustomerReviews from "../home/sections/OpinionSection.vue";
 import ContactModal from "../home/sections/ContactModal.vue";
 import {inject, ref} from "vue";
 import WhyMeSection from "../home/sections/WhyMeSection.vue";
+import FAQSection from "../home/sections/FaqSection.vue";
 
 export default {
     name: 'HomePage',
     components: {
+        FAQSection,
         WhyMeSection,
         ContactModal,
         CustomerReviews,

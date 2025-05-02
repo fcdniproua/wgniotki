@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ApplicationReceived;
 use App\Models\Application;
 use App\Models\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
@@ -199,6 +201,8 @@ class ApplicationController extends Controller
             // Зберігаємо фото в базу даних (припускаючи, що у вас є зв'язок і модель для фото)
             $application->photos()->createMany($photos);
         }
+
+        Mail::to($request->email)->send(new ApplicationReceived($application));
 
         return response()->json($application, 201);
     }

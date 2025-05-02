@@ -19,7 +19,7 @@
                 </div>
             </div>
 
-            <h2 class="section-title bold">Polub nasze strony </h2>
+            <h2 class="section-subtitle semibold">Polub nasze strony </h2>
 
             <div class="contact-grid">
                 <div class="contact-item">
@@ -51,11 +51,26 @@
 }
 
 .section-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 700;
-    color: #FF6700;
-    margin-bottom: 2rem;
+    color: #1e293b;
     text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, #3b82f6, #1d4ed8);
 }
 
 .contact-grid {
@@ -235,34 +250,15 @@
     transition: 0.3s;
 }
 
-/*.social-icons li {
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text; !* Додаємо для кращої підтримки *!
+.section-subtitle {
+    font-size: 1.8rem;
+    color: #64748b;
+    text-align: center;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
-
-!* Instagram *!
-.social-icons li:nth-child(1) {
-    background-image: linear-gradient(45deg,
-    #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%,
-    #bc1888 100%);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-}
-
-!* WhatsApp *!
-.social-icons li:nth-child(2) {
-    background: #25D366;
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-}
-
-!* Facebook *!
-.social-icons li:nth-child(3)  {
-    background: #1877F2;
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-}*/
 
 </style>
 

@@ -1,6 +1,6 @@
 <template>
     <div class="services-page">
-        <section class="services-section">
+        <section class="about-us-section">
             <div class="container">
                 <h2 class="section-title bold">Usuwanie wgnieceń</h2>
                 <p class="hero-description">Profesjonalne usuwanie wgnieceń bez lakierowania (PDR) dla wszystkich typów pojazdów</p>
@@ -267,6 +267,12 @@ export default {
 </script>
 
 <style scoped>
+
+.about-us-section {
+    padding: 80px 0;
+    background-color: #f8fafc;
+}
+
 /* Стилі залишаються незмінними, як у попередньому варіанті */
 .services-page {
     color: #333;
@@ -582,6 +588,9 @@ export default {
 
 
 @media (max-width: 768px) {
+    .about-us-section {
+        padding: 50px 0;
+    }
 
     .hero-description {
         font-size: 1.1rem;
