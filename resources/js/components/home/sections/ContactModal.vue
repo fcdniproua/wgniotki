@@ -559,9 +559,41 @@ select.form-input {
 }
 
 /* Фікс для iOS, щоб клавіатура не зламала макет */
+/* Специфічні стилі для iOS */
 @supports (-webkit-touch-callout: none) {
     .modal-overlay {
         align-items: flex-start;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        -webkit-overflow-scrolling: touch; /* Плавний скролл */
+    }
+
+    .modal-container {
+        max-height: 90vh;
+        height: auto;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    .form-scrollable {
+        padding-bottom: 15px;
+    }
+
+    /* Фікс для віртуальної клавіатури */
+    .form-input {
+        font-size: 16px; /* Запобігає масштабуванню */
+    }
+
+    /* Кнопки більшого розміру для iOS */
+    .btn-submit,
+    .btn-cancel {
+        padding: 12px;
+        min-height: 44px; /* Мінімальний розмір для iOS */
+    }
+
+    /* Фікс для input type="date" */
+    input[type="date"] {
+        min-height: 44px;
     }
 }
 
