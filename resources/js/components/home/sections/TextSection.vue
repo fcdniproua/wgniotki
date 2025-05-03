@@ -29,7 +29,7 @@
                 <p>
                     Mamy tysięcy zadowolonych klientów, którzy chwalą nas za skuteczność, szybkość i bezproblemowy proces naprawy.
                     Szukasz specjalistów, <b class="b-text">którzy naprawią wgniotki w pobliżu Ciebie?</b> Zaufaj profesjonalistom, którzy naprawdę kochają to, co robią.
-                    <b class="b-text" @click="$emit('open-contact-modal')">Skontaktuj się z nami i umów wizytę jeszcze dziś!</b>
+                    <b class="b-text" @click="$emit('open-contact-modal')" style="cursor: pointer; color: #FF6700">Skontaktuj się z nami i umów wizytę jeszcze dziś!</b>
                 </p>
                 </div>
             </div>

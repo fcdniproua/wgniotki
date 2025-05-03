@@ -7,8 +7,8 @@
 
             <nav class="main-nav">
                 <ul class="nav-list">
-                    <li><router-link class="menu-next bold" to="/">GLÓWNA</router-link></li>
-                    <li><router-link class="menu-next bold" to="/services">USLUGI</router-link></li>
+                    <li><router-link class="menu-next bold" to="/">GŁÓWNA</router-link></li>
+                    <li><router-link class="menu-next bold" to="/services">USŁUGI</router-link></li>
                     <li><router-link class="menu-next bold" to="/about">O NAS</router-link></li>
                     <li><router-link class="menu-next bold" to="/contact">KONTAKT</router-link></li>
                     <li v-if="isAuthenticated">
@@ -31,6 +31,11 @@
             </div>
 
             <!-- Десктопна версія кнопки -->
+            <div style="width: 60%">
+                <router-link to="/" class="mobile-logo" style="width: 66px;">
+                    <logo></logo>
+                </router-link>
+            </div>
             <button
                 v-if="!isMobile && !isAuthenticated"
                 @click="showLoginModal = true"
@@ -47,14 +52,9 @@
 
             <transition name="slide">
                 <nav class="mobile-menu" v-if="isMenuOpen">
-                    <div style="width: 60%">
-                        <router-link to="/" class="mobile-logo">
-                            <logo></logo>
-                        </router-link>
-                    </div>
                     <ul>
-                        <li><router-link class="menu-next" to="/" @click="closeMenu">GLÓWNA</router-link></li>
-                        <li><router-link class="menu-next" to="/services" @click="closeMenu">USLUGI</router-link></li>
+                        <li><router-link class="menu-next" to="/" @click="closeMenu">GŁÓWNA</router-link></li>
+                        <li><router-link class="menu-next" to="/services" @click="closeMenu">USŁUGI</router-link></li>
                         <li><router-link class="menu-next" to="/about" @click="closeMenu">O NAS</router-link></li>
                         <li><router-link class="menu-next" to="/contact" @click="closeMenu">KONTAKT</router-link></li>
                         <li v-if="isAuthenticated">

@@ -10,7 +10,7 @@ class Application extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['client_id', 'service', 'message', 'status'];
+    protected $fillable = ['client_id', 'service', 'brand', 'model', 'message', 'status'];
 
     public function client()
     {

@@ -31,6 +31,8 @@ class ApplicationController extends Controller
         $validator = Validator::make($request->all(), [
             'client_id' => 'required|exists:clients,id',
             'service' => 'required|string|max:255',
+            'brand' => 'nullable|string',
+            'model' => 'nullable|string',
             'message' => 'nullable|string',
             'status' => 'nullable|in:new,in_progress,completed',
         ]);
@@ -163,6 +165,8 @@ class ApplicationController extends Controller
         $appValidator = Validator::make($request->all(), [
             'client_id' => 'sometimes|exists:clients,id',
             'service' => 'sometimes|string|max:255',
+            'brand' => 'nullable|string',
+            'model' => 'nullable|string',
             'message' => 'nullable|string',
             'status' => 'sometimes|in:new,in_progress,completed',
         ]);

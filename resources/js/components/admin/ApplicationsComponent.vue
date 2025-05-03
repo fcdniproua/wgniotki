@@ -135,6 +135,16 @@
                         </div>
 
                         <div class="detail-item">
+                            <span class="detail-label">Model:</span>
+                            <span class="detail-value">{{ selectedApplication.brand }}</span>
+                        </div>
+
+                        <div class="detail-item">
+                            <span class="detail-label">Rocznik:</span>
+                            <span class="detail-value">{{ selectedApplication.model }}</span>
+                        </div>
+
+                        <div class="detail-item">
                             <span class="detail-label">Data:</span>
                             <span class="detail-value">{{ formatDate(selectedApplication.created_at) }}</span>
                         </div>

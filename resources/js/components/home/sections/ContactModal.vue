@@ -2,7 +2,7 @@
     <div class="modal-overlay" @click.self="$emit('close')">
         <div class="modal-container">
             <div class="modal-header">
-                <h2 class="modal-title bold">Skontaktuj się z nami</h2>
+                <h2 class="modal-title bold">Wyceń usługę</h2>
             </div>
 
             <div class="modal-content">
@@ -23,6 +23,7 @@
                         <div class="form-group">
                             <label for="phone">Numer telefonu</label>
                             <input
+                                @input="checkPhone"
                                 id="phone"
                                 v-model="form.phone"
                                 type="tel"
@@ -30,6 +31,7 @@
                                 placeholder="123 456 789"
                                 class="form-input"
                             >
+                            <span style="color:red;" class="help-text"></span>
                         </div>
 
                         <div class="form-group">
@@ -45,27 +47,28 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="service">Usługa</label>
-                            <select
-                                id="service"
-                                v-model="form.service"
-                                class="form-input"
-                            >
-                                <option v-for="(service, index) in services" :key="index" :value="service.id" :selected="index === 4">
-                                    {{ service.name }}
-                                </option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="phone">Model samochodu</label>
-                            <input
-                                id="brand"
-                                v-model="form.brand"
-                                type="text"
-                                placeholder="Audi"
-                                class="form-input"
-                            >
+                            <div class="model-group">
+                                <div class="model">
+                                    <label for="phone">Marka</label>
+                                    <input
+                                        id="brand"
+                                        v-model="form.brand"
+                                        type="text"
+                                        placeholder="Audi"
+                                        class="form-input"
+                                    >
+                                </div>
+                                <div class="model">
+                                    <label for="phone">Model auta</label>
+                                    <input
+                                        id="brand"
+                                        v-model="form.marka"
+                                        type="text"
+                                        placeholder="Audi"
+                                        class="form-input"
+                                    >
+                                </div>
+                            </div>
                         </div>
 
                         <div class="form-group">
@@ -128,10 +131,10 @@
                             </div>
                         </div>
                     </div>
-
+                    <p class="section-subtitle">Wysyłając formularz, wyrażasz zgodę na przetwarzanie danych osobowych w celu kontaktu, zgodnie z RODO. Administratorem danych jest Usuwanie Wgnieceń, a Twoje dane mogą być poprawiane lub usunięte na żądanie.</p>
                     <div class="form-actions">
                         <button type="submit" class="btn-submit">
-                            Wyślij zgłoszenie
+                            Wyślij
                         </button>
                         <button type="button" @click="$emit('close')" class="btn-cancel">
                             Zamknij
@@ -155,6 +158,7 @@ export default {
             phone: '',
             email: '',
             brand: '',
+            marka: '',
             model: '',
             service: '',
             message: ''
@@ -165,7 +169,7 @@ export default {
             try {
                 const response = await fetch('/get-services')
                 services.value = await response.json()
-                form.value.service = services.value[0].id;
+                form.value.service = 1;
             } catch (error) {
                 console.error('Error fetching services:', error)
             }
@@ -203,6 +207,8 @@ export default {
                         formData.append(key, form.value[key])
                     }
                 })
+                form.value.brand = form.value.brand + ' ' + form.value.marka
+                formData.append('brand', form.value.brand)
                 formData.append('status', 'new')
                 ;[...uploadedFiles.value].forEach((item, index) => {
                     const file = item.file || item
@@ -234,11 +240,22 @@ export default {
                 phone: '',
                 email: '',
                 brand: '',
+                marka: '',
                 model: '',
                 service: '',
                 message: ''
             }
             uploadedFiles.value = []
+        }
+
+        const checkPhone = () => {
+            if (form.value.phone.length !== 9) {
+                let block = document.querySelector('.help-text');
+                block.textContent = 'podaj prawidłowy numer telefonu!';
+            } else {
+                let block = document.querySelector('.help-text');
+                block.textContent = '';
+            }
         }
 
         onMounted(() => {
@@ -249,6 +266,7 @@ export default {
             services,
             form,
             uploadedFiles,
+            checkPhone,
             handleFileUpload,
             removeFile,
             submitForm,
@@ -274,6 +292,17 @@ export default {
     box-sizing: border-box;
     -webkit-overflow-scrolling: touch; /* Для плавного скролла на iOS */
 }
+
+.section-subtitle {
+    font-size: 0.8rem;
+    color: #64748b;
+    text-align: center;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 .modal-container {
     background-color: white;
@@ -595,6 +624,19 @@ select.form-input {
     input[type="date"] {
         min-height: 44px;
     }
+}
+
+.model-group {
+    display: flex;
+    flex-direction: row;
+}
+.model {
+    display: flex;
+    flex-direction: column;
+}
+
+.model input {
+    width: 70%;
 }
 
 @media (max-width: 480px) {

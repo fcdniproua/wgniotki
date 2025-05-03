@@ -10,12 +10,14 @@ import WorksComponent from "./components/admin/WorksComponent.vue";
 import SettingsComponent from "./components/admin/SettingsComponent.vue";
 import ClientComponent from "./components/admin/ClientComponent.vue";
 import ContactPage from "./components/pages/ContactPage.vue";
+import PrivacyPolicyPage from "./components/pages/PrivacyPolicyPage.vue";
 
 const routes = [
     { path: '/', name: 'Home', component: HomePage },
     { path: '/about', name: 'About', component: AboutPage },
     { path: '/services', name: 'Services', component: ServicesPage },
     { path: '/contact', name: 'Contact', component: ContactPage },
+    { path: '/privacy', name: 'Privacy', component: PrivacyPolicyPage },
     { path: '/admin/login', name: 'AdminLogin', component: AdminLoginModal },
     {
         path: '/admin/dashboard',

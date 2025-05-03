@@ -6,9 +6,9 @@
             <div class="contact-grid">
                 <div class="contact-item">
                     <div class="icon-wrapper">
-                        <icon-map-pin class="contact-icon" />
+                        <a href="https://www.google.com/maps?ll=51.126291,17.031129&z=16&t=m&hl=en&gl=PL&mapclient=embed&q=Kleczkowska+18b+50-227+Wroc%C5%82aw" target="_blank"><icon-map-pin class="contact-icon" /></a>
                     </div>
-                    <p class="contact-text">ul. Kleczkowska 18B, 50-227 Wrocław, Poland</p>
+                    <a href="https://www.google.com/maps?ll=51.126291,17.031129&z=16&t=m&hl=en&gl=PL&mapclient=embed&q=Kleczkowska+18b+50-227+Wroc%C5%82aw" target="_blank"> <p class="contact-text">ul. Kleczkowska 18B, 50-227 Wrocław, Poland</p></a>
                 </div>
 
                 <div class="contact-item">

@@ -3,9 +3,9 @@
         <HeroSection @open-contact-modal="showModal()" />
         <SliderSection />
         <WhyMeSection />
-        <TextSection @open-contact-modal="showModal()"/>
         <CustomerReviews />
         <MapSection :mapEmbed="contactData.mapEmbed"/>
+        <TextSection @open-contact-modal="showModal()"/>
         <FAQSection />
         <ContactModal v-if="showContact" @close="closeModal()" />
     </div>

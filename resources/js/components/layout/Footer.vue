@@ -28,14 +28,6 @@
                             <span class="hours" v-if="day.closed === false">{{day.from}} - {{day.to}}</span>
                             <span class="hours" v-else>Zamknięte</span>
                         </div>
-                        <!--                        <div class="hours-item">-->
-                        <!--                            <span class="day">Sobota:</span>-->
-                        <!--                            <span class="hours">9:00 - 14:00</span>-->
-                        <!--                        </div>-->
-                        <!--                        <div class="hours-item">-->
-                        <!--                            <span class="day">Niedziela:</span>-->
-                        <!--                            <span class="hours">Zamknięte</span>-->
-                        <!--                        </div>-->
                     </div>
 
                     <!-- Колонка з соцмережами -->
@@ -52,19 +44,18 @@
                         </div>
 
                         <!-- Прикольний додаток - лічильник відремонтованих авто -->
-                        <div class="fun-fact">
-                            <div class="counter">
-                                <i class="fas fa-car"></i>
-                                <span class="count">4563</span>
-                            </div>
-                            <p>Odremontowanych pojazdów</p>
+                        <div class="fun-fact bold">
+                            <p>NIP - 8952254284</p>
+                            <p>REGON - 524663440</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="footer-bottom">
                     <div class="footer-legal">
-                        <p class="copyright">&copy; 2025 usuwanie-wgnieceń.pl - Wszelkie prawa zastrzeżone</p>
+                        <p class="copyright">
+                            © 2025 Usuwanie Wgnieceń. Wszystkie prawa zastrzeżone. | Polityka prywatności | Regulamin
+                        </p>
                     </div>
                 </div>
             </div>
@@ -85,25 +76,6 @@ export default {
     setup() {
         const weekDays = ref(['Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', 'Piątek', 'Sobota', 'Niedziela']);
         const contactData = inject('contactData')
-        const animateCounter = () => {
-            const counter = document.querySelector('.count');
-            const target = parseInt(counter.textContent);
-            let current = 0;
-            const increment = target / 50;
-
-            const timer = setInterval(() => {
-                current += increment;
-                if (current >= target) {
-                    clearInterval(timer);
-                    current = target;
-                }
-                counter.textContent = Math.floor(current);
-            }, 20);
-        }
-
-        onMounted(() => {
-            animateCounter();
-        });
 
         return {
             contactData,
