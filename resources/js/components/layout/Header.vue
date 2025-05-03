@@ -16,7 +16,11 @@
                     </li>
                 </ul>
             </nav>
-
+            <div class="mobile-logo" style="width: 60%">
+                <router-link to="/" class="mobile-logo" style="width: 66px;">
+                    <logo></logo>
+                </router-link>
+            </div>
             <div class="contact-item">
                 <div class="contact-phone">
                     <div class="icon-wrapper">
@@ -31,11 +35,7 @@
             </div>
 
             <!-- Десктопна версія кнопки -->
-            <div class="mobile-logo" style="width: 60%">
-                <router-link to="/" class="mobile-logo" style="width: 66px;">
-                    <logo></logo>
-                </router-link>
-            </div>
+
             <button
                 v-if="!isMobile && !isAuthenticated"
                 @click="showLoginModal = true"
