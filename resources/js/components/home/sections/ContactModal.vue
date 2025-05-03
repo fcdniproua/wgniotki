@@ -9,91 +9,6 @@
                 <form @submit.prevent="submitForm" class="contact-form">
                     <div class="form-scrollable">
                         <div class="form-group">
-                            <label for="name">Imię i nazwisko</label>
-                            <input
-                                id="name"
-                                v-model="form.name"
-                                type="text"
-                                placeholder="Jakub Blaszczykowski"
-                                required
-                                class="form-input"
-                            >
-                        </div>
-
-                        <div class="form-group">
-                            <label for="phone">Numer telefonu</label>
-                            <input
-                                @input="checkPhone"
-                                id="phone"
-                                v-model="form.phone"
-                                type="tel"
-                                required
-                                placeholder="123 456 789"
-                                class="form-input"
-                            >
-                            <span style="color:red;" class="help-text"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="phone">E-mail</label>
-                            <input
-                                id="email"
-                                v-model="form.email"
-                                type="email"
-                                placeholder="exapmle@example.com"
-                                required
-                                class="form-input"
-                            >
-                        </div>
-
-                        <div class="form-group">
-                            <div class="model-group">
-                                <div class="model">
-                                    <label for="phone">Marka</label>
-                                    <input
-                                        id="brand"
-                                        v-model="form.brand"
-                                        type="text"
-                                        placeholder="Audi"
-                                        class="form-input"
-                                    >
-                                </div>
-                                <div class="model">
-                                    <label for="phone">Model auta</label>
-                                    <input
-                                        id="brand"
-                                        v-model="form.marka"
-                                        type="text"
-                                        placeholder="Audi"
-                                        class="form-input"
-                                    >
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="phone">Rocznik</label>
-                            <input
-                                id="model"
-                                v-model="form.model"
-                                type="text"
-                                placeholder="A8"
-                                class="form-input"
-                            >
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">Opis problemu</label>
-                            <textarea
-                                id="message"
-                                v-model="form.message"
-                                rows="4"
-                                placeholder="Co się stało z samochodem?"
-                                class="form-input"
-                            ></textarea>
-                        </div>
-
-                        <div class="form-group">
                             <label>Załącz zdjęcia (max 5)</label>
                             <div class="file-upload-container">
                                 <input
@@ -130,8 +45,87 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="form-group">
+                            <div class="model-group">
+                                <div class="model">
+                                    <label for="phone">Marka, model auta</label>
+                                    <input
+                                        id="brand"
+                                        v-model="form.brand"
+                                        type="text"
+                                        placeholder="Audi A8"
+                                        class="form-input"
+                                    >
+                                </div>
+                                <div class="model">
+                                    <label for="phone">Rocznik</label>
+                                    <input
+                                        id="model"
+                                        v-model="form.model"
+                                        type="text"
+                                        placeholder="2020"
+                                        class="form-input"
+                                    >
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Numer telefonu</label>
+                            <input
+                                @input="checkPhone"
+                                id="phone"
+                                v-model="form.phone"
+                                type="tel"
+                                required
+                                placeholder="123 456 789"
+                                class="form-input"
+                            >
+                            <span style="color:red;" class="help-text"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">E-mail</label>
+                            <input
+                                id="email"
+                                v-model="form.email"
+                                type="email"
+                                placeholder="exapmle@example.com"
+                                required
+                                class="form-input"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name">Imię i nazwisko</label>
+                            <input
+                                id="name"
+                                v-model="form.name"
+                                type="text"
+                                placeholder="Jakub Blaszczykowski"
+                                required
+                                class="form-input"
+                            >
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <label for="message">Opis problemu</label>
+                            <textarea
+                                id="message"
+                                v-model="form.message"
+                                rows="4"
+                                placeholder="Co się stało z samochodem?"
+                                class="form-input"
+                            ></textarea>
+                        </div>
                     </div>
-                    <p class="section-subtitle">Wysyłając formularz, wyrażasz zgodę na przetwarzanie danych osobowych w celu kontaktu, zgodnie z RODO. Administratorem danych jest Usuwanie Wgnieceń, a Twoje dane mogą być poprawiane lub usunięte na żądanie.</p>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="rodo"  v-model="form.check">
+                        Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z <a href="/polityka-prywatnosci" target="_blank">Polityką prywatności</a> w celu obsługi mojego zapytania.
+                    </label>
                     <div class="form-actions">
                         <button type="submit" class="btn-submit">
                             Wyślij
@@ -158,6 +152,7 @@ export default {
             phone: '',
             email: '',
             brand: '',
+            check: '',
             marka: '',
             model: '',
             service: '',
@@ -193,6 +188,10 @@ export default {
 
         // Обробка відправки форми
         const submitForm = async () => {
+            if (!form.value.check) {
+                alert('Aby wysłać formularz, musisz wyrazić zgodę na przetwarzanie danych osobowych zgodnie z Polityką prywatności')
+                return
+            }
             // Валідація обов'язкових полів
             if (!form.value.service || !form.value.email || !form.value.name || !form.value.phone) {
                 alert('Wypełnij wymagane pola')
@@ -277,6 +276,9 @@ export default {
 </script>
 
 <style scoped>
+.checkbox-label {
+    padding: 0 15px;
+}
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -335,6 +337,8 @@ export default {
     display: flex;
     flex-direction: column;
     min-height: 0; /* Фікс для Firefox */
+    padding: 25px 0;
+    width: 100%;
 }
 
 .contact-form {

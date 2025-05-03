@@ -8,11 +8,11 @@
                         <h3 class="footer-heading bold">Kontakt</h3>
                         <div class="contact-item">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>{{contactData.address}}</span>
+                            <span><a href="https://www.google.com/maps?ll=51.126291,17.031129&z=16&t=m&hl=en&gl=PL&mapclient=embed&q=Kleczkowska+18b+50-227+Wroc%C5%82aw">{{contactData.address}}</a></span>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-phone"></i>
-                            <a href="tel:+48123456789">+48 {{contactData.contactPhone}}</a>
+                            <a href="tel:+48123456789">{{contactData.contactPhone}}</a>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
@@ -32,7 +32,7 @@
 
                     <!-- Колонка з соцмережами -->
                     <div class="footer-column">
-                        <h3 class="footer-heading bold">Polub nasze strony </h3>
+                        <h3 class="footer-heading bold">POLUB NAS </h3>
                         <div class="social-links">
                             <a href="https://www.instagram.com/usuwanie.wgniecen.wroclaw" class="social-icon"
                                target="_blank">
@@ -42,19 +42,16 @@
                                 <icon-facebook/>
                             </a>
                         </div>
-
-                        <!-- Прикольний додаток - лічильник відремонтованих авто -->
-                        <div class="fun-fact bold">
-                            <p>NIP - 8952254284</p>
-                            <p>REGON - 524663440</p>
-                        </div>
                     </div>
                 </div>
 
                 <div class="footer-bottom">
                     <div class="footer-legal">
                         <p class="copyright">
-                            © 2025 Usuwanie Wgnieceń. Wszystkie prawa zastrzeżone. | <router-link to="/privacy">Polityka prywatności </router-link> | Regulamin
+                            NIP - 8952254284 <br> REGON - 524663440
+                        </p>
+                        <p class="copyright">
+                            © 2025 Usuwanie Wgnieceń. Wszystkie prawa zastrzeżone. | <router-link class="default-link" to="/privacy">Polityka prywatności </router-link>
                         </p>
                     </div>
                 </div>
@@ -86,6 +83,11 @@ export default {
 </script>
 
 <style scoped>
+.default-link {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.3s;
+}
 .footer {
     background-color: #1A1A1A;
     color: #ffffff;

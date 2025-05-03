@@ -2,11 +2,11 @@
     <div class="main-page-container">
         <HeroSection @open-contact-modal="showModal()" />
         <SliderSection />
-        <WhyMeSection />
-        <CustomerReviews />
-        <MapSection :mapEmbed="contactData.mapEmbed"/>
         <TextSection @open-contact-modal="showModal()"/>
+<!--        <WhyMeSection />-->
+        <CustomerReviews />
         <FAQSection />
+        <MapSection :mapEmbed="contactData.mapEmbed"/>
         <ContactModal v-if="showContact" @close="closeModal()" />
     </div>
 </template>

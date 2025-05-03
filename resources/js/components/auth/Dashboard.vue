@@ -69,7 +69,7 @@ const logout = async () => {
 .admin-container {
     min-height: 100vh;
     background: #f5f7fa;
-    padding: 2rem;
+    padding: 7rem;
 }
 
 .admin-header {

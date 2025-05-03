@@ -1,9 +1,17 @@
 <template>
     <section class="hero-section">
         <div class="hero-container">
-            <h2 class="hero-title bold"> Usuwanie wgnieceń Wrocław</h2>
+            <div class="desktop-header">
+                <h2 class="hero-title bold"> Usuwanie wgnieceń Wrocław</h2>
+            </div>
+            <div class="mobile-header">
+                <h2 class="hero-title bold"> Usuwanie wgnieceń</h2>
+
+                <h2 class="hero-title bold">Wrocław</h2>
+            </div>
+<!--            <h2 class="hero-title bold"> Usuwanie wgnieceń Wrocław</h2>-->
             <p class="hero-description">
-                Szkody parkingowe, powypadkowe, komunikacyjne oraz uszkodzenia gradowe. Szybko i profesjonalnie!
+                Precyzyjnie usuwamy wgniecenia bez lakierowania popularną metodą PDR
             </p>
             <button class="hero-button-1" @click="$emit('open-contact-modal');">
                 Wyceń usługę
@@ -127,6 +135,15 @@
     .hero-description {
         font-size: 1.1rem;
     }
+    .desktop-header {
+        display: none;
+    }
+    .mobile-header {
+        display: block!important;
+    }
+}
+.mobile-header {
+    display: none;
 }
 </style>
 <script setup lang="ts">

@@ -1,13 +1,12 @@
 <template>
     <section class="about-us-section">
-        <div class="section-header">
-            <h2 class="bold"> <router-link class="menu-first" to="/admin/dashboard">Dashboard</router-link> -> Klienci</h2>
-            <button @click="openAddModal" class="add-client-btn">
-                <i class="fas fa-plus"></i> Dodaj klienta
-            </button>
-        </div>
-
         <div class="clients-container">
+            <div class="section-header">
+                <h2 class="bold"> <router-link class="menu-first" to="/admin/dashboard">Dashboard</router-link> -> Klienci</h2>
+                <button @click="openAddModal" class="add-client-btn">
+                    <i class="fas fa-plus"></i> Dodaj klienta
+                </button>
+            </div>
             <!-- Tabela klientów -->
             <div class="table-container">
                 <div class="table-header">
@@ -251,7 +250,7 @@ export default {
 <style scoped>
 
 .about-us-section {
-    padding: 80px 0;
+    padding: 120px 0;
     background-color: #f8fafc;
 }
 
@@ -571,7 +570,7 @@ export default {
 }
 
 .table-container {
-    width: 94%;
+    width: 100%;
     background: white;
     border-radius: 0.5rem;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);

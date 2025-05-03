@@ -1,10 +1,10 @@
 <template>
     <section class="about-us-section">
         <div class="admin-section">
+            <h2 class="bold">
+                <router-link class="menu-first" to="/admin/dashboard">Dashboard</router-link> -> Dodaj nowe zgłoszenie
+            </h2>
             <div class="add-form">
-                <h3 class="bold">
-                    <router-link class="menu-first" to="/admin/dashboard">Dashboard</router-link> -> Dodaj nowe zgłoszenie
-                </h3>
                 <div class="form-group">
                     <label for="client">Klient:</label>
                     <select v-model="newApp.client_id" id="client" class="form-control" required>
@@ -467,7 +467,7 @@ export default {
 
 <style scoped>
 .about-us-section {
-    padding: 80px 0;
+    padding: 120px 0;
     background-color: #f8fafc;
 }
 

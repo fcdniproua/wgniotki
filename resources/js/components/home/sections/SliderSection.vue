@@ -4,6 +4,7 @@
             <h3 class="services-title bold">Nasze prace</h3>
             <div class="slider-wrapper">
                 <BlockSlider />
+                <router-link to="/services" class="btn-primary">Zobacz więcej</router-link>
             </div>
         </div>
     </section>
@@ -64,6 +65,13 @@
         font-size: 2rem;
         margin-bottom: 3rem;
     }
+}
+.btn-primary {
+    border: 1px solid #1A1A1A;
+    padding: 20px;
+    border-radius: 32px;
+    cursor: pointer;
+    color: #1A1A1A;
 }
 </style>
 

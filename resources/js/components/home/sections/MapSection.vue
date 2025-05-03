@@ -19,7 +19,7 @@
                 </div>
             </div>
 
-            <h2 class="section-subtitle semibold">Polub nasze strony </h2>
+            <h2 class="section-subtitle semibold">POLUB NAS </h2>
 
             <div class="contact-grid">
                 <div class="contact-item">
