@@ -5,17 +5,27 @@ import tailwindcss from 'tailwindcss';
 import autoprefixer from 'autoprefixer';
 
 export default defineConfig({
+    base: '/build/', // базовий префікс для ресурсів у продакшн-збірці
+
+    build: {
+        manifest: true,
+        outDir: 'public/build',
+        rollupOptions: {
+            input: 'resources/js/app.js'
+        }
+    },
+
     server: {
         host: '0.0.0.0',  // Обов'язково для Docker
         port: 5173,       // Порт всередині контейнера
         strictPort: true, // Не шукати вільні порти
         cors: {
-            origin: ['http://192.168.233.200:8080','http://127.0.0.1:8080'], // або '*', але не бажано для продакшну
+            origin: ['http://192.168.233.172:8080','http://127.0.0.1:8080'], // або '*', але не бажано для продакшну
             methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
         },
         hmr: {
             // host: '127.0.0.1',
-            host: '192.168.233.200',
+            host: '192.168.233.172',
             clientPort: 5173  // Порт для Hot Module Replacement
         }
     },
