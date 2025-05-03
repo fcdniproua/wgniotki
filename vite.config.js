@@ -3,7 +3,7 @@ import vue from '@vitejs/plugin-vue'
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-    base: '/build/assets/',
+    base: 'https://usuwanie-wgniecen.pro/build/assets/',
     build: {
         manifest: 'manifest.json',
         outDir: 'public/build',
