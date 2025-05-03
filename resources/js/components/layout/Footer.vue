@@ -54,7 +54,7 @@
                 <div class="footer-bottom">
                     <div class="footer-legal">
                         <p class="copyright">
-                            © 2025 Usuwanie Wgnieceń. Wszystkie prawa zastrzeżone. | Polityka prywatności | Regulamin
+                            © 2025 Usuwanie Wgnieceń. Wszystkie prawa zastrzeżone. | <router-link to="/privacy">Polityka prywatności </router-link> | Regulamin
                         </p>
                     </div>
                 </div>
