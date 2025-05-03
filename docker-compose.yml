@@ -23,6 +23,7 @@ services:
       - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
       - ./docker/certbot/www:/var/www/certbot
       - ./docker/certbot/conf:/etc/letsencrypt
+      - ./etc/letsencrypt:/etc/letsencrypt:ro
     ports:
       - "80:80"
       - "443:443"
