@@ -4,7 +4,7 @@ import { defineConfig } from 'vite'
 
 export default defineConfig({
     build: {
-        manifest: true,
+        manifest: 'manifest.json',
         outDir: 'public/build',
         rollupOptions: {
             input: 'resources/js/app.js',
