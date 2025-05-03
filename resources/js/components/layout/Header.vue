@@ -31,7 +31,7 @@
             </div>
 
             <!-- Десктопна версія кнопки -->
-            <div style="width: 60%">
+            <div class="mobile-logo" style="width: 60%">
                 <router-link to="/" class="mobile-logo" style="width: 66px;">
                     <logo></logo>
                 </router-link>
