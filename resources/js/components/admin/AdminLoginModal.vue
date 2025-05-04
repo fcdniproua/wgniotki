@@ -81,6 +81,7 @@ export default {
                     email: email.value,
                     password: password.value
                 });
+                window.location.href = 'https://usuwanie-wgniecen.pro/admin/dashboard'
                 emit('login-success');
             } catch (err) {
                 error.value = err.response?.data?.message || 'Login failed';
