@@ -66,6 +66,10 @@
         font-size: 2rem;
         margin-bottom: 3rem;
     }
+
+    .slider-wrapper {
+        height: 850px;
+    }
 }
 .btn-primary {
     border: 1px solid #1A1A1A;
