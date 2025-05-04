@@ -255,6 +255,7 @@ export default {
             client_id: '',
             service: 1,
             brand: '',
+            model: '',
             message: '',
             status: 'new',
             photos: []
