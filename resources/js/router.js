@@ -11,6 +11,7 @@ import SettingsComponent from "./components/admin/SettingsComponent.vue";
 import ClientComponent from "./components/admin/ClientComponent.vue";
 import ContactPage from "./components/pages/ContactPage.vue";
 import PrivacyPolicyPage from "./components/pages/PrivacyPolicyPage.vue";
+import { nextTick } from 'vue'
 
 const routes = [
     { path: '/', name: 'Home', component: HomePage },
@@ -65,14 +66,47 @@ const router = createRouter({
     // }
 })
 
-router.afterEach(() => {
+router.afterEach((to) => {
     setTimeout(() => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth' // Плавна анімація
-        });
+        if (to.hash) {
+            waitForElement(to.hash, 5000) // до 5 сек.
+                .then((el) => {
+                    el.scrollIntoView({ behavior: 'smooth' })
+                })
+                .catch(() => {
+                    console.warn(`Element ${to.hash} not found after waiting`)
+                })
+        }
+        if (!to.hash) {
+            setTimeout(() => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }, 100);
+        }
     }, 100); // Невелика затримка для стабільності
 });
+
+function waitForElement(selector, timeout = 3000) {
+    return new Promise((resolve, reject) => {
+        const interval = 100
+        const maxTries = timeout / interval
+        let tries = 0
+
+        const timer = setInterval(() => {
+            const el = document.querySelector(selector)
+            if (el) {
+                clearInterval(timer)
+                resolve(el)
+            } else if (++tries > maxTries) {
+                clearInterval(timer)
+                reject()
+            }
+        }, interval)
+    })
+}
+
 
 router.beforeEach(async (to, from, next) => {
     const requiresAuth = to.matched.some(record => record.meta.requiresAuth)

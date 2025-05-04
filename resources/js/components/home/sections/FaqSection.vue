@@ -1,8 +1,7 @@
 <template>
-    <section class="faq-section">
+    <section class="faq-section" id="faq">
         <div class="container">
-            <h2 class="section-title">Najczęściej zadawane pytania – FAQ</h2>
-
+            <h2 class="section-title" >Najczęściej zadawane pytania – FAQ</h2>
             <div
                 class="faq-item"
                 v-for="(item, index) in faqItems"

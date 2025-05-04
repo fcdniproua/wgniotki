@@ -54,23 +54,65 @@
 
                     </p>
                 </div>
+                <button class="btn-primary" @click="showModal()">
+                    Wyceń usługę
+                </button>
+                <router-link :to="{path: '/', hash: '#faq'}" class="btn-primary">F.A.Q.</router-link>
             </div>
         </div>
     </section>
+    <ContactModal v-if="showContact" @close="closeModal()" />
 </template>
 
 <script>
+import ContactModal from "../home/sections/ContactModal.vue";
+import {inject, ref} from "vue";
+
 export default {
     name: 'AboutPage',
-    data() {
-        return {
-            // Można dodać dane dynamiczne jeśli potrzeba
+    components: {ContactModal},
+    setup() {
+        const showContact = ref(false);
+        const showModal = () => {
+            showContact.value = true;
         }
+        const closeModal = () => {
+            showContact.value = false;
+        }
+        return {
+            showContact,
+            showModal,
+            closeModal
+        };
     }
 }
 </script>
 
 <style scoped>
+
+.btn-primary {
+    text-align: center;
+    border: 1px solid #1A1A1A;
+    padding: 20px;
+    border-radius: 32px;
+    cursor: pointer;
+    color: #1A1A1A;
+    position:relative;
+    top: 60px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    border: 1px solid #1A1A1A;
+    background-color: #1A1A1A;
+    color: #fff;
+    padding: 20px;
+    border-radius: 32px;
+    cursor: pointer;
+    position:relative;
+    top: 60px;
+}
+
 .about-us-section {
     padding: 120px 0;
     background-color: #f8fafc;

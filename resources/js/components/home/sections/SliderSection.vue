@@ -49,6 +49,7 @@
     width: 100%;
     margin: 0 auto;
     padding: 2rem 0;
+    height: 600px;
 }
 
 /* Адаптація для мобільних пристроїв */
@@ -72,6 +73,20 @@
     border-radius: 32px;
     cursor: pointer;
     color: #1A1A1A;
+    position:relative;
+    top: 60px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    border: 1px solid #1A1A1A;
+    background-color: #1A1A1A;
+    color: #fff;
+    padding: 20px;
+    border-radius: 32px;
+    cursor: pointer;
+    position:relative;
+    top: 60px;
 }
 </style>
 
