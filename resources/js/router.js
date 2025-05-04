@@ -71,7 +71,7 @@ router.afterEach((to) => {
         if (to.hash) {
             waitForElement(to.hash, 5000) // до 5 сек.
                 .then((el) => {
-                    el.scrollIntoView({ behavior: 'smooth' })
+                    scrollToHashWithOffset(to.hash, -1000)
                 })
                 .catch(() => {
                     console.warn(`Element ${to.hash} not found after waiting`)
@@ -87,6 +87,15 @@ router.afterEach((to) => {
         }
     }, 100); // Невелика затримка для стабільності
 });
+
+function scrollToHashWithOffset(hash, offset = 100) {
+    const el = document.querySelector(hash)
+    if (!el) return
+
+    const y = el.getBoundingClientRect().top + window.pageYOffset - offset
+
+    window.scrollTo({ top: y, behavior: 'smooth' })
+}
 
 function waitForElement(selector, timeout = 3000) {
     return new Promise((resolve, reject) => {
