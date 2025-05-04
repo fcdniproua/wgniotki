@@ -15,8 +15,12 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="service">Usługa:</label>
-                    <input v-model="newApp.service" id="service" class="form-control" required>
+                    <label for="service">Marka. model:</label>
+                    <input v-model="newApp.brand" id="service" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="service">Rocznik:</label>
+                    <input v-model="newApp.model" id="service" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label for="message">Wiadomość:</label>
@@ -24,7 +28,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Zdjęcia uszkodzeń (maks. 3):</label>
+                    <label>Zdjęcia uszkodzeń (maks. 5):</label>
                     <div class="photos-upload">
                         <div v-for="(photo, index) in photoUploads" :key="index" class="photo-upload-item">
                             <div v-if="photo.preview" class="photo-preview">
@@ -68,7 +72,8 @@
                     <tr>
                         <th>ID</th>
                         <th>Imię i nazwisko</th>
-                        <th>Usługa</th>
+                        <th>Marka</th>
+                        <th>Rocznik</th>
                         <th>Data</th>
                         <th>Status</th>
                         <th>Zdjęcia</th>
@@ -79,7 +84,8 @@
                     <tr v-for="app in filteredApplications" :key="app.id">
                         <td data-label="ID">{{ app.id }}</td>
                         <td data-label="Imię i nazwisko">{{ app.client ? app.client.name : 'N/A' }}</td>
-                        <td data-label="Usługa">{{ app.service }}</td>
+                        <td data-label="Marka">{{ app.brand ? app.brand : 'N/A' }}</td>
+                        <td data-label="Marka">{{ app.model ? app.model : 'N/A' }}</td>
                         <td data-label="Data">{{ formatDate(app.created_at) }}</td>
                         <td data-label="Status">
                             <select v-model="app.status" @change="updateStatus(app)" class="status-select">
@@ -240,12 +246,15 @@ export default {
         const photoUploads = ref([
             { file: null, preview: null },
             { file: null, preview: null },
+            { file: null, preview: null },
+            { file: null, preview: null },
             { file: null, preview: null }
         ]);
 
         const newApp = ref({
             client_id: '',
-            service: '',
+            service: 1,
+            brand: '',
             message: '',
             status: 'new',
             photos: []
@@ -346,7 +355,9 @@ export default {
             try {
                 const formData = new FormData();
                 formData.append('client_id', newApp.value.client_id);
-                formData.append('service', newApp.value.service);
+                formData.append('service', 1);
+                formData.append('brand', newApp.value.brand);
+                formData.append('model', newApp.value.model);
                 formData.append('message', newApp.value.message);
                 formData.append('status', newApp.value.status);
 
@@ -374,7 +385,7 @@ export default {
         const resetForm = () => {
             newApp.value = {
                 client_id: '',
-                service: '',
+                service: 1,
                 message: '',
                 status: 'new'
             };

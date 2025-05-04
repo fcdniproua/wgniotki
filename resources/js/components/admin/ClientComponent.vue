@@ -62,10 +62,6 @@
         <div v-if="showClientModal" class="modal-overlay" @click.self="closeModal">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <button class="modal-close-btn" @click="closeModal">
-                        <i class="fas fa-times"></i>
-                    </button>
-
                     <h3 class="bold">{{ editMode ? 'Edytuj klienta' : 'Dodaj nowego klienta' }}</h3>
 
                     <div class="form-grid">
@@ -269,7 +265,7 @@ export default {
 }
 
 .add-client-btn {
-    background-color: #3182ce;
+    background-color: #1A1A1A;
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 0.375rem;
@@ -284,7 +280,7 @@ export default {
 }
 
 .add-client-btn:hover {
-    background-color: #2c5282;
+    background-color: #1A1A1A;
 }
 
 .table-container {
@@ -407,25 +403,6 @@ export default {
     color: #718096;
 }
 
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-    backdrop-filter: blur(2px);
-}
-
-.modal-dialog {
-    width: 100%;
-    max-width: 500px;
-    animation: modalFadeIn 0.3s ease-out;
-}
 
 @keyframes modalFadeIn {
     from {
@@ -436,37 +413,6 @@ export default {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-.modal-content {
-    background: white;
-    border-radius: 0.5rem;
-    padding: 2rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-    position: relative;
-}
-
-.modal-close-btn {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: none;
-    border: none;
-    font-size: 1.25rem;
-    color: #718096;
-    cursor: pointer;
-    transition: color 0.2s;
-}
-
-.modal-close-btn:hover {
-    color: #e53e3e;
-}
-
-.modal-content h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-    color: #2d3748;
-    text-align: center;
 }
 
 .form-grid {
@@ -524,13 +470,6 @@ export default {
     font-size: 1rem;
 }
 
-.modal-actions {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 1.5rem;
-}
-
 .btn {
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
@@ -543,12 +482,12 @@ export default {
 }
 
 .submit-btn {
-    background-color: #3182ce;
+    background-color: #1A1A1A;
     color: white;
 }
 
 .submit-btn:hover {
-    background-color: #2c5282;
+    background-color: #1A1A1A;
 }
 
 .cancel-btn {
@@ -561,12 +500,12 @@ export default {
 }
 
 .confirm-btn {
-    background-color: #e53e3e;
+    background-color: #1A1A1A;
     color: white;
 }
 
 .confirm-btn:hover {
-    background-color: #c53030;
+    background-color: #1A1A1A;
 }
 
 .table-container {
@@ -669,9 +608,5 @@ export default {
         width: auto;
     }
 
-    .modal-content {
-        width: 95%;
-        padding: 15px;
-    }
 }
 </style>

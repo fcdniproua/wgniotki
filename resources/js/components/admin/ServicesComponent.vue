@@ -37,9 +37,6 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h3 class="bold">{{editingId ? 'Edytuj usługę' : 'Nowa usługa'}}</h3>
-                        <button @click="closeModal" class="modal-close">
-                            <i class="fas fa-times"></i>
-                        </button>
                     </div>
 
                     <div class="modal-body">
@@ -54,7 +51,7 @@
                         </div>
                     </div>
 
-                    <div class="modal-footer">
+                    <div class="modal-actions">
                         <button @click="closeModal" class="btn-secondary">Anuluj</button>
                         <button v-if="formData.id === null" @click="createService" class="btn-main">Zapisz</button>
                         <button v-else @click="updateService" class="btn-main">Zapisz</button>
@@ -206,7 +203,7 @@ export default {
 }
 
 .btn-main {
-    background: #3b82f6;
+    background: #1A1A1A;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -220,7 +217,7 @@ export default {
 }
 
 .btn-main:hover {
-    background: #2563eb;
+    background: #1A1A1A;
 }
 
 .card-grid {
@@ -308,55 +305,6 @@ export default {
     background: #fee2e2;
 }
 
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    padding: 20px;
-}
-
-.modal-content {
-    background: white;
-    border-radius: 10px;
-    width: 100%;
-    max-width: 500px;
-    max-height: 90vh;
-    overflow-y: auto;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
-.modal-header {
-    padding: 20px;
-    border-bottom: 1px solid #f1f5f9;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.modal-header h3 {
-    margin: 0;
-    font-size: 20px;
-}
-
-.modal-close {
-    background: none;
-    border: none;
-    color: #94a3b8;
-    font-size: 20px;
-    cursor: pointer;
-}
-
-.modal-body {
-    padding: 20px;
-}
-
 .form-group {
     margin-bottom: 20px;
 }
@@ -385,14 +333,6 @@ export default {
 
 textarea.form-input {
     min-height: 100px;
-}
-
-.modal-footer {
-    padding: 20px;
-    border-top: 1px solid #f1f5f9;
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
 }
 
 .btn-secondary {
@@ -437,9 +377,5 @@ textarea.form-input {
         border-top: 1px solid #f0f4f8;
     }
 
-    .modal-content {
-        width: 95%;
-        padding: 15px;
-    }
 }
 </style>
