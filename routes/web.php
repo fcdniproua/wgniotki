@@ -8,6 +8,7 @@ use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\ReviewsController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Middleware\AuthenticateAdmin;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\URL;
 
@@ -55,6 +56,15 @@ Route::prefix('admin')->group(function () {
         Route::post('/logout', [AuthController::class, 'logout']);
         Route::get('/user', [AuthController::class, 'getUser']);
     });
+});
+
+// routes/web.php
+Route::get('/test-mail', function () {
+    $data = ['message' => 'Це тестовий email від Laravel з Zoho Mail'];
+
+    Mail::to('fcdnipro268@gmail.com')->send(new \App\Mail\TestMail($data));
+
+    return 'Тестовий лист надіслано!';
 });
 
 Route::get('/{any}', function () {
