@@ -73,7 +73,7 @@
     line-height: 1.2;
     text-shadow: 0 2px 4px rgba(0,0,0,0.1);
     animation: fadeInUp 0.8s ease-out;
-    color: #FF6700;
+    color: #DAA520;
 }
 
 .hero-description {
@@ -89,8 +89,8 @@
 .hero-button-1 {
     display: inline-block;
     background-color: transparent;
-    color: #FF6700; /* світліший жовтий */
-    border: 2px solid #FF6700;
+    color: #DAA520; /* світліший жовтий */
+    border: 2px solid #DAA520;
     font-weight: 700;
     font-size: 16px;
     padding: 12px 28px;
@@ -101,7 +101,7 @@
 }
 
 .hero-button-1:hover {
-    background-color: #FF6700;
+    background-color: #DAA520;
     color: #1a1a1a;
 }
 

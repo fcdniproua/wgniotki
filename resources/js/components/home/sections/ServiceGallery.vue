@@ -16,7 +16,7 @@
 
 <style scoped>
 .services-section {
-    background-color: #f8fafc;
+    background-color: #F5F1EB;
     padding: 4rem 0;
     position: relative;
     flex: 1; /* Займає доступний простір */
@@ -35,7 +35,7 @@
 .services-title {
     font-size: 2rem;
     font-weight: 700;
-    color: #1e293b;
+    color: #DAA520;
     text-align: center;
     margin-bottom: 3rem;
     position: relative;
@@ -51,7 +51,7 @@
     left: 0;
     width: 100%;
     height: 3px;
-    background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+    background: linear-gradient(90deg, #DAA520, #DAA520);
     border-radius: 3px;
 }
 

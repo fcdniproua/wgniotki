@@ -4,7 +4,7 @@
             <h2 class="about-title bold">O nas – Usuwanie wgnieceń metodą PDR we Wrocławiu</h2>
 
             <div class="about-content">
-                <p>Jesteśmy ekspertami w <b class="b-text">usuwaniu wgniotek metodą PDR </b>(Paintless Dent Repair). Działamy we Wrocławiu i okolicach, oferując szybkie i profesjonalne naprawy uszkodzeń karoserii bez konieczności jej lakierowania. Nasze usługi obejmują usuwanie wgnieceń po <b class="b-text">szkodach parkingowych</b>, <b class="b-text">uszkodzeń po wypadkach</b> oraz <b class="b-text">po gradobiciu</b></p>
+                <p>Jesteśmy ekspertami w <b class="b-text">usuwaniu wgniotek metodą PDR </b>(Paintless Dent Repair). Działamy we Wrocławiu, oferując szybkie i profesjonalne naprawy uszkodzeń karoserii bez konieczności jej lakierowania. Nasze usługi obejmują usuwanie wgnieceń po <b class="b-text">szkodach parkingowych</b>, <b class="b-text">uszkodzeń po wypadkach</b> oraz <b class="b-text">po gradobiciu</b></p>
                 <div>Naprawiamy wgniecenia na każdym elemencie karoserii:
                     <ul class="car-list">
                         <li>Drzwiach</li>
@@ -29,7 +29,7 @@
                 <p>
                     Mamy tysięcy zadowolonych klientów, którzy chwalą nas za skuteczność, szybkość i bezproblemowy proces naprawy.
                     Szukasz specjalistów, <b class="b-text">którzy naprawią wgniotki w pobliżu Ciebie?</b> Zaufaj profesjonalistom, którzy naprawdę kochają to, co robią.
-                    <b class="b-text" @click="$emit('open-contact-modal')" style="cursor: pointer; color: #FF6700">Skontaktuj się z nami i umów wizytę jeszcze dziś!</b>
+                    <b class="b-text" @click="$emit('open-contact-modal')" style="cursor: pointer; color: #DAA520">Skontaktuj się z nami i umów wizytę jeszcze dziś!</b>
                 </p>
                 </div>
             </div>
@@ -55,7 +55,7 @@
 .about-title {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #1e293b;
+    color: #DAA520;
     text-align: center;
     margin-bottom: 2rem;
     position: relative;
@@ -73,7 +73,7 @@
     transform: translateX(-50%);
     width: 80px;
     height: 3px;
-    background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+    background: linear-gradient(90deg, #DAA520, #DAA520);
 }
 
 .about-content {

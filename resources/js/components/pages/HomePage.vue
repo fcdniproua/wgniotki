@@ -6,7 +6,7 @@
 <!--        <WhyMeSection />-->
         <CustomerReviews />
         <FAQSection />
-        <MapSection :mapEmbed="contactData.mapEmbed"/>
+        <MapSection :contactData="contactData"/>
         <ContactModal v-if="showContact" @close="closeModal()" />
     </div>
 </template>

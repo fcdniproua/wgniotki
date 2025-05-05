@@ -178,7 +178,7 @@ export default {
 <style scoped>
 .about-us-section {
     padding: 120px 0;
-    background-color: #f8fafc;
+    background-color: #F5F1EB;
 }
 
 .admin-container {
@@ -283,7 +283,7 @@ export default {
     height: 36px;
     border-radius: 50%;
     border: none;
-    background: #f8fafc;
+    background: #F5F1EB;
     color: #64748b;
     cursor: pointer;
     display: flex;

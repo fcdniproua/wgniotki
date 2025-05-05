@@ -1,7 +1,7 @@
 <template>
     <section class="faq-section" id="faq">
         <div class="container">
-            <h2 class="section-title" >Najczęściej zadawane pytania – FAQ</h2>
+            <h2 class="section-title bold" >Najczęściej zadawane pytania – FAQ</h2>
             <div
                 class="faq-item"
                 v-for="(item, index) in faqItems"
@@ -138,7 +138,7 @@ export default {
     text-align: center;
     margin-bottom: 40px;
     font-size: 32px;
-    color: #333;
+    color: #DAA520;
 }
 
 .faq-item {

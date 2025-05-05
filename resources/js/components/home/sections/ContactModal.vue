@@ -117,7 +117,7 @@
                                 id="message"
                                 v-model="form.message"
                                 rows="4"
-                                placeholder="Co się stało z samochodem?"
+                                placeholder="Coś chcesz dodać?"
                                 class="form-input"
                             ></textarea>
                         </div>
@@ -394,7 +394,7 @@ export default {
 }
 
 .form-input:hover {
-    border-color: #FF6700;
+    border-color: #DAA520;
 }
 
 textarea.form-input {
@@ -428,7 +428,7 @@ select.form-input {
 }
 
 .upload-btn:hover {
-    background-color: #FF6700;
+    background-color: #DAA520;
 }
 
 .upload-btn:disabled {
@@ -498,7 +498,7 @@ select.form-input {
 
 .remove-file:hover {
     color: white;
-    background-color: #FF6700;
+    background-color: #DAA520;
 }
 
 .file-counter {
@@ -510,7 +510,7 @@ select.form-input {
 }
 
 .file-counter.warning {
-    color: #FF6700;
+    color: #DAA520;
     font-weight: 500;
 }
 
@@ -524,13 +524,13 @@ select.form-input {
 }
 
 .btn-submit {
-    background-color: #FF6700;
+    background-color: #DAA520;
     color: white;
     border: none;
 }
 
 .btn-submit:hover {
-    background-color: #d35400;
+    background-color: #DAA520;
 }
 
 .btn-cancel {

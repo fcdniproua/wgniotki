@@ -297,7 +297,7 @@ export default {
 }
 
 .menu-first:hover, .menu-next:hover {
-    color: #FF6700;
+    color: #DAA520;
 }
 
 /* Мобільне меню */
@@ -354,7 +354,7 @@ export default {
 }
 
 .mobile-menu .menu-first:hover, .mobile-menu .menu-next:hover {
-    color: #FF6700;
+    color: #DAA520;
 }
 
 /* Анімації */
@@ -410,7 +410,7 @@ export default {
     display: inline-block;
     padding: 15px 30px;
     margin: 40px 0;
-    color: #FF6700;
+    color: #DAA520;
     text-decoration: none;
     text-transform: uppercase;
     transition: 0.5s;
@@ -420,10 +420,10 @@ export default {
     cursor: pointer;
 }
 .button-40:hover {
-    background: #FF6700;
+    background: #DAA520;
     color: #050801;
-    box-shadow: 0 0 5px #FF6700, 0 0 25px #FF6700, 0 0 50px #FF6700,
-    0 0 200px #FF6700;
+    box-shadow: 0 0 5px #DAA520, 0 0 25px #DAA520, 0 0 50px #DAA520,
+    0 0 200px #DAA520;
     -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
 }
 .button-40:nth-child(1) {
@@ -441,7 +441,7 @@ export default {
     left: 0;
     width: 100%;
     height: 2px;
-    background: linear-gradient(90deg, transparent, #FF6700);
+    background: linear-gradient(90deg, transparent, #DAA520);
     animation: animate1 2s linear infinite;
 }
 @keyframes animate1 {
@@ -458,7 +458,7 @@ export default {
     right: 0;
     width: 2px;
     height: 100%;
-    background: linear-gradient(180deg, transparent, #FF6700);
+    background: linear-gradient(180deg, transparent, #DAA520);
     animation: animate2 2s linear infinite;
     animation-delay: 0.5s;
 }
@@ -476,7 +476,7 @@ export default {
     right: 0;
     width: 100%;
     height: 2px;
-    background: linear-gradient(270deg, transparent, #FF6700);
+    background: linear-gradient(270deg, transparent, #DAA520);
     animation: animate3 2s linear infinite;
     animation-delay: 1s;
 }
@@ -495,7 +495,7 @@ export default {
     left: 0;
     width: 2px;
     height: 100%;
-    background: linear-gradient(360deg, transparent, #FF6700);
+    background: linear-gradient(360deg, transparent, #DAA520);
     animation: animate4 2s linear infinite;
     animation-delay: 1.5s;
 }
@@ -558,8 +558,8 @@ export default {
 .hero-button-1 {
     display: inline-block;
     background-color: transparent;
-    color: #FF6700; /* світліший жовтий */
-    border: 2px solid #FF6700;
+    color: #DAA520; /* світліший жовтий */
+    border: 2px solid #DAA520;
     font-weight: 700;
     font-size: 16px;
     padding: 12px 28px;
@@ -570,7 +570,7 @@ export default {
 }
 
 .hero-button-1:hover {
-    background-color: #FF6700;
+    background-color: #DAA520;
     color: #1a1a1a;
 }
 

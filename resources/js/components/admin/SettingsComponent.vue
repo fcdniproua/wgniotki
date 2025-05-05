@@ -173,7 +173,7 @@ export default {
 <style scoped>
 .about-us-section {
     padding: 120px 0;
-    background-color: #f8fafc;
+    background-color: #F5F1EB;
 }
 
 .settings-tabs {

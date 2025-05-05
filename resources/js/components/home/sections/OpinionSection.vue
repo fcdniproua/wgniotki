@@ -229,7 +229,7 @@ export default {
 <style scoped>
 .reviews-section {
     padding: 5rem 0;
-    background-color: #fff;
+    background-color: #F5F1EB;
     width: 100vw;
 }
 
@@ -242,7 +242,7 @@ export default {
 .section-title {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #1e293b;
+    color: #DAA520;
     text-align: center;
     margin-bottom: 1rem;
 }

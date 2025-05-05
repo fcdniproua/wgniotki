@@ -247,7 +247,7 @@ export default {
 
 .about-us-section {
     padding: 120px 0;
-    background-color: #f8fafc;
+    background-color: #F5F1EB;
 }
 
 .section-header {
@@ -356,7 +356,7 @@ export default {
 }
 
 .data-table tr:hover {
-    background-color: #f8fafc;
+    background-color: #F5F1EB;
 }
 
 .actions {
@@ -542,7 +542,7 @@ export default {
     font-weight: 600;
 }
 .data-table tr:hover {
-    background-color: #f8fafc;
+    background-color: #F5F1EB;
 }
 
 /* Колонки з фіксованими ширинами */

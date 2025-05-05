@@ -54,7 +54,7 @@ const logout = async () => {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background: #f8fafc;
+    background: #F5F1EB;
 }
 
 .admin-main {

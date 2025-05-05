@@ -9,7 +9,7 @@
                 </div>
 
                 <div class="about-text">
-                    <h3 class="subtitle bold">Specjalizujemy się w <strong>usuwaniu wgnieceń metodą PDR</strong> we Wrocławiu i okolicach.</h3>
+                    <h3 class="subtitle bold">Specjalizujemy się w <strong>usuwaniu wgnieceń metodą PDR</strong> we Wrocławiu.</h3>
 
                     <p class="description semibold">
                         Działamy szybko, precyzyjnie i bezpiecznie – bez szpachlowania, bez lakierowania.</p>
@@ -54,10 +54,10 @@
 
                     </p>
                 </div>
-                <button class="btn-primary" @click="showModal()">
+                <button class="btn-primary bold" @click="showModal()">
                     Wyceń usługę
                 </button>
-                <router-link :to="{path: '/', hash: '#faq'}" class="btn-primary">F.A.Q.</router-link>
+                <router-link :to="{path: '/', hash: '#faq'}" class="btn-primary bold">F.A.Q.</router-link>
             </div>
         </div>
     </section>
@@ -100,6 +100,7 @@ export default {
     position:relative;
     top: 60px;
     transition: all 0.3s ease;
+    font-size: 25px;
 }
 
 .btn-primary:hover {

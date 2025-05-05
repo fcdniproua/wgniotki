@@ -32,15 +32,17 @@
 
                     <!-- Колонка з соцмережами -->
                     <div class="footer-column">
-                        <h3 class="footer-heading bold">POLUB NAS </h3>
+                        <h3 class="footer-heading bold">Polub nas</h3>
                         <div class="social-links">
                             <a href="https://www.instagram.com/usuwanie.wgniecen.wroclaw" class="social-icon"
                                target="_blank">
                                 <icon-instagram/>
                             </a>
+                            <a href="https://wa.me/48510631616" class="social-icon" target="_blank"><icon-whatsapp /></a>
                             <a href="https://m.facebook.com/108648248244581" class="social-icon" target="_blank">
                                 <icon-facebook/>
                             </a>
+
                         </div>
                     </div>
                 </div>
@@ -128,7 +130,7 @@ export default {
 .footer-heading {
     font-size: 1.3rem;
     margin-bottom: 1rem;
-    color: #FF6700;
+    color: #DAA520;
     position: relative;
     padding-bottom: 10px;
 }
@@ -140,7 +142,7 @@ export default {
     left: 0;
     width: 50px;
     height: 2px;
-    background: #FF6700;
+    background: #DAA520;
 }
 
 .contact-item, .hours-item {
@@ -151,7 +153,7 @@ export default {
 }
 
 .contact-item i, .hours-item i {
-    color: #FF6700;
+    color: #DAA520;
     width: 20px;
     text-align: center;
 }
@@ -163,7 +165,7 @@ export default {
 }
 
 .contact-item a:hover {
-    color: #FF6700;
+    color: #DAA520;
 }
 
 .day {
@@ -191,7 +193,7 @@ export default {
 }
 
 .social-icon:hover {
-    background: #FF6700;
+    background: #DAA520;
     transform: translateY(-3px);
 }
 
@@ -206,7 +208,7 @@ export default {
 .counter {
     font-size: 1.8rem;
     font-weight: 700;
-    color: #FF6700;
+    color: #DAA520;
     margin-bottom: 0.5rem;
 }
 

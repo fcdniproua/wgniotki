@@ -1,7 +1,7 @@
 <template>
     <section class="about-us-section">
         <h2 class="section-title bold">KONTAKT</h2>
-        <MapSection :mapEmbed="contactData.mapEmbed" :hideTitle="true"/>
+        <MapSection :contactData="contactData" :hideTitle="true"/>
     </section>
 </template>
 

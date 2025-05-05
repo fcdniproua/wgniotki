@@ -1,7 +1,8 @@
 <template>
     <section class="services-section">
         <div class="services-container">
-            <h3 class="services-title bold">Nasze prace</h3>
+            <br>
+            <h3 class="services-title bold">REALIZACJE</h3>
             <div class="slider-wrapper">
                 <BlockSlider />
                 <router-link to="/services" class="btn-primary">Zobacz więcej</router-link>
@@ -12,7 +13,7 @@
 
 <style scoped>
 .services-section {
-    background-color: #f8fafc;
+    background-color: #F5F1EB;
     padding: 0; /* Збільшив відступи */
     width: 100vw;
     text-align: center;
@@ -27,7 +28,7 @@
 .services-title {
     font-size: 2.5rem; /* Збільшив розмір шрифту */
     font-weight: 700;
-    color: #1e293b;
+    color: #DAA520;
     text-align: center;
     margin-bottom: 4rem; /* Збільшив відступ знизу */
     position: relative;
@@ -41,7 +42,7 @@
     left: 0;
     width: 100%;
     height: 4px; /* Збільшив товщину лінії */
-    background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+    background: linear-gradient(90deg, #DAA520, #DAA520);
     border-radius: 4px;
 }
 

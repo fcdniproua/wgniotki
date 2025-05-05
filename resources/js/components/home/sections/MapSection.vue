@@ -1,5 +1,5 @@
 <template>
-    <section class="map-section">
+    <section class="map-section" :style="!hideTitle ? 'background-color: #F5F1EB' : ''">
         <div class="map-container">
             <h2 class="section-title bold" v-if="!hideTitle">Kontakt</h2>
 
@@ -8,14 +8,14 @@
                     <div class="icon-wrapper">
                         <a href="https://www.google.com/maps?ll=51.126291,17.031129&z=16&t=m&hl=en&gl=PL&mapclient=embed&q=Kleczkowska+18b+50-227+Wroc%C5%82aw" target="_blank"><icon-map-pin class="contact-icon" /></a>
                     </div>
-                    <a href="https://www.google.com/maps?ll=51.126291,17.031129&z=16&t=m&hl=en&gl=PL&mapclient=embed&q=Kleczkowska+18b+50-227+Wroc%C5%82aw" target="_blank"> <p class="contact-text">ul. Kleczkowska 18B, 50-227 Wrocław, Poland</p></a>
+                    <a href="https://www.google.com/maps?ll=51.126291,17.031129&z=16&t=m&hl=en&gl=PL&mapclient=embed&q=Kleczkowska+18b+50-227+Wroc%C5%82aw" target="_blank"> <p class="contact-text">{{contactData.address}}</p></a>
                 </div>
 
                 <div class="contact-item">
                     <div class="icon-wrapper">
                         <IconPhoneCall class="contact-icon" />
                     </div>
-                    <p class="contact-text"><a  class="contact-text" href="tel:48510631616">510 631 616</a></p>
+                    <p class="contact-text"><a  class="contact-text" href="tel:48510631616">{{contactData.contactPhone}}</a></p>
                 </div>
             </div>
 
@@ -32,7 +32,7 @@
             </div>
 
 
-            <div class="map-wrapper" v-html="mapEmbed"></div>
+            <div class="map-wrapper" v-html="contactData.mapEmbed"></div>
         </div>
     </section>
 </template>
@@ -97,7 +97,7 @@
 .contact-icon {
     width: 24px;
     height: 24px;
-    color: #FF6700;
+    color: #DAA520;
 }
 
 .contact-text {
@@ -286,10 +286,14 @@ export default {
         IconMail,
     },
     props: {
-        mapEmbed: {
-            type: String,
+        contactData: {
+            type: Object,
             required: true,
-            default: ''
+            default: {
+                mapEmbed: '',
+                contactPhone: '',
+                contactEmail: '',
+            }
         },
         hideTitle: {
             type: Boolean,

@@ -2,8 +2,8 @@
     <div class="services-page">
         <section class="about-us-section">
             <div class="container">
-                <h2 class="section-title bold">Usuwanie wgnieceń</h2>
-                <p class="hero-description">Profesjonalne usuwanie wgnieceń bez lakierowania (PDR) dla wszystkich typów pojazdów</p>
+                <h2 class="section-title bold">REALIZACJE</h2>
+                <p class="hero-description">Zobacz rzeczywiste efekty naszej pracy w różnych przypadkach uszkodzeń.</p>
                 <div v-if="loading" class="loading-indicator">
                     Ładowanie danych...
                 </div>
@@ -441,8 +441,8 @@ export default {
 
 .category-toggle.pressed {
     background: #e2e8f0;
-    color: #FF6700;
-    border-color: #FF6700;
+    color: #DAA520;
+    border-color: #DAA520;
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
     transform: translateY(2px);
 }
@@ -583,7 +583,7 @@ export default {
     line-height: 1.6;
     opacity: 0.9;
     animation: fadeInUp 0.8s ease-out 0.2s forwards;
-
+    text-align: center;
 }
 
 
