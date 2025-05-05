@@ -555,7 +555,7 @@ export default {
 .section-title {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #1e293b;
+    color: #DAA520;
     text-align: center;
     margin-bottom: 50px;
     position: relative;
@@ -572,7 +572,7 @@ export default {
     transform: translateX(-50%);
     width: 100px;
     height: 3px;
-    background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+    background: linear-gradient(90deg, #DAA520, #DAA520);
 }
 
 .hero-description {

@@ -134,13 +134,28 @@ export default {
     padding: 0 20px;
 }
 
+
 .section-title {
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 32px;
+    font-size: 2.5rem;
+    font-weight: 700;
     color: #DAA520;
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
 }
 
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, #DAA520, #DAA520);
+}
 .faq-item {
     margin-bottom: 15px;
     border: 1px solid #e0e0e0;
