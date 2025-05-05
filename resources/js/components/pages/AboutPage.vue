@@ -14,29 +14,6 @@
                     <p class="description semibold">
                         Działamy szybko, precyzyjnie i bezpiecznie – bez szpachlowania, bez lakierowania.</p>
 
-<!--                    <ul class="features-list">-->
-<!--                        <li class="feature-item">-->
-<!--                            <span class="check-icon">✓</span>-->
-<!--                            <span>Bezinwazyjna metoda PDR (Paintless Dent Repair)</span>-->
-<!--                        </li>-->
-<!--                        <li class="feature-item">-->
-<!--                            <span class="check-icon">✓</span>-->
-<!--                            <span>Usuwanie wgnieceń po gradobiciach i kolizjach</span>-->
-<!--                        </li>-->
-<!--                        <li class="feature-item">-->
-<!--                            <span class="check-icon">✓</span>-->
-<!--                            <span>Naprawy bez konieczności lakierowania</span>-->
-<!--                        </li>-->
-<!--                        <li class="feature-item">-->
-<!--                            <span class="check-icon">✓</span>-->
-<!--                            <span>Profesjonalny sprzęt najwyższej jakości</span>-->
-<!--                        </li>-->
-<!--                        <li class="feature-item">-->
-<!--                            <span class="check-icon">✓</span>-->
-<!--                            <span>Gwarancja na wykonane usługi</span>-->
-<!--                        </li>-->
-<!--                    </ul>-->
-
                     <p class="closing-text">
                         Naprawiamy <strong>wszystkie typy samochodów</strong>: miejskie, luksusowe, SUV-y i inne, youngtimery, klasyki i auta firmowe – niezależnie od marki, modelu czy kraju rejestracji.
                         <br>
@@ -54,6 +31,8 @@
 
                     </p>
                 </div>
+            </div>
+            <div class="btn-block">
                 <button class="btn-primary bold" @click="showModal()">
                     Wyceń usługę
                 </button>
@@ -225,7 +204,25 @@ export default {
     }
 }
 
+.btn-block {
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 50px;
+    margin-bottom: 25px;
+}
+
 @media (max-width: 576px) {
+    .btn-block {
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 50px;
+        margin-bottom: 25px;
+    }
     .about-us-section {
         padding: 50px 0;
     }
