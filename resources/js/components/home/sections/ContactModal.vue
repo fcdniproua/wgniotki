@@ -327,7 +327,7 @@ export default {
 .modal-title {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #333;
+    color: #DAA520;
     margin: 0;
     text-align: center;
 }
