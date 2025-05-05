@@ -202,6 +202,10 @@ export default {
     gap: 10px;
 }
 
+.form-input {
+    width: 90%;
+}
+
 .btn-main {
     background: #1A1A1A;
     color: white;

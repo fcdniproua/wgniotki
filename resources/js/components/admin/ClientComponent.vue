@@ -431,7 +431,7 @@ export default {
 }
 
 .form-control {
-    width: 100%;
+    width: 90%;
     padding: 0.75rem 1rem;
     border: 1px solid #e2e8f0;
     border-radius: 0.5rem;
