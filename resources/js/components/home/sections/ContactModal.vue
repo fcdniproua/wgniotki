@@ -568,7 +568,7 @@ select.form-input {
     }
 
     .modal-container {
-        max-height: calc(100vh - 20px);
+        max-height: calc(100vh - 70px);
         border-radius: 8px 8px 0 0;
     }
 
