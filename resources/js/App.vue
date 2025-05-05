@@ -99,11 +99,6 @@ html, body {
     height: 70px; /* Висота вашого хедера */
 }
 
-.app-main {
-    flex: 1;
-    padding: 20px 0; /* Додаткові відступи */
-}
-
 .app-footer {
     height: 100%; /* Висота вашого футера */
 }
