@@ -23,9 +23,6 @@
             </div>
             <div class="contact-item">
                 <div class="contact-phone">
-<!--                    <div class="icon-wrapper">-->
-<!--                        <IconPhoneCall class="contact-icon" />-->
-<!--                    </div>-->
                     <p class="contact-text">
                         <button class="hero-button-1 " @click="$emit('open-contact-modal');">
                             <a :href="'tel:' + contactData.contactPhone" class="contact-link semibold">{{contactData.contactPhone}}</a>

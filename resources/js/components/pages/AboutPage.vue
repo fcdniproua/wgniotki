@@ -123,7 +123,7 @@ export default {
     transform: translateX(-50%);
     width: 100px;
     height: 3px;
-    background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+    background: linear-gradient(90deg, #DAA520, #DAA520);
 }
 
 .about-content {

@@ -18,7 +18,9 @@
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://usuwanie-wgniecen.pro/assets/img/logo_v4.jpg">
     <link rel="canonical" href="https://usuwanie-wgniecen.pro/">
-
+    <link rel="icon" sizes="32x32"  type="image/svg" href="/favicon.svg">
+    <link rel="icon" sizes="16x16"  type="image/svg" href="/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.svg">
 </head>
 <body>
 <div id="app"></div>
