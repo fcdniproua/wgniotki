@@ -70,6 +70,8 @@ export default {
 <style scoped>
 
 .btn-primary {
+    width: 305px;
+    height: 80px;
     text-align: center;
     border: 1px solid #1A1A1A;
     padding: 20px;
