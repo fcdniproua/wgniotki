@@ -312,7 +312,7 @@ export default {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     width: 100%;
     max-width: 500px;
-    max-height: calc(100vh - 40px); /* Враховуємо padding overlay */
+    max-height: calc(100vh - 70px); /* Враховуємо padding overlay */
     display: flex;
     flex-direction: column;
     overflow: hidden; /* Важливо для правильного скролла */
