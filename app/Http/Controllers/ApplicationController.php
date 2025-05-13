@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Mail\ApplicationReceived;
 use App\Models\Application;
 use App\Models\Client;
+use App\Models\Photo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -142,6 +143,7 @@ class ApplicationController extends Controller
 
     public function destroy(Application $application)
     {
+        $application->photos()->delete();
         $application->delete();
         return response()->json(null, 204);
     }
