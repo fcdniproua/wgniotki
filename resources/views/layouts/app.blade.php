@@ -6,8 +6,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <base href="/">
     @vite(['resources/js/app.js'])
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/fontawesome.min.css" integrity="sha384-NvKbDTEnL+A8F/AA5Tc5kmMLSJHUO868P+lDtTpJIeQdGYaUIuLr4lVGOEA1OcMy" crossorigin="anonymous">
     <title>Usuwanie wgnieceń bez lakierowania | Profesjonalna naprawa karoserii</title>
 
     <meta name="description" content="Specjalizujemy się w bezinwazyjnym usuwaniu wgnieceń karoserii metodą PDR. Szybko, skutecznie i bez potrzeby lakierowania. Umów się już dziś!">
