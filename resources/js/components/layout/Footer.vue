@@ -12,7 +12,7 @@
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-phone"></i>
-                            <a href="tel:+48123456789">{{contactData.contactPhone}}</a>
+                            <a :href="'tel:' + contactData.contactPhone">{{contactData.contactPhone}}</a>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>

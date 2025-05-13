@@ -15,7 +15,7 @@
                     <div class="icon-wrapper">
                         <IconPhoneCall class="contact-icon" />
                     </div>
-                    <p class="contact-text"><a  class="contact-text" href="tel:48510631616">{{contactData.contactPhone}}</a></p>
+                    <p class="contact-text"><a  class="contact-text" :href="'tel:' + contactData.contactPhone">{{contactData.contactPhone}}</a></p>
                 </div>
             </div>
 
@@ -53,7 +53,7 @@
 .section-title {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #DAA520;
+    color: #1A1A1A;
     text-align: center;
     margin-bottom: 50px;
     position: relative;
