@@ -28,7 +28,7 @@
 .services-title {
     font-size: 2.5rem; /* Збільшив розмір шрифту */
     font-weight: 700;
-    color: #DAA520;
+    color: #1A1A1A;
     text-align: center;
     margin-bottom: 4rem; /* Збільшив відступ знизу */
     position: relative;

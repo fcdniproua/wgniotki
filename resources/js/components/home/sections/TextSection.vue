@@ -55,7 +55,7 @@
 .about-title {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #DAA520;
+    color: #1A1A1A;
     text-align: center;
     margin-bottom: 2rem;
     position: relative;
