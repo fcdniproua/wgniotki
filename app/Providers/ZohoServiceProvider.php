@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use zcrmsdk\crm\setup\restclient\ZCRMRestClient;
+use zcrmsdk\oauth\ZohoOAuth;
 
 class ZohoServiceProvider extends ServiceProvider
 {
@@ -17,7 +18,6 @@ class ZohoServiceProvider extends ServiceProvider
                 'current_user_email' => config('zoho.current_user_email'),
                 'api_domain' => config('zoho.api_domain'),
                 'access_type' => config('zoho.access_type'),
-                'persistence_handler_class' => config('zoho.persistence_handler_class'),
                 'token_persistence_path' => config('zoho.token_persistence_path'),
             ];
 
@@ -29,7 +29,6 @@ class ZohoServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        // Переконайтеся, що директорія для токенів існує
         if (!file_exists(config('zoho.token_persistence_path'))) {
             mkdir(config('zoho.token_persistence_path'), 0755, true);
         }

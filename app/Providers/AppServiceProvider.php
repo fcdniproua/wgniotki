@@ -2,6 +2,11 @@
 
 namespace App\Providers;
 
+use com\zoho\api\authenticator\OAuthToken;
+use com\zoho\api\authenticator\store\FileStore;
+use com\zoho\crm\api\dc\USDataCenter;
+use com\zoho\crm\api\InitializeBuilder;
+use com\zoho\crm\api\UserSignature;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 

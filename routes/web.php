@@ -59,9 +59,10 @@ Route::prefix('admin')->group(function () {
     });
 });
 //
-Route::get('/zoho/auth', [ZohoAuthController::class, 'generateAuthUrl']);
+Route::get('/zoho/auth', [ZohoAuthController::class, 'auth'])->name('zoho.auth');
 Route::get('/zoho/callback', [ZohoAuthController::class, 'callback']);
 Route::get('/zoho/test', [ZohoAuthController::class, 'test']);
+Route::post('/zoho/send-email', [ZohoAuthController::class, 'sendEmail']);
 
 // routes/web.php
 Route::get('/test-mail', function () {

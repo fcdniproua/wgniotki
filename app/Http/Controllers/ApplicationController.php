@@ -7,6 +7,7 @@ use App\Models\Application;
 use App\Models\Client;
 use App\Models\Photo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
@@ -209,8 +210,93 @@ class ApplicationController extends Controller
             $application->photos()->createMany($photos);
         }
 
-        Mail::to($request->email)->send(new ApplicationReceived($application));
+        $this->sendZohoMail(
+            $request->email,
+            'Заявка отримана',
+            'Ваша заявка була успішно отримана! Дякуємо за звернення.'
+        );
 
         return response()->json($application, 201);
     }
+
+    private function sendZohoMail($toEmail, $subject, $content)
+    {
+        $client = new \GuzzleHttp\Client();
+        $domain = env('ZOHO_API_DOMAIN');
+        $refreshToken = env('ZOHO_REFRESH_TOKEN');
+        $token = null;
+        // Якщо токена в сесії немає, отримуємо новий
+//        $token = session('zoho_access_token');
+        if (! $token) {
+            try {
+                $res = $client->post("{$domain}/oauth/v2/token", [
+                    'form_params' => [
+                        'grant_type'    => 'refresh_token',
+                        'client_id'     => env('ZOHO_CLIENT_ID'),
+                        'client_secret' => env('ZOHO_CLIENT_SECRET'),
+                        'refresh_token' => $refreshToken,
+                    ],
+                ]);
+                $data = json_decode($res->getBody(), true);
+                $token = $data['access_token'] ?? null;
+                if (! $token) {
+                    \Log::error('Zoho: не вдалося отримати access_token');
+                    return false;
+                }
+                // Зберігаємо токен у сесію
+                session(['zoho_access_token' => $token]);
+            } catch (\Exception $e) {
+                \Log::error('Помилка при оновленні токена Zoho: ' . $e->getMessage());
+                return false;
+            }
+
+        }
+
+        // Отримати accountId
+        try {
+            $res = $client->get('https://mail.zoho.eu/api/accounts', [
+                'headers' => [
+                    'Authorization' => "Zoho-oauthtoken {$token}",
+                ]
+            ]);
+
+            $accounts = json_decode($res->getBody(), true);
+            $accountId = $accounts['data'][0]['accountId'] ?? null;
+
+            if (! $accountId) {
+                \Log::error('Zoho: не вдалося отримати accountId');
+                return false;
+            }
+        } catch (\Exception $e) {
+            var_dump($e->getMessage());die();
+            App::error('Помилка при отриманні акаунтів Zoho: ' . $e->getMessage());
+            return false;
+        }
+
+        // Надсилання листа
+        try {
+
+            $response = $client->post("https://mail.zoho.eu/api/accounts/{$accountId}/messages", [
+                'headers' => [
+                    'Authorization' => "Zoho-oauthtoken {$token}",
+                    'Content-Type' => 'application/json',
+                    'Accept' => 'application/json',
+                ],
+                'json' => [
+                    'fromAddress' => 'support@usuwanie-wgniecen.pro', // Замінити на справжній Zoho емейл
+                    'toAddress' => $toEmail,
+                    'subject' => $subject,
+                    'content' => $content,
+                ],
+            ]);
+
+            return $response->getStatusCode() === 200;
+        } catch (\Exception $e) {
+            var_dump($e->getMessage());die();
+            \Log::error('Помилка при надсиланні листа через Zoho: ' . $e->getMessage());
+            return false;
+        }
+    }
+
+
 }
