@@ -148,6 +148,7 @@ class ApplicationController extends Controller
         return response()->json(null, 204);
     }
 
+
     public function sendApplication(Request $request) {
         $client = Client::query()->where('email', '=', $request['email'])->first();
         if (!$client) {

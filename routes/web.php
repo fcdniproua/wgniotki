@@ -58,7 +58,7 @@ Route::prefix('admin')->group(function () {
         Route::get('/user', [AuthController::class, 'getUser']);
     });
 });
-
+//
 Route::get('/zoho/auth', [ZohoAuthController::class, 'generateAuthUrl']);
 Route::get('/zoho/callback', [ZohoAuthController::class, 'callback']);
 Route::get('/zoho/test', [ZohoAuthController::class, 'test']);
