@@ -90,6 +90,7 @@ class PhotoController extends Controller
     public function update(Request $request, Photo $photo)
     {
         $validator = Validator::make($request->all(), [
+            'service_id' => 'sometimes|integer',
             'application_id' => 'sometimes|exists:applications,id',
             'slider_1' => 'sometimes|integer',
             'slider_2' => 'sometimes|integer',
@@ -112,6 +113,7 @@ class PhotoController extends Controller
         }
 
         $photo->update($request->only([
+            'service_id',
             'application_id',
             'slider_1',
             'slider_2',

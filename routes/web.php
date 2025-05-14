@@ -58,6 +58,10 @@ Route::prefix('admin')->group(function () {
     });
 });
 
+Route::get('/zoho/auth', 'App\Http\Controllers\ZohoAuthController@generateAuthUrl');
+Route::get('/zoho/callback', 'App\Http\Controllers\ZohoAuthController@callback');
+Route::get('/zoho/test', 'App\Http\Controllers\ZohoAuthController@test');
+
 // routes/web.php
 Route::get('/test-mail', function () {
     $data = ['message' => 'Це тестовий email від Laravel з Zoho Mail'];

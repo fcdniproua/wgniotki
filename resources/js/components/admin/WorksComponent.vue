@@ -206,6 +206,7 @@ export default {
             editingId.value = photo.id;
             photoForm.value = {
                 application_id: photo.application_id,
+                service_id: photo.service_id,
                 slider_1: photo.slider_1,
                 slider_2: photo.slider_2,
                 slider_tag: photo.slider_tag,
