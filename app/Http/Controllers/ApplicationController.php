@@ -147,23 +147,6 @@ class ApplicationController extends Controller
         $application->delete();
         return response()->json(null, 204);
     }
-//curl "https://accounts.zoho.eu/oauth/v2/token?
-//code=1000.84aaf8ef9830743f3a23f04686ccbbc4.98265635a2c41f9a00fdd7beee73415d&
-//client_id=&
-//client_secret=&
-//redirect_uri=&
-//grant_type=authorization_code"
-//curl: (3) URL rejected: Malformed i
-//
-//
-//curl -X POST "https://accounts.zoho.eu/oauth/v2/token" \
-//-H "Content-Type: application/x-www-form-urlencoded" \
-//-d "code=1000.84aaf8ef9830743f3a23f04686ccbbc4.98265635a2c41f9a00fdd7beee73415d" \
-//-d "client_id=1000.4EPA4K0MUNG66EROE07M4GZGQ826JZ" \
-//-d "client_secret=f1a74e902027ab1014392b25d203cb0aa54b8c7011" \
-//-d "redirect_uri=https://usuwanie-wgniecen.pro/" \
-//-d "grant_type=authorization_code" \
-//-d "access_type=offline"
 
     public function sendApplication(Request $request) {
         $client = Client::query()->where('email', '=', $request['email'])->first();
