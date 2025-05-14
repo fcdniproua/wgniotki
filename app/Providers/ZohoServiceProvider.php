@@ -23,7 +23,7 @@ class ZohoServiceProvider extends ServiceProvider
 
             ZCRMRestClient::initialize($configuration);
 
-            return new ZCRMRestClient();
+            return ZCRMRestClient::getInstance();
         });
     }
 
