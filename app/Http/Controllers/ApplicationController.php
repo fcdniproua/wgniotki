@@ -212,8 +212,9 @@ class ApplicationController extends Controller
 
         $this->sendZohoMail(
             $request->email,
-            'Заявка отримана',
-            'Ваша заявка була успішно отримана! Дякуємо за звернення.'
+            'Dzięki za wypełnienie formularza',
+            'Dzięki za wypełnienie formularza. Skontaktujemy się z Tobą i podamy koszt naprawy.
+                Tymczasem zajrzyj na naszego Instagrama i Facebooka – mamy tam mnóstwo postów i zdjęć.'
         );
 
         return response()->json($application, 201);
