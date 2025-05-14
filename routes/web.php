@@ -7,6 +7,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\ReviewsController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\ZohoAuthController;
 use App\Http\Middleware\AuthenticateAdmin;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
@@ -58,9 +59,9 @@ Route::prefix('admin')->group(function () {
     });
 });
 
-Route::get('/zoho/auth', 'App\Http\Controllers\ZohoAuthController@generateAuthUrl');
-Route::get('/zoho/callback', 'App\Http\Controllers\ZohoAuthController@callback');
-Route::get('/zoho/test', 'App\Http\Controllers\ZohoAuthController@test');
+Route::get('/zoho/auth', [ZohoAuthController::class, 'generateAuthUrl']);
+Route::get('/zoho/callback', [ZohoAuthController::class, 'callback']);
+Route::get('/zoho/test', [ZohoAuthController::class, 'test']);
 
 // routes/web.php
 Route::get('/test-mail', function () {
