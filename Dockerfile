@@ -50,6 +50,8 @@ USER www
 RUN composer install
 RUN npm install
 
+# Замінити listen на 0.0.0.0:9000
+RUN sed -i 's/listen = 127.0.0.1:9000/listen = 0.0.0.0:9000/' /usr/local/etc/php-fpm.d/www.conf
 
 # Expose port 9000 for php-fpm and 5173 for Vite
 EXPOSE 9000 5173
