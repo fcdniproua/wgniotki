@@ -42,7 +42,7 @@ class PhotoController extends Controller
                 'max:255'
             ],
             'is_gallery' => 'sometimes|integer',
-            'photo' => 'required|file|image|max:10240', // 10MB max
+            'photo' => 'required|file|image|max:40960', // 10MB max
         ]);
 
         if ($validator->fails()) {
