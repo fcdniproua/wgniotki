@@ -209,13 +209,17 @@ class ApplicationController extends Controller
             // Зберігаємо фото в базу даних (припускаючи, що у вас є зв'язок і модель для фото)
             $application->photos()->createMany($photos);
         }
-
         $this->sendZohoMail(
             $request->email,
             'Dzięki za wypełnienie formularza',
-            'Dzięki za wypełnienie formularza. Skontaktujemy się z Tobą i podamy koszt naprawy.
-                Tymczasem zajrzyj na naszego Instagrama i Facebooka – mamy tam mnóstwo postów i zdjęć.'
+            view('emails.application_received', compact('application'))->render()
         );
+
+//        $this->sendZohoMail(
+//            'bezwgniotek@gmail.com',
+//            'Otrzymano nowe zgłoszenie.',
+//            view('emails.application_received_me', compact('application'))->render()
+//        );
 
         return response()->json($application, 201);
     }

@@ -67,6 +67,18 @@ const router = createRouter({
 })
 
 router.afterEach((to) => {
+    if (typeof gtag === 'function') {
+        gtag('event', 'page_view', {
+            page_path: to.fullPath,
+            page_title: to.name,
+        });
+    }
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+        event: 'pageview',
+        page_path: to.fullPath,
+        page_title: to.name,
+    });
     setTimeout(() => {
         if (to.hash) {
             waitForElement(to.hash, 5000) // до 5 сек.

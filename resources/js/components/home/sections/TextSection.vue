@@ -5,30 +5,29 @@
 
             <div class="about-content">
                 <p>Jesteśmy ekspertami w <b class="b-text">usuwaniu wgniotek metodą PDR </b>(Paintless Dent Repair). Działamy we Wrocławiu, oferując szybkie i profesjonalne naprawy uszkodzeń karoserii bez konieczności jej lakierowania. Nasze usługi obejmują usuwanie wgnieceń po <b class="b-text">szkodach parkingowych</b>, <b class="b-text">uszkodzeń po wypadkach</b> oraz <b class="b-text">po gradobiciu</b></p>
-                <div>Naprawiamy wgniecenia na każdym elemencie karoserii:
+                <div>Naprawiamy wgniecenia na wszystkich elementach karoserii, takich jak:
                     <ul class="car-list">
-                        <li>Drzwiach</li>
-                        <li>Błotnikach</li>
-                        <li>Maskach</li>
-                        <li>Klapach</li>
-                        <li>Dachu</li>
-                        <li>Relingach</li>
+                        <li>drzwi</li>
+                        <li>błotniki</li>
+                        <li>maska</li>
+                        <li>klapa</li>
+                        <li>dach</li>
+                        <li>relingi</li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="b-text bold">Dlaczego warto wybrać nas?</h3>
                     <ul class="car-list">
-                        <li><b class="b-text">Fachowość</b> – mamy doświadczenie i know-how, które pozwala nam wykonywać naprawy, których inni się boją.</li>
-                        <li><b class="b-text">Szybka naprawa, perfekcyjny efekt</b> – naprawiamy wgniotki w krótkim czasie, bez pozostawiania auta na długie dni.</li>
-                        <li><b class="b-text">Atrakcyjna cena</b> – oferujemy konkurencyjne ceny, które dają Ci oszczędności bez kompromisów w jakości.</li>
-                        <li><b class="b-text">Łatwość umówienia</b> – umów się na naprawę online lub telefonicznie, zrobimy to w najdogodniejszym dla Ciebie terminie.</li>
+                        <li><b class="b-text">Fachowość</b> – mamy duże doświadczenie i wyspecjalizowane umiejętności praktyczne, które pozwalają nam wykonywać naprawy, których inni się boją.</li>
+                        <li><b class="b-text">Szybka naprawa, znakomity efekt</b> – naprawiamy wgniotki w krótkim czasie,bez konieczności pozostawiania auta w serwisie na długie dni.</li>
+                        <li><b class="b-text">Atrakcyjna cena</b> – oferujemy konkurencyjne ceny,które pozwalają Ci zaoszczędzić pieniądze bez obawy o jakości usługi.</li>
+                        <li><b class="b-text">Łatwy kontakt</b> – umów się na naprawę online lub telefonicznie, na pewno znajdziemy dla Ciebie dogodny termin.</li>
                     </ul>
-                <p>Zajmujemy się naprawą samochodów wszystkich marek i modeli – niezależnie od tego, czy to <b class="b-text">uszkodzenia po kolizjach czy drobne wgniotki,
-                szkody parkingowe, czy wgniecenia po gradzie </b> – poradzimy sobie z każdym problemem.
+                <p>Zajmujemy się naprawą samochodów wszystkich marek i modeli – niezależnie od tego, są to <b class="b-text">uuszkodzenia po kolizjach, drobne wgniotki, szkody parkingowe, czy też wgniecenia po gradzie  </b> – poradzimy sobie z każdym problemem.
                     Zaufaj specjalistom, którzy naprawdę znają się na rzeczy i daj swojemu samochodowi drugie życie. </p>
                 <p>
-                    Mamy tysięcy zadowolonych klientów, którzy chwalą nas za skuteczność, szybkość i bezproblemowy proces naprawy.
-                    Szukasz specjalistów, <b class="b-text">którzy naprawią wgniotki w pobliżu Ciebie?</b> Zaufaj profesjonalistom, którzy naprawdę kochają to, co robią.
+                    Mamy tysiące zadowolonych klientów, którzy chwalą nas za  skuteczny, szybki i bezproblemowy proces naprawy.
+                    Szukasz specjalistów, <b class="b-text">którzy naprawią wgniotki blisko Ciebie?</b> Zaufaj profesjonalistom, którzy naprawdę kochają to, co robią.
                     <b class="b-text" @click="$emit('open-contact-modal')" style="cursor: pointer; color: #DAA520">Skontaktuj się z nami i umów wizytę jeszcze dziś!</b>
                 </p>
                 </div>

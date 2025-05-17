@@ -55,16 +55,12 @@
         <img src="{{ asset('img/logo_v4.jpg') }}" alt="Logo">
     </div>
     <div class="content">
-        <p><strong> Dzięki za wypełnienie formularza!</strong></p>
-        <p>Skontaktujemy się z Tobą i podamy koszt naprawy.</p>
-        <p>Tymczasem zajrzyj na naszego Instagrama i Facebooka – mamy tam mnóstwo postów i zdjęć.</p>
+        <p><strong> Otrzymano nowe zgłoszenie!</strong></p>
+        <p>Szczegóły dostępne są w panelu administracyjnym.</p>
     </div>
     <div class="social">
-        <a href="https://www.instagram.com/usuwanie.wgniecen.wroclaw" class="fa-brands" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram">
-        </a>
-        <a href="https://m.facebook.com/108648248244581" class="fa-brands" target="_blank" >
-            <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+        <a href="https://usuwanie-wgniecen.pro/admin/dashboard" class="fa-brands" target="_blank">
+            Do strony administracyjnej
         </a>
     </div>
     <div class="footer">

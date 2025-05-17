@@ -16,7 +16,7 @@
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
-                            <a href="mailto:kontakt@twojesto.pl">{{contactData.contactEmail}}</a>
+                            <a :href="'mailto:' + contactData.contactEmail">{{contactData.contactEmail}}</a>
                         </div>
                     </div>
 

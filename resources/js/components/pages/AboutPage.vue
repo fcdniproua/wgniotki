@@ -18,8 +18,8 @@
                         Naprawiamy <strong>wszystkie typy samochodów</strong>: miejskie, luksusowe, SUV-y i inne, youngtimery, klasyki i auta firmowe – niezależnie od marki, modelu czy kraju rejestracji.
                         <br>
                         <br>
-                        <strong>Nie boimy się trudnych wyzwań</strong> – skomplikowane wgniecenia po gradobiciu, kolizjach, szkody parkingowe, uszkodzenia w trudno dostępnych miejscach?
-                        Dla nas to chleb powszedni. Tam, gdzie inni mówią ‘nie da się’ – <strong>my podejmujemy się naprawy.</strong>
+                        <strong>Nie boimy się trudnych wyzwań</strong> – skomplikowane wgniecenia po gradobiciu, szkodach parkingowych. Uszkodzenia w trudno dostępnych miejscach?
+                        Doradzimy Ci. Tam, gdzie inni mówią ‘nie da się’ – <strong>my podejmujemy się naprawy.</strong>
                         <br>
                         <br>
                         Za firmą stoi <strong>Eliasz Kowalczuk</strong> – pasjonat motoryzacji, który sam naprawia auta razem z zespołem doświadczonych techników.
@@ -27,7 +27,7 @@
                         Doradzimy najlepsze rozwiązanie i przywrócimy Twojemu autu perfekcyjny wygląd.
                         <br>
                         <br>
-                        Zadzwoń, napisz lub umów się online – działamy elastycznie i bez zbędnej zwłoki.
+                        Zadzwoń, napisz lub umów się online – działamy szybko i bez zbędnej zwłoki.
 
                     </p>
                 </div>

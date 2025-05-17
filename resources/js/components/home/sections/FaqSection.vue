@@ -29,7 +29,7 @@ export default {
             faqItems: [
                 {
                     question: "Czy można usunąć wgniotkę bez lakierowania?",
-                    answer: "<p>Tak, metoda PDR (Paintless Dent Repair) pozwala na usunięcie wgniotek bez konieczności lakierowania karoserii. Warunkiem jest, aby uszkodzony nie był wcześniej szpachlowany – wtedy możemy precyzyjnie wyciągnąć lub wypchnąć wgniotkę i przywrócić pierwotny kształt karoserii.</p>"
+                    answer: "<p>Tak, metoda PDR (Paintless Dent Repair) pozwala na usunięcie wgniotek bez konieczności lakierowania karoserii. Warunkiem jest, aby uszkodzony element nie był wcześniej szpachlowany – wtedy możemy precyzyjnie wyciągnąć lub wypchnąć wgniotkę i przywrócić pierwotny kształt karoserii.</p>"
                 },
                 {
                     question: "Ile kosztuje usunięcie wgniotki?",
@@ -54,9 +54,9 @@ export default {
                     answer: "<p>Niekoniecznie. Większość napraw wykonujemy tego samego dnia, czasem nawet w ciągu 1–3 godzin. Nie ma potrzeby zostawiania auta na długie dni – działamy sprawnie, bez zbędnych formalności.</p>"
                 },
                 {
-                    question: "Czy oferujecie naprawy w pobliżu mnie?",
-                    answer: "<p>Tak! Obsługujemy Wrocław i okolice, w tym: Krzyki, Gaj, Fabryczna, Psie Pole, Ołbin, Ołtaszyn, Brochów, Klecina, Muchobór, Tarnogaj, a także Bielany Wrocławskie, Długołęka, Kąty Wrocławskie, Siechnice i inne lokalizacje.\n" +
-                        "Szukasz „usuwanie wgniotek bez lakierowania w pobliżu mnie”? Jesteś we właściwym miejscu.</p>"
+                    question: "Czy oferujecie naprawy w blisko mnie?",
+                    answer: "<p>Tak! Oferujemy usługi na terenie Wrocławia, w tym: Krzyki, Gaj, Fabryczna, Psie Pole, Ołbin, Ołtaszyn, Brochów, Klecina, Muchobór, Tarnogaj, a także Bielany Wrocławskie, Długołęka, Kąty Wrocławskie, Siechnice.  Zapraszamy także z okolic." +
+                        "Szukasz usuwanie wgniotek bez lakierowania blisko mnie? Jesteś we właściwym miejscu.</p>"
                 },
                 {
                     question: "Jakie wgniotki da się naprawić metodą PDR?",
@@ -87,7 +87,7 @@ export default {
               <li>Wyślij je przez formularz lub na WhatsApp</li>
               <li>Otrzymasz wycenę i najbliższy termin naprawy</li>
             </ol>
-            <p>Terminy mamy dość krótkie: tydzień-dwa na skomplikowane wgniecenia, a często nawet na dziś lub jutro w przypadku niedużych wgniotek. Działamy elastycznie i zawsze się dogadamy.</p>
+            <p>Terminy mamy dość krótkie: tydzień-dwa na skomplikowane wgniecenia, a często nawet na dziś lub jutro w przypadku niedużych wgniotek. Działamy szybko i zawsze się dogadamy.</p>
           `
                 },
                 {
@@ -100,11 +100,11 @@ export default {
                 },
                 {
                     question: "Czy można samodzielnie usunąć wgniecenie?",
-                    answer: "<p>Nie polecamy, chociaż istnieją zestawy do samodzielnego usuwania wgnieceń, brak doświadczenia i odpowiednich narzędzi może prowadzić do pogorszenia stanu karoserii. Zaleca się skorzystanie z usług profesjonalistów, pomożemy ci, wyślij zdjęcia przez formularz lub zadzwoń. </p>"
+                    answer: "<p>Chociaż istnieją zestawy do samodzielnego usuwania wgnieceń, my nie polecamy, ponieważ brak doświadczenia i odpowiednich narzędzi może prowadzić do pogorszenia stanu karoserii. Zaleca się skorzystanie z usług profesjonalistów. Z chęcią ci z tym pomożemy, wyślij zdjęcia przez formularz lub zadzwoń.</p>"
                 },
                 {
                     question: "Czy naprawa PDR jest możliwa w przypadku uszkodzeń na krawędziach (rantach)?",
-                    answer: "<p>Tak, ale jest to bardziej skomplikowane niż w przypadku płaskich powierzchni. Naprawa wgnieceń na krawędziach wymaga większej precyzji i doświadczenia, dlatego ważne jest, aby powierzyć ją specjalistom z odpowiednim know-how. Naprawiamy to, dlatego wyślij zdjęcia przez formularz lub zadzwoń.</p>"
+                    answer: "<p>Tak, ale jest to bardziej skomplikowane niż w przypadku płaskich powierzchni. Naprawa wgnieceń na krawędziach wymaga większej precyzji i doświadczenia, dlatego ważne jest, aby powierzyć ją specjalistom z odpowiednim doświadczeniem. Skontaktuj się, chętnie Ci pomożemy.</p>"
                 },
                 {
                     question: "Czy usuwacie wgniecenia z elementów wcześniej lakierowanych?\n",

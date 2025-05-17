@@ -10,7 +10,7 @@
                 <strong>USUWANIE WGNIECEŃ ILLIA KOVALCHUK</strong><br>
                 ul. Kleczkowska 18B, 50-227 Wrocław<br>
                 NIP: 8952254284, REGON: 524663440<br>
-                e-mail: <a href="mailto:bezwgniotek@gmail.com">bezwgniotek@gmail.com</a>
+                e-mail: <a href="mailto:support@usuwanie-wgniecen.pro">support@usuwanie-wgniecen.pro</a>
             </p>
 
             <h2>2. Zakres przetwarzanych danych</h2>

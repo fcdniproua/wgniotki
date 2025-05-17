@@ -251,7 +251,7 @@ export default {
                 slider_1: 0,
                 slider_2: 0,
                 slider_tag: '',
-                is_gallery: 0,
+                is_gallery: 1,
                 photo: null
             };
         };
