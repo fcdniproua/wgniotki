@@ -61,6 +61,71 @@
             <p>Dane Użytkowników mogą być zapisywane w systemie CRM w celu utrzymania kontaktu, historii korespondencji oraz personalizacji ofert marketingowych (profilowanie).</p>
             <p>Dane nie będą przekazywane osobom trzecim bez wyraźnej zgody, z wyjątkiem podmiotów świadczących usługi IT i marketingowe na rzecz Administratora.</p>
         </div>
+        <h1 class="section-title bold">Polityka cookies</h1>
+
+        <div class="about-text">
+            <h2>1. Czym są pliki cookies?</h2>
+            <p>
+                Pliki cookies to niewielkie pliki tekstowe zapisywane na urządzeniu końcowym Użytkownika (komputerze, tablecie, smartfonie), które są niezbędne do prawidłowego działania strony internetowej, a także do prowadzenia analiz statystycznych i działań marketingowych.
+            </p>
+
+            <h2>2. Jakie pliki cookies wykorzystujemy?</h2>
+            <p>Na naszej stronie internetowej stosujemy następujące rodzaje plików cookies:</p>
+            <ul>
+                <li>
+                    <strong>Niezbędne</strong> – umożliwiają korzystanie z podstawowych funkcji strony i zapewniają jej prawidłowe działanie. Ich stosowanie nie wymaga zgody Użytkownika
+                    (podstawa prawna: art. 6 ust. 1 lit. f RODO – uzasadniony interes administratora).
+                </li>
+                <li>
+                    <strong>Analityczne</strong> – umożliwiają zbieranie anonimowych danych o sposobie korzystania ze strony w celu ulepszania jej funkcjonowania
+                    (np. Google Analytics z anonimizacją IP). Ich stosowanie odbywa się wyłącznie po wyrażeniu zgody przez Użytkownika
+                    (podstawa prawna: art. 6 ust. 1 lit. a RODO – zgoda).
+                </li>
+                <li>
+                    <strong>Marketingowe</strong> – umożliwiają wyświetlanie reklam dostosowanych do preferencji Użytkownika (np. Meta Pixel, Google Ads). Zawierają również elementy profilowania. Ich stosowanie wymaga wyraźnej zgody
+                    (podstawa prawna: art. 6 ust. 1 lit. a RODO).
+                </li>
+            </ul>
+
+            <h2>3. Czas przechowywania danych</h2>
+            <p>
+                Dane gromadzone za pomocą plików cookies przechowujemy maksymalnie przez 12 miesięcy lub do momentu wycofania zgody przez Użytkownika – w zależności od tego, co nastąpi wcześniej.
+            </p>
+
+            <h2>4. Zarządzanie plikami cookies</h2>
+            <p>Użytkownik może w każdej chwili zarządzać plikami cookies poprzez:</p>
+            <ul>
+                <li>zmianę ustawień w swojej przeglądarce internetowej,</li>
+                <li>kliknięcie opcji „Zmień ustawienia cookies” dostępnej w stopce strony,</li>
+                <li>wybór preferencji w banerze cookies podczas pierwszej wizyty na stronie.</li>
+            </ul>
+            <p>Brak zmiany ustawień oznacza akceptację domyślnych ustawień i zapisanie plików cookies na urządzeniu końcowym.</p>
+
+            <h2>5. Podmioty zewnętrzne</h2>
+            <p>
+                W ramach działania strony dane mogą być przetwarzane przez następujące podmioty trzecie, które dostarczają nam narzędzia analityczne lub marketingowe:
+            </p>
+            <ul>
+                <li>Google LLC (Google Analytics, Google Ads),</li>
+                <li>Meta Platforms Inc. (Facebook Pixel),</li>
+                <li>[TU WPISZ inne rzeczywiste narzędzia, np. MailerLite, Tawk.to, Hotjar].</li>
+            </ul>
+            <p>
+                Dane mogą być przekazywane poza Europejski Obszar Gospodarczy (np. do USA), przy zachowaniu odpowiednich mechanizmów zabezpieczających zgodnie z RODO (np. standardowe klauzule umowne zatwierdzone przez Komisję Europejską).
+            </p>
+
+            <h2>6. Dodatkowe informacje o przetwarzaniu danych</h2>
+            <p>Dane Użytkowników mogą być zapisywane w systemie CRM w celu:</p>
+            <ul>
+                <li>utrzymywania historii kontaktu i korespondencji,</li>
+                <li>przesyłania informacji handlowych drogą elektroniczną (e-mail, telefon, SMS),</li>
+                <li>personalizacji ofert marketingowych na podstawie profilowania.</li>
+            </ul>
+            <p>
+                Podstawą przetwarzania danych jest zgoda Użytkownika lub uzasadniony interes Administratora
+                (art. 6 ust. 1 lit. a i f RODO). Dane nie są przekazywane osobom trzecim bez wyraźnej zgody, z wyjątkiem podmiotów świadczących usługi IT i marketingowe na rzecz Administratora.
+            </p>
+        </div>
     </section>
 </template>
 
